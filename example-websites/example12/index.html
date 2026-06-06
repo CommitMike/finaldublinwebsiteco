@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Barber Block — Stoneybatter, Dublin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">BB</div>
+    The Barber Block
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks" role="list">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#team">The Team</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#find-us">Find Us</a></li>
+    <li><a href="#booking" class="nav-book">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=80" alt="Barber at work">
+  </div>
+  <div class="hero-stripe"></div>
+  <p class="hero-side-text">The Barber Block · Stoneybatter · Dublin 7</p>
+  <div class="hero-content">
+    <div class="hero-tag">Stoneybatter, Dublin 7 · Since 2016</div>
+    <h1>SHARP.<br><span>CLEAN.</span><br>DONE.</h1>
+    <div class="hero-sub-row">
+      <div class="hero-rule"></div>
+      <p class="hero-sub">Old-school craft, no-nonsense service. Walk-ins welcome, appointments preferred. We take pride in every cut.</p>
+    </div>
+    <div class="hero-actions">
+      <a href="#booking" class="btn-book">Book a Cut</a>
+      <a href="#services" class="btn-services">See Services</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="hero-stat-num">8<span>+</span></div>
+      <div class="hero-stat-label">Years Open</div>
+    </div>
+    <div>
+      <div class="hero-stat-num">4<span>.8★</span></div>
+      <div class="hero-stat-label">Google Rating</div>
+    </div>
+    <div>
+      <div class="hero-stat-num">3<span>k+</span></div>
+      <div class="hero-stat-label">Happy Clients</div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span>Walk-Ins Welcome</span><span>Classic Cuts</span><span>Hot Towel Shave</span><span>Beard Trims</span><span>Kids Cuts</span><span>No Fuss</span><span>Dublin 7</span>
+    <span>Walk-Ins Welcome</span><span>Classic Cuts</span><span>Hot Towel Shave</span><span>Beard Trims</span><span>Kids Cuts</span><span>No Fuss</span><span>Dublin 7</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="section-header-row reveal">
+      <div>
+        <p class="eyebrow">What We Do</p>
+        <h2 class="section-title">OUR<br><span>SERVICES</span></h2>
+      </div>
+      <p class="section-note">All prices include finish & styling. Walk-ins subject to availability.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <div class="service-name">The Classic Cut</div>
+        <div class="service-desc">Scissors or clippers — however you like it. Wash, cut, dry and style with a proper finish.</div>
+        <div class="service-footer">
+          <div class="service-price">€22<span>+ tax</span></div>
+          <div class="service-duration">35 min</div>
+        </div>
+      </div>
+      <div class="service-card reveal d1">
+        <div class="service-num">02</div>
+        <div class="service-name">Skin Fade</div>
+        <div class="service-desc">Zero to length — blended smooth. Our most popular cut, finished sharp and clean every time.</div>
+        <div class="service-footer">
+          <div class="service-price">€28<span>+ tax</span></div>
+          <div class="service-duration">40 min</div>
+        </div>
+      </div>
+      <div class="service-card reveal d2">
+        <div class="service-num">03</div>
+        <div class="service-name">Cut & Beard</div>
+        <div class="service-desc">Full haircut plus a beard shape, trim and line-up. The full package — sharp head to jaw.</div>
+        <div class="service-footer">
+          <div class="service-price">€38<span>+ tax</span></div>
+          <div class="service-duration">55 min</div>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">04</div>
+        <div class="service-name">Hot Towel Shave</div>
+        <div class="service-desc">Pre-shave oil, hot towel, straight razor, afterbalm. Old-school luxury done properly.</div>
+        <div class="service-footer">
+          <div class="service-price">€30<span>+ tax</span></div>
+          <div class="service-duration">40 min</div>
+        </div>
+      </div>
+      <div class="service-card reveal d1">
+        <div class="service-num">05</div>
+        <div class="service-name">Kids Cut</div>
+        <div class="service-desc">Under 12s. Patient, no-rush, always a fair price. We've seen it all — don't worry, they're grand.</div>
+        <div class="service-footer">
+          <div class="service-price">€14<span>+ tax</span></div>
+          <div class="service-duration">25 min</div>
+        </div>
+      </div>
+      <div class="service-card reveal d2">
+        <div class="service-num">06</div>
+        <div class="service-name">OAP / Student</div>
+        <div class="service-desc">Classic cut at a reduced rate. Just bring valid ID. Same quality, same finish, no compromise.</div>
+        <div class="service-footer">
+          <div class="service-price">€16<span>+ tax</span></div>
+          <div class="service-duration">35 min</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team" id="team">
+  <div class="team-inner">
+    <div class="section-header-row reveal">
+      <div>
+        <p class="eyebrow">The Crew</p>
+        <h2 class="section-title">MEET<br><span>THE TEAM</span></h2>
+      </div>
+      <p class="section-note">Hover over each barber to learn more.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-card-img">
+          <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=80" alt="Head barber">
+        </div>
+        <div class="team-card-body">
+          <div class="team-card-role">Head Barber · 12 Years</div>
+          <div class="team-card-name">CIARÁN</div>
+          <div class="team-card-bio">Trained in London, came home to Stoneybatter. Ciarán runs the show — obsessed with clean fades and even cleaner lines.</div>
+          <div class="team-card-spec">
+            <span class="spec-tag">Skin Fades</span>
+            <span class="spec-tag">Classic Cuts</span>
+            <span class="spec-tag">Hot Shave</span>
+          </div>
+        </div>
+      </div>
+      <div class="team-card reveal d1">
+        <div class="team-card-img">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Barber">
+        </div>
+        <div class="team-card-body">
+          <div class="team-card-role">Barber · 6 Years</div>
+          <div class="team-card-name">DARRAGH</div>
+          <div class="team-card-bio">Darragh's the talkative one — regulars love him as much for the craic as the cuts. Specialises in textured styles and beard sculpting.</div>
+          <div class="team-card-spec">
+            <span class="spec-tag">Textured Styles</span>
+            <span class="spec-tag">Beard Work</span>
+          </div>
+        </div>
+      </div>
+      <div class="team-card reveal d2">
+        <div class="team-card-img">
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Junior barber">
+        </div>
+        <div class="team-card-body">
+          <div class="team-card-role">Barber · 3 Years</div>
+          <div class="team-card-name">RYAN</div>
+          <div class="team-card-bio">Newest on the block but no stranger to sharp work. Ryan handles most of our kids cuts and is quickly building his regular base.</div>
+          <div class="team-card-spec">
+            <span class="spec-tag">Kids Cuts</span>
+            <span class="spec-tag">Fades</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<div class="gallery" id="gallery" role="region" aria-label="Photo gallery">
+  <div class="gal-item main">
+    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80" alt="Barber shop interior">
+    <span class="gal-label">The Shop Floor</span>
+  </div>
+  <div class="gal-item">
+    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80" alt="Haircut in progress">
+    <span class="gal-label">The Work</span>
+  </div>
+  <div class="gal-item">
+    <img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=600&q=80" alt="Barber tools">
+    <span class="gal-label">The Tools</span>
+  </div>
+  <div class="gal-item">
+    <img src="https://images.unsplash.com/photo-1534297635766-a262cdcb8ee4?auto=format&fit=crop&w=600&q=80" alt="Fresh cut result">
+    <span class="gal-label">The Finish</span>
+  </div>
+  <div class="gal-item">
+    <img src="https://images.unsplash.com/photo-1596728325488-58c87691e9af?auto=format&fit=crop&w=600&q=80" alt="Beard trim">
+    <span class="gal-label">Beard Work</span>
+  </div>
+</div>
+
+<!-- BOOKING STRIP -->
+<div class="booking-strip">
+  <div class="booking-strip-left">
+    <h2>WALK IN.<br>OR BOOK<br>AHEAD.</h2>
+    <p>We take walk-ins every day but booking means no waiting around. Takes 30 seconds, saves you half an hour.</p>
+    <a href="tel:018321177" class="booking-tel">01 832 1177</a>
+  </div>
+  <div>
+    <a href="#booking" class="btn-book-white">Book Online Now</a>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="reviews-inner">
+    <div class="reveal">
+      <p class="eyebrow">What People Say</p>
+      <h2 class="section-title">4.8★ ON<br><span>GOOGLE</span></h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Best barber in Stoneybatter by a mile. Ciarán knows exactly what I want before I even sit down. Never going anywhere else."</p>
+        <div class="review-author">
+          <div class="review-avatar">PM</div>
+          <div>
+            <div class="review-name">Padraig M.</div>
+            <div class="review-source">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal d1">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Brought my son in for his first proper haircut. Darragh was deadly with him — patient, funny, and the cut was class. Highly recommend."</p>
+        <div class="review-author">
+          <div class="review-avatar">SK</div>
+          <div>
+            <div class="review-name">Sarah K.</div>
+            <div class="review-source">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal d2">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Hot towel shave is unreal. I come in every three weeks — it's as much a ritual as anything else at this stage. Gas lads, serious about their craft."</p>
+        <div class="review-author">
+          <div class="review-avatar">DO</div>
+          <div>
+            <div class="review-name">Declan O'B.</div>
+            <div class="review-source">Google Review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIND US -->
+<div class="find-us" id="find-us">
+  <div class="find-us-info reveal">
+    <p class="eyebrow">Location</p>
+    <h2>FIND<br>THE <span>BLOCK</span></h2>
+    <div class="info-row">
+      <div class="info-icon">📍</div>
+      <div>
+        <div class="info-label">Address</div>
+        <div class="info-val">28 Manor Street, Stoneybatter<br>Dublin 7, D07 KF42</div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">🕐</div>
+      <div>
+        <div class="info-label">Opening Hours</div>
+        <div class="hours-table">
+          <div class="hours-row"><strong>Mon – Wed</strong><span>9:00am – 6:00pm</span></div>
+          <div class="hours-row"><strong>Thu – Fri</strong><span>9:00am – 7:30pm</span></div>
+          <div class="hours-row"><strong>Saturday</strong><span>9:00am – 5:30pm</span></div>
+          <div class="hours-row"><strong>Sunday</strong><span>Closed</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">📞</div>
+      <div>
+        <div class="info-label">Contact</div>
+        <div class="info-val">
+          <a href="tel:018321177">01 832 1177</a><br>
+          <a href="mailto:hello@thebarberblock.ie">hello@thebarberblock.ie</a><br>
+          <a href="https://instagram.com" target="_blank" rel="noopener">@thebarberblock</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="find-us-map">
+    <div class="map-placeholder">
+      <div class="map-pin">📍</div>
+      <div class="map-address">28 Manor Street, Dublin 7</div>
+    </div>
+    <a href="https://maps.google.com" target="_blank" rel="noopener" class="map-btn">Open in Google Maps →</a>
+  </div>
+</div>
+
+<!-- BOOKING / CONTACT -->
+<section class="contact" id="booking">
+  <div class="contact-inner">
+    <p class="eyebrow" style="justify-content:center;">Online Booking</p>
+    <h2 class="contact-title reveal">BOOK<br>YOUR <span>CUT</span></h2>
+    <p class="contact-sub reveal">Pick your barber, your service and a time that suits. We'll confirm by text within the hour.</p>
+    <div class="booking-form reveal">
+      <form id="bookForm" novalidate>
+        <div class="form-grid">
+          <div class="fg">
+            <label for="bname">Your Name</label>
+            <input type="text" id="bname" placeholder="Seán Murphy" required>
+          </div>
+          <div class="fg">
+            <label for="bphone">Phone Number</label>
+            <input type="tel" id="bphone" placeholder="085 123 4567" required>
+          </div>
+          <div class="fg">
+            <label for="bservice">Service</label>
+            <select id="bservice">
+              <option value="">Choose a service...</option>
+              <option>The Classic Cut — €22</option>
+              <option>Skin Fade — €28</option>
+              <option>Cut & Beard — €38</option>
+              <option>Hot Towel Shave — €30</option>
+              <option>Kids Cut — €14</option>
+              <option>OAP / Student Cut — €16</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="bbarber">Preferred Barber</label>
+            <select id="bbarber">
+              <option value="">No preference</option>
+              <option>Ciarán</option>
+              <option>Darragh</option>
+              <option>Ryan</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="bdate">Preferred Date</label>
+            <input type="date" id="bdate">
+          </div>
+          <div class="fg">
+            <label for="btime">Preferred Time</label>
+            <select id="btime">
+              <option value="">Any time</option>
+              <option>9:00am</option><option>9:30am</option><option>10:00am</option>
+              <option>10:30am</option><option>11:00am</option><option>11:30am</option>
+              <option>12:00pm</option><option>12:30pm</option><option>1:00pm</option>
+              <option>2:00pm</option><option>3:00pm</option><option>4:00pm</option>
+              <option>5:00pm</option>
+            </select>
+          </div>
+          <div class="fg full">
+            <label for="bnotes">Anything Else?</label>
+            <textarea id="bnotes" placeholder="Any notes, style references, or special requests..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="form-submit">Confirm Booking</button>
+        <p class="form-note">We'll confirm your slot by text. Walk-ins always welcome too.</p>
+      </form>
+      <div class="form-success" id="bookSuccess">
+        <div class="form-success-mark">✓</div>
+        <h3>BOOKED IN.</h3>
+        <p>We'll text you a confirmation shortly. See you at the Block.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <div class="footer-logo-mark">BB</div>
+        The Barber Block
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#services">Services</a>
+        <a href="#team">Team</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#find-us">Find Us</a>
+        <a href="#booking">Book Now</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 The Barber Block · 28 Manor Street, Dublin 7</span>
+      <span>Site by <a href="../index.html">Dublin Website Co.</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// CUSTOM CURSOR
+const dot = document.getElementById('cursorDot');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px'; });
+function animRing() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(animRing); }
+animRing();
+document.querySelectorAll('a, button, .service-card, .team-card').forEach(el => {
+  el.addEventListener('mouseenter', () => { ring.style.transform = 'translate(-50%, -50%) scale(1.8)'; ring.style.borderColor = 'rgba(200,53,42,0.8)'; });
+  el.addEventListener('mouseleave', () => { ring.style.transform = 'translate(-50%, -50%) scale(1)'; ring.style.borderColor = 'rgba(200,53,42,0.5)'; });
+});
+
+// NAV
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20));
+const toggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+toggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  toggle.setAttribute('aria-expanded', false);
+}));
+
+// SCROLL REVEALS
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal, .reveal-left').forEach(el => obs.observe(el));
+
+// BOOKING FORM
+document.getElementById('bookForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = document.getElementById('bname').value.trim();
+  const phone = document.getElementById('bphone').value.trim();
+  if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+  document.getElementById('bookForm').style.display = 'none';
+  document.getElementById('bookSuccess').classList.add('show');
+});
+
+// Set min date to today
+const dateInput = document.getElementById('bdate');
+if (dateInput) { const t = new Date(); dateInput.min = t.toISOString().split('T')[0]; }
+</script>
+</body>
+</html>

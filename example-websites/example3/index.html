@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>LUXECORE | Premium Ecommerce Demo</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --bg:#f6f1eb;
+  --text:#111111;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --line:#e8dfd5;
+  --dark:#0f0f0f;
+  --cream:#f7f3ee;
+  --accent:#b8895c;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Inter,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+.container{
+  width:min(1380px,92%);
+  margin:auto;
+}
+
+section{
+  padding:100px 0;
+}
+
+h1,h2,h3,h4{
+  font-family:"Playfair Display",serif;
+  letter-spacing:-0.04em;
+  line-height:0.95;
+}
+
+p{
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px 28px;
+  border-radius:999px;
+  text-decoration:none;
+  transition:0.3s ease;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.btn-dark{
+  background:#111;
+  color:white;
+}
+
+.btn-dark:hover{
+  transform:translateY(-2px);
+  opacity:0.9;
+}
+
+.btn-light{
+  border:1px solid rgba(0,0,0,0.12);
+  color:#111;
+  margin-left:14px;
+}
+
+.btn-light:hover{
+  background:white;
+}
+
+/* ANNOUNCEMENT */
+
+.announcement{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:12px;
+  font-size:14px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+
+/* NAV */
+
+.nav{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(246,241,235,0.82);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,0.06);
+}
+
+.nav-wrap{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:24px 0;
+}
+
+.logo{
+  font-size:42px;
+  color:#111;
+}
+
+.logo span{
+  color:var(--accent);
+}
+
+.nav-links{
+  display:flex;
+  gap:36px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#111;
+  font-weight:600;
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+}
+
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.icon-btn{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:white;
+  border:1px solid rgba(0,0,0,0.06);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.hero-copy span{
+  text-transform:uppercase;
+  letter-spacing:0.2em;
+  font-size:13px;
+  color:var(--accent);
+}
+
+.hero-copy h1{
+  font-size:clamp(70px,10vw,140px);
+  margin:20px 0 30px;
+}
+
+.hero-copy p{
+  max-width:540px;
+  font-size:18px;
+  margin-bottom:36px;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.hero-image{
+  position:relative;
+}
+
+.hero-image img{
+  border-radius:32px;
+  height:760px;
+  width:100%;
+  object-fit:cover;
+}
+
+.floating-card{
+  position:absolute;
+  background:white;
+  border-radius:24px;
+  padding:24px;
+  box-shadow:0 30px 60px rgba(0,0,0,0.12);
+}
+
+.card-top{
+  top:40px;
+  left:-60px;
+  width:240px;
+}
+
+.card-bottom{
+  bottom:40px;
+  right:-40px;
+  width:280px;
+}
+
+.floating-card h4{
+  font-size:24px;
+  margin-bottom:8px;
+}
+
+.floating-card strong{
+  color:var(--accent);
+  font-size:22px;
+}
+
+/* MARQUEE */
+
+.marquee{
+  overflow:hidden;
+  white-space:nowrap;
+  border-top:1px solid rgba(0,0,0,0.08);
+  border-bottom:1px solid rgba(0,0,0,0.08);
+  padding:24px 0;
+  background:white;
+}
+
+.marquee-track{
+  display:inline-block;
+  animation:scroll 28s linear infinite;
+}
+
+.marquee span{
+  margin-right:80px;
+  font-size:28px;
+  font-family:"Playfair Display",serif;
+}
+
+@keyframes scroll{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-50%);
+  }
+}
+
+/* FEATURED GRID */
+
+.editorial-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:24px;
+}
+
+.editorial-large{
+  position:relative;
+  overflow:hidden;
+  border-radius:34px;
+}
+
+.editorial-large img{
+  width:100%;
+  height:760px;
+  object-fit:cover;
+  transition:0.6s ease;
+}
+
+.editorial-large:hover img{
+  transform:scale(1.05);
+}
+
+.editorial-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,0.72),
+    rgba(0,0,0,0.1)
+  );
+  display:flex;
+  align-items:flex-end;
+  padding:60px;
+  color:white;
+}
+
+.editorial-overlay h2{
+  font-size:78px;
+  margin-bottom:18px;
+}
+
+.editorial-side{
+  display:grid;
+  gap:24px;
+}
+
+.side-card{
+  background:white;
+  border-radius:30px;
+  overflow:hidden;
+  border:1px solid rgba(0,0,0,0.06);
+  transition:0.35s ease;
+}
+
+.side-card:hover{
+  transform:translateY(-6px);
+}
+
+.side-card img{
+  height:320px;
+  width:100%;
+  object-fit:cover;
+}
+
+.side-content{
+  padding:28px;
+}
+
+.side-content h3{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.price{
+  color:var(--accent);
+  font-weight:700;
+  margin-top:18px;
+  display:block;
+}
+
+/* PRODUCTS */
+
+.section-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  margin-bottom:50px;
+  gap:30px;
+}
+
+.section-heading h2{
+  font-size:74px;
+}
+
+.filters{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.filter-btn{
+  padding:12px 18px;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,0.08);
+  background:white;
+  font-weight:600;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+}
+
+.product-card{
+  position:relative;
+  background:white;
+  border-radius:28px;
+  overflow:hidden;
+  transition:0.35s ease;
+  border:1px solid rgba(0,0,0,0.05);
+}
+
+.product-card:hover{
+  transform:translateY(-8px);
+}
+
+.product-image{
+  position:relative;
+  overflow:hidden;
+}
+
+.product-image img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  transition:0.5s ease;
+}
+
+.product-card:hover img{
+  transform:scale(1.05);
+}
+
+.quick-actions{
+  position:absolute;
+  left:20px;
+  right:20px;
+  bottom:20px;
+  display:flex;
+  gap:10px;
+  opacity:0;
+  transform:translateY(10px);
+  transition:0.3s ease;
+}
+
+.product-card:hover .quick-actions{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.quick-btn{
+  flex:1;
+  background:white;
+  border:none;
+  padding:14px;
+  border-radius:999px;
+  font-weight:700;
+}
+
+.product-info{
+  padding:24px;
+}
+
+.product-info h3{
+  font-size:34px;
+  margin-bottom:8px;
+}
+
+.product-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:20px;
+}
+
+.tag{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+  color:var(--accent);
+}
+
+/* EXPERIENCE */
+
+.experience{
+  background:#111;
+  color:white;
+}
+
+.experience-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.experience-copy h2{
+  font-size:82px;
+  margin-bottom:24px;
+}
+
+.experience-copy p{
+  color:#d1d5db;
+  margin-bottom:34px;
+}
+
+.feature-list{
+  display:grid;
+  gap:18px;
+}
+
+.feature-item{
+  background:rgba(255,255,255,0.05);
+  border-radius:20px;
+  padding:22px;
+  border:1px solid rgba(255,255,255,0.06);
+}
+
+.feature-item strong{
+  display:block;
+  margin-bottom:8px;
+  font-size:18px;
+}
+
+.experience-image img{
+  border-radius:34px;
+  height:760px;
+  object-fit:cover;
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+  background:white;
+}
+
+.review-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.review{
+  background:#faf7f3;
+  border-radius:28px;
+  padding:34px;
+}
+
+.review-top{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:24px;
+}
+
+.review-top img{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.stars{
+  color:#f59e0b;
+  margin-bottom:12px;
+}
+
+/* NEWSLETTER */
+
+.newsletter{
+  position:relative;
+}
+
+.newsletter-wrap{
+  background:#111;
+  color:white;
+  border-radius:40px;
+  padding:90px;
+  overflow:hidden;
+}
+
+.newsletter-wrap::before{
+  content:"";
+  position:absolute;
+  width:500px;
+  height:500px;
+  background:rgba(184,137,92,0.12);
+  border-radius:50%;
+  right:-180px;
+  top:-180px;
+  filter:blur(30px);
+}
+
+.newsletter-content{
+  position:relative;
+  z-index:2;
+  max-width:760px;
+}
+
+.newsletter h2{
+  font-size:86px;
+  margin-bottom:22px;
+}
+
+.newsletter p{
+  color:#d1d5db;
+  margin-bottom:30px;
+}
+
+.newsletter-form{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.newsletter-form input{
+  flex:1;
+  min-width:260px;
+  padding:18px;
+  border-radius:999px;
+  border:none;
+  font-family:inherit;
+}
+
+/* FOOTER */
+
+footer{
+  padding:90px 0 40px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:40px;
+}
+
+.footer-col h4{
+  font-size:24px;
+  margin-bottom:18px;
+}
+
+.footer-col a{
+  display:block;
+  margin-bottom:12px;
+  color:#6b7280;
+  text-decoration:none;
+}
+
+.footer-bottom{
+  margin-top:60px;
+  padding-top:30px;
+  border-top:1px solid rgba(0,0,0,0.08);
+  color:#6b7280;
+}
+
+/* MOBILE */
+
+@media(max-width:1100px){
+
+  .hero-grid,
+  .editorial-grid,
+  .experience-grid,
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .product-grid,
+  .review-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .section-heading{
+    flex-direction:column;
+    align-items:start;
+  }
+
+  .hero h1,
+  .editorial-overlay h2,
+  .section-heading h2,
+  .experience-copy h2,
+  .newsletter h2{
+    font-size:54px;
+  }
+
+  .floating-card{
+    display:none;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .newsletter-wrap{
+    padding:60px 30px;
+  }
+
+}
+
+@media(max-width:700px){
+
+  .product-grid,
+  .review-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-image img,
+  .editorial-large img,
+  .experience-image img{
+    height:500px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ANNOUNCEMENT -->
+
+<div class="announcement">
+  Free Worldwide Shipping On Orders Over €200
+</div>
+
+<!-- NAV -->
+
+<nav class="nav">
+
+  <div class="container nav-wrap">
+
+    <div class="logo">
+      LUXE<span>CORE</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="shop.html">New Arrivals</a>
+      <a href="shop.html?cat=outerwear">Outerwear</a>
+      <a href="shop.html?cat=essentials">Essentials</a>
+      <a href="shop.html">Collections</a>
+      <a href="shop.html">Journal</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="shop.html" class="icon-btn" aria-label="Search">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </a>
+      <a href="cart.html" class="icon-btn" style="position:relative" aria-label="Cart">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span id="cartCount" style="display:none;position:absolute;top:-6px;right:-6px;background:#b8895c;color:white;border-radius:999px;width:20px;height:20px;font-size:11px;font-weight:700;align-items:center;justify-content:center;font-family:Inter,sans-serif;">0</span>
+      </a>
+    </div>
+
+  </div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="container hero-grid">
+
+    <div class="hero-copy">
+
+      <span>Luxury Capsule Collection 2026</span>
+
+      <h1>
+        Minimalism,
+        elevated.
+      </h1>
+
+      <p>
+        A premium ecommerce website concept built for modern fashion brands,
+        luxury lifestyle labels, boutique collections, and elevated online retail experiences.
+      </p>
+
+      <div class="hero-actions">
+
+        <a href="shop.html" class="btn btn-dark">Shop Collection</a>
+
+        <a href="shop.html" class="btn btn-light">Explore Lookbook</a>
+
+      </div>
+
+    </div>
+
+    <div class="hero-image">
+
+      <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1600&q=80">
+
+      <div class="floating-card card-top">
+
+        <h4>New Arrival</h4>
+
+        <p>Italian wool oversized coat.</p>
+
+        <strong>€420</strong>
+
+      </div>
+
+      <div class="floating-card card-bottom">
+
+        <h4>Trending This Week</h4>
+
+        <p>Modern essentials inspired by Scandinavian editorial styling.</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- MARQUEE -->
+
+<div class="marquee">
+
+  <div class="marquee-track">
+
+    <span>Premium Fabric</span>
+    <span>Italian Tailoring</span>
+    <span>Minimal Luxury</span>
+    <span>Modern Essentials</span>
+    <span>Editorial Styling</span>
+    <span>Limited Collection</span>
+
+  </div>
+
+</div>
+
+<!-- FEATURED -->
+
+<section>
+
+  <div class="container">
+
+    <div class="editorial-grid">
+
+      <article class="editorial-large">
+
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80">
+
+        <div class="editorial-overlay">
+
+          <div>
+
+            <h2>
+              Autumn
+              Editorial
+            </h2>
+
+            <a href="#" class="btn btn-dark">
+              View Collection
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <div class="editorial-side">
+
+        <article class="side-card">
+
+          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=80">
+
+          <div class="side-content">
+
+            <h3>
+              Neutral
+              Layers
+            </h3>
+
+            <p>
+              Elevated essentials designed for year-round versatility.
+            </p>
+
+            <span class="price">
+              Starting at €120
+            </span>
+
+          </div>
+
+        </article>
+
+        <article class="side-card">
+
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80">
+
+          <div class="side-content">
+
+            <h3>
+              Modern
+              Tailoring
+            </h3>
+
+            <p>
+              Clean silhouettes inspired by editorial fashion campaigns.
+            </p>
+
+            <span class="price">
+              Explore Collection
+            </span>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div>
+
+        <h2>
+          Best sellers.
+        </h2>
+
+        <p>
+          Designed to feel closer to a luxury fashion campaign than a generic ecommerce template.
+        </p>
+
+      </div>
+
+      <div class="filters">
+
+        <button class="filter-btn" onclick="location.href='shop.html'">All</button>
+        <button class="filter-btn" onclick="location.href='shop.html?cat=outerwear'">Outerwear</button>
+        <button class="filter-btn" onclick="location.href='shop.html?cat=footwear'">Footwear</button>
+        <button class="filter-btn" onclick="location.href='shop.html?cat=accessories'">Accessories</button>
+
+      </div>
+
+    </div>
+
+    <div class="product-grid">
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=80">
+
+          <div class="quick-actions">
+            <a href="product.html?id=1" class="quick-btn" style="text-align:center">View</a>
+            <button class="quick-btn" onclick="addToCart(1)">Add to Cart</button>
+          </div>
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="tag">Outerwear</div>
+
+          <a href="product.html?id=1" style="text-decoration:none;color:inherit"><h3>Wool Blend Coat</h3></a>
+
+          <div class="product-meta">
+
+            <strong>€320</strong>
+
+            <span>★★★★★</span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1200&q=80">
+
+          <div class="quick-actions">
+            <a href="product.html?id=2" class="quick-btn" style="text-align:center">View</a>
+            <button class="quick-btn" onclick="addToCart(2)">Add to Cart</button>
+          </div>
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="tag">Footwear</div>
+
+          <a href="product.html?id=2" style="text-decoration:none;color:inherit"><h3>Minimal Sneakers</h3></a>
+
+          <div class="product-meta">
+
+            <strong>€180</strong>
+
+            <span>★★★★★</span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80">
+
+          <div class="quick-actions">
+            <a href="product.html?id=4" class="quick-btn" style="text-align:center">View</a>
+            <button class="quick-btn" onclick="addToCart(4)">Add to Cart</button>
+          </div>
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="tag">Essentials</div>
+
+          <a href="product.html?id=4" style="text-decoration:none;color:inherit"><h3>Relaxed Knitwear</h3></a>
+
+          <div class="product-meta">
+
+            <strong>€140</strong>
+
+            <span>★★★★★</span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80">
+
+          <div class="quick-actions">
+            <a href="product.html?id=3" class="quick-btn" style="text-align:center">View</a>
+            <button class="quick-btn" onclick="addToCart(3)">Add to Cart</button>
+          </div>
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="tag">Accessories</div>
+
+          <a href="product.html?id=3" style="text-decoration:none;color:inherit"><h3>Leather Carry Bag</h3></a>
+
+          <div class="product-meta">
+
+            <strong>€260</strong>
+
+            <span>★★★★★</span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section class="experience">
+
+  <div class="container">
+
+    <div class="experience-grid">
+
+      <div class="experience-copy">
+
+        <h2>
+          Luxury ecommerce
+          with personality.
+        </h2>
+
+        <p>
+          Designed to showcase high-end brands using editorial layouts,
+          cinematic photography, product storytelling, and premium UI systems.
+        </p>
+
+        <div class="feature-list">
+
+          <div class="feature-item">
+
+            <strong>Editorial Layout System</strong>
+
+            Magazine-inspired composition instead of generic ecommerce grids.
+
+          </div>
+
+          <div class="feature-item">
+
+            <strong>Luxury Product Presentation</strong>
+
+            Large visuals, hover interactions, layered cards, and immersive layouts.
+
+          </div>
+
+          <div class="feature-item">
+
+            <strong>High-End Brand Positioning</strong>
+
+            Designed to increase perceived value and conversion quality.
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="experience-image">
+
+        <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1600&q=80">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- REVIEWS -->
+
+<section class="testimonials">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div>
+
+        <h2>
+          Customer stories.
+        </h2>
+
+      </div>
+
+    </div>
+
+    <div class="review-grid">
+
+      <article class="review">
+
+        <div class="review-top">
+
+          <img src="https://randomuser.me/api/portraits/women/44.jpg">
+
+          <div>
+            <strong>Sophie M.</strong>
+            <p>Paris, France</p>
+          </div>
+
+        </div>
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+          “The quality feels exceptional and the website experience alone made the brand feel premium.”
+        </p>
+
+      </article>
+
+      <article class="review">
+
+        <div class="review-top">
+
+          <img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+          <div>
+            <strong>Daniel K.</strong>
+            <p>Copenhagen</p>
+          </div>
+
+        </div>
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+          “Feels more like browsing a luxury fashion campaign than shopping online.”
+        </p>
+
+      </article>
+
+      <article class="review">
+
+        <div class="review-top">
+
+          <img src="https://randomuser.me/api/portraits/women/68.jpg">
+
+          <div>
+            <strong>Amelia R.</strong>
+            <p>Amsterdam</p>
+          </div>
+
+        </div>
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+          “Beautiful layout, smooth interactions, and incredible product presentation.”
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter">
+
+  <div class="container">
+
+    <div class="newsletter-wrap">
+
+      <div class="newsletter-content">
+
+        <h2>
+          Join the
+          private list.
+        </h2>
+
+        <p>
+          Early access to limited collections,
+          editorial drops, and seasonal launches.
+        </p>
+
+        <div class="newsletter-form">
+
+          <input type="email" placeholder="Enter your email">
+
+          <a href="#" class="btn btn-dark">
+            Subscribe
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-col">
+
+        <h3 class="logo">
+          LUXE<span>CORE</span>
+        </h3>
+
+        <p>
+          Premium ecommerce website demo showcasing editorial layouts,
+          luxury branding, and elevated product presentation.
+        </p>
+
+      </div>
+
+      <div class="footer-col">
+
+        <h4>Shop</h4>
+
+        <a href="shop.html">New Arrivals</a>
+        <a href="#">Outerwear</a>
+        <a href="#">Footwear</a>
+        <a href="#">Accessories</a>
+
+      </div>
+
+      <div class="footer-col">
+
+        <h4>Company</h4>
+
+        <a href="#">About</a>
+        <a href="shop.html">Journal</a>
+        <a href="#">Careers</a>
+        <a href="#">Stores</a>
+
+      </div>
+
+      <div class="footer-col">
+
+        <h4>Support</h4>
+
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+        <a href="#">Contact</a>
+        <a href="#">FAQs</a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      Ecommerce website demo by Dublin Website Company
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>
+```

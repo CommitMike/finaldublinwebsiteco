@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop | LUXECORE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --bg:#f6f1eb;
+  --text:#111111;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --line:#e8dfd5;
+  --accent:#b8895c;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+
+.container{width:min(1380px,92%);margin:auto;}
+
+h1,h2,h3,h4{font-family:"Playfair Display",serif;letter-spacing:-0.04em;}
+p{color:var(--muted);line-height:1.7;}
+
+/* ANNOUNCEMENT */
+.announcement{background:#111;color:white;text-align:center;padding:12px;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:999;background:rgba(246,241,235,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.06);}
+.nav-wrap{display:flex;justify-content:space-between;align-items:center;padding:22px 0;}
+.logo{font-size:36px;color:#111;font-family:"Playfair Display",serif;letter-spacing:-0.04em;font-weight:700;}
+.logo span{color:var(--accent);}
+.nav-links{display:flex;gap:36px;}
+.nav-links a{font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.08em;color:#111;}
+.nav-links a:hover{color:var(--accent);}
+.nav-actions{display:flex;align-items:center;gap:12px;}
+.icon-btn{width:44px;height:44px;border-radius:50%;background:white;border:1px solid rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;transition:0.2s;cursor:pointer;}
+.icon-btn:hover{background:#111;color:white;border-color:#111;}
+
+/* SHOP HERO */
+.shop-hero{padding:100px 0 60px;}
+.shop-hero-inner{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;}
+.shop-hero h1{font-size:clamp(60px,10vw,120px);line-height:0.9;}
+.shop-hero p{max-width:420px;font-size:16px;}
+
+/* CONTROLS */
+.shop-controls{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:40px;flex-wrap:wrap;}
+.filters{display:flex;gap:10px;flex-wrap:wrap;}
+.filter-btn{padding:12px 20px;border-radius:999px;border:1px solid rgba(0,0,0,0.1);background:white;font-weight:600;font-size:13px;cursor:pointer;transition:0.2s;font-family:Inter,sans-serif;}
+.filter-btn:hover,.filter-btn.active{background:#111;color:white;border-color:#111;}
+.controls-right{display:flex;align-items:center;gap:12px;}
+#searchInput{padding:14px 20px;border-radius:999px;border:1px solid rgba(0,0,0,0.1);background:white;font-family:Inter,sans-serif;font-size:14px;width:240px;outline:none;}
+#sortSelect{padding:14px 20px;border-radius:999px;border:1px solid rgba(0,0,0,0.1);background:white;font-family:Inter,sans-serif;font-size:14px;cursor:pointer;outline:none;}
+
+/* PRODUCT GRID */
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-bottom:100px;}
+.product-card{position:relative;background:white;border-radius:28px;overflow:hidden;transition:0.35s ease;border:1px solid rgba(0,0,0,0.05);}
+.product-card:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(0,0,0,0.1);}
+.product-image{position:relative;overflow:hidden;}
+.product-image img{width:100%;height:400px;object-fit:cover;transition:0.5s ease;}
+.product-card:hover img{transform:scale(1.05);}
+.product-badge-grid{position:absolute;top:16px;left:16px;background:#111;color:white;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:6px 12px;border-radius:999px;}
+.quick-actions{position:absolute;left:16px;right:16px;bottom:16px;display:flex;gap:8px;opacity:0;transform:translateY(8px);transition:0.3s ease;}
+.product-card:hover .quick-actions{opacity:1;transform:translateY(0);}
+.quick-btn{flex:1;background:white;border:none;padding:13px;border-radius:999px;font-weight:700;font-size:13px;cursor:pointer;transition:0.2s;font-family:Inter,sans-serif;text-align:center;display:flex;align-items:center;justify-content:center;}
+.quick-btn:hover{background:#111;color:white;}
+.product-info{padding:22px;}
+.tag{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);margin-bottom:6px;font-weight:600;}
+.product-info h3{font-size:28px;margin-bottom:6px;}
+.product-meta{display:flex;justify-content:space-between;align-items:center;margin-top:14px;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* FOOTER */
+footer{padding:80px 0 40px;border-top:1px solid var(--line);}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:60px;}
+.footer-col h4{font-size:22px;margin-bottom:16px;}
+.footer-col a{display:block;margin-bottom:10px;color:#6b7280;font-size:14px;}
+.footer-col a:hover{color:#111;}
+.footer-col p{font-size:14px;}
+.footer-bottom{color:#6b7280;font-size:13px;border-top:1px solid rgba(0,0,0,0.08);padding-top:28px;}
+
+@media(max-width:1100px){
+  .product-grid{grid-template-columns:repeat(3,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:800px){
+  .product-grid{grid-template-columns:1fr 1fr;}
+  .nav-links{display:none;}
+  #searchInput{width:180px;}
+}
+@media(max-width:560px){
+  .product-grid{grid-template-columns:1fr;}
+  .shop-controls{flex-direction:column;align-items:flex-start;}
+}
+
+</style>
+</head>
+<body>
+
+<div class="announcement">Free Worldwide Shipping On Orders Over €200</div>
+
+<nav class="nav">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo">LUXE<span>CORE</span></a>
+    <div class="nav-links">
+      <a href="shop.html">New Arrivals</a>
+      <a href="shop.html?cat=outerwear">Outerwear</a>
+      <a href="shop.html?cat=footwear">Footwear</a>
+      <a href="shop.html?cat=accessories">Accessories</a>
+    </div>
+    <div class="nav-actions">
+      <a href="cart.html" class="icon-btn" style="position:relative" aria-label="Cart">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span id="cartCount" style="display:none;position:absolute;top:-6px;right:-6px;background:#b8895c;color:white;border-radius:999px;width:20px;height:20px;font-size:11px;font-weight:700;align-items:center;justify-content:center;font-family:Inter,sans-serif;">0</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section class="shop-hero">
+  <div class="container">
+    <div class="shop-hero-inner">
+      <div>
+        <p style="text-transform:uppercase;letter-spacing:0.15em;font-size:13px;color:var(--accent);margin-bottom:16px">Luxury Collection 2026</p>
+        <h1>Shop<br>All.</h1>
+      </div>
+      <p>Editorial pieces designed for the discerning wardrobe. Premium fabric, refined silhouettes, and considered craftsmanship.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="shop-controls">
+      <div class="filters">
+        <button class="filter-btn" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="outerwear">Outerwear</button>
+        <button class="filter-btn" data-filter="footwear">Footwear</button>
+        <button class="filter-btn" data-filter="accessories">Accessories</button>
+        <button class="filter-btn" data-filter="essentials">Essentials</button>
+      </div>
+      <div class="controls-right">
+        <input id="searchInput" type="text" placeholder="Search…">
+        <select id="sortSelect">
+          <option value="default">Featured</option>
+          <option value="price-asc">Price: Low–High</option>
+          <option value="price-desc">Price: High–Low</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+    </div>
+
+    <p style="margin-bottom:30px;font-size:14px"><span id="productCount">0</span> products</p>
+
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="font-size:32px;display:block;margin-bottom:16px">LUXE<span>CORE</span></a>
+        <p>Premium ecommerce concept built for modern fashion brands and luxury lifestyle labels.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop.html">New Arrivals</a>
+        <a href="shop.html?cat=outerwear">Outerwear</a>
+        <a href="shop.html?cat=footwear">Footwear</a>
+        <a href="shop.html?cat=accessories">Accessories</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Journal</a>
+        <a href="#">Careers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 LUXECORE — Premium Ecommerce Demo</div>
+  </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/shop.js"></script>
+
+</body>
+</html>

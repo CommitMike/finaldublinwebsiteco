@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Confirmed | LUXECORE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --bg:#f6f1eb;
+  --text:#111111;
+  --muted:#6b7280;
+  --accent:#b8895c;
+  --line:#e8dfd5;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;}
+h1,h2,h3{font-family:"Playfair Display",serif;letter-spacing:-0.04em;}
+a{text-decoration:none;color:inherit;}
+.container{width:min(1380px,92%);margin:auto;}
+
+.nav{background:rgba(246,241,235,0.95);border-bottom:1px solid rgba(0,0,0,0.06);}
+.nav-wrap{display:flex;justify-content:space-between;align-items:center;padding:22px 0;}
+.logo{font-size:36px;color:#111;font-family:"Playfair Display",serif;letter-spacing:-0.04em;font-weight:700;}
+.logo span{color:var(--accent);}
+
+.success-main{flex:1;display:flex;align-items:center;justify-content:center;padding:80px 20px;}
+.success-card{background:white;border-radius:40px;padding:70px;max-width:680px;width:100%;text-align:center;border:1px solid rgba(0,0,0,0.05);}
+
+.check-circle{width:90px;height:90px;border-radius:50%;background:#ecfdf5;display:flex;align-items:center;justify-content:center;margin:0 auto 32px;animation:pop 0.5s cubic-bezier(.34,1.56,.64,1) both;}
+
+@keyframes pop{
+  from{transform:scale(0);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+.success-card h1{font-size:62px;margin-bottom:16px;animation:fadeUp 0.5s 0.2s ease both;opacity:0;}
+.success-card p{color:#6b7280;font-size:17px;line-height:1.75;animation:fadeUp 0.5s 0.35s ease both;opacity:0;margin-bottom:12px;}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.order-ref{background:#f6f1eb;border-radius:16px;padding:16px 24px;margin:24px 0;font-weight:700;font-size:15px;letter-spacing:0.08em;animation:fadeUp 0.5s 0.45s ease both;opacity:0;}
+
+.success-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px;animation:fadeUp 0.5s 0.55s ease both;opacity:0;}
+.btn-dark{display:inline-flex;align-items:center;padding:16px 28px;border-radius:999px;background:#111;color:white;font-weight:700;font-size:15px;transition:0.3s;}
+.btn-dark:hover{background:var(--accent);}
+.btn-light{display:inline-flex;align-items:center;padding:16px 28px;border-radius:999px;border:1px solid rgba(0,0,0,0.1);color:#111;font-weight:600;font-size:15px;transition:0.3s;background:white;}
+.btn-light:hover{background:#f3f4f6;}
+
+.delivery-info{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;padding-top:40px;border-top:1px solid var(--line);animation:fadeUp 0.5s 0.65s ease both;opacity:0;}
+.delivery-item{text-align:center;}
+.delivery-item strong{display:block;font-size:18px;margin-bottom:4px;}
+.delivery-item span{font-size:13px;color:#9ca3af;}
+
+footer{padding:40px 0;border-top:1px solid var(--line);}
+.footer-bottom{color:#6b7280;font-size:13px;text-align:center;}
+
+@media(max-width:600px){
+  .success-card{padding:40px 24px;}
+  .success-card h1{font-size:44px;}
+  .delivery-info{grid-template-columns:1fr;}
+}
+
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo">LUXE<span>CORE</span></a>
+  </div>
+</nav>
+
+<main class="success-main">
+  <div class="success-card">
+
+    <div class="check-circle">
+      <svg width="40" height="40" fill="none" stroke="#065f46" stroke-width="2.5" viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+
+    <h1>Order Confirmed.</h1>
+
+    <p>Thank you for your order. We've received your payment and our team is already preparing your pieces with care.</p>
+
+    <div class="order-ref">
+      Order #LX-<span id="orderRef">000000</span>
+    </div>
+
+    <p style="font-size:15px">A confirmation email will be sent to your inbox shortly.</p>
+
+    <div class="delivery-info">
+      <div class="delivery-item">
+        <strong>3–5 days</strong>
+        <span>Estimated delivery</span>
+      </div>
+      <div class="delivery-item">
+        <strong>Free</strong>
+        <span>Shipping included</span>
+      </div>
+      <div class="delivery-item">
+        <strong>30 days</strong>
+        <span>Free returns</span>
+      </div>
+    </div>
+
+    <div class="success-actions">
+      <a href="shop.html" class="btn-dark">Continue Shopping</a>
+      <a href="index.html" class="btn-light">Back to Home</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom">© 2026 LUXECORE — Premium Ecommerce Demo</div>
+  </div>
+</footer>
+
+<script>
+  // Generate a random order number
+  document.getElementById("orderRef").textContent =
+    Math.floor(100000 + Math.random() * 900000);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Copper Kettle Café — Rathmines, Dublin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo" aria-label="The Copper Kettle Café">
+    <div class="nav-logo-icon">☕</div>
+    The Copper Kettle
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks" role="list">
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#find-us">Find Us</a></li>
+    <li><a href="#contact" class="nav-cta">Book a Table</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-badge">Est. 2009 · Rathmines, Dublin</div>
+    <h1>Where every<br>cup tells a<br><em>story.</em></h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">Handcrafted coffee, fresh-baked pastries and warm Dublin hospitality — right in the heart of Rathmines since 2009.</p>
+    <div class="hero-actions">
+      <a href="#menu" class="btn-primary">Browse Menu ↓</a>
+      <a href="#contact" class="btn-ghost">Book a Table</a>
+    </div>
+    <div class="hero-hours">
+      <div class="hero-hour-item">
+        <strong>Mon – Fri</strong>
+        <span>7:30am – 6pm</span>
+      </div>
+      <div class="hero-hour-item">
+        <strong>Sat – Sun</strong>
+        <span>8:30am – 5pm</span>
+      </div>
+      <div class="hero-hour-item">
+        <strong>Phone</strong>
+        <span>01 496 2210</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80" alt="Coffee and pastries at The Copper Kettle Café">
+    <div class="hero-img-overlay"></div>
+    <div class="hero-img-tag">
+      <strong>4.9 ★</strong>
+      <span>Google Reviews</span>
+    </div>
+  </div>
+</section>
+
+<!-- RIBBON -->
+<div class="ribbon" aria-hidden="true">
+  <div class="ribbon-inner">
+    <span>Specialty Coffee</span><span>Fresh Pastries Daily</span><span>Free Wi-Fi</span><span>Dine In & Takeaway</span><span>Vegetarian Options</span><span>Local Roasters</span>
+    <span>Specialty Coffee</span><span>Fresh Pastries Daily</span><span>Free Wi-Fi</span><span>Dine In & Takeaway</span><span>Vegetarian Options</span><span>Local Roasters</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-imgs reveal">
+      <img class="about-img-main" src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=800&q=80" alt="Inside the café">
+      <img class="about-img-accent" src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?auto=format&fit=crop&w=600&q=80" alt="Coffee being prepared">
+      <div class="about-label">Est. 2009</div>
+    </div>
+    <div class="about-text reveal reveal-delay-1">
+      <p class="section-eyebrow">Our Story</p>
+      <h2>A little corner of<br><em>warmth</em> in Rathmines.</h2>
+      <p>The Copper Kettle started as a dream between two sisters, Aoife and Sinéad, who wanted to bring real café culture to their neighbourhood. No chains, no shortcuts — just proper coffee, made with care.</p>
+      <p>Fifteen years on, we're still sourcing our beans from the same Dublin roaster, still baking our scones fresh every morning, and still trying to remember everyone's order before they reach the counter.</p>
+      <div class="about-pillars">
+        <div class="pillar reveal reveal-delay-1">
+          <strong>Single-Origin Coffee</strong>
+          <span>Roasted locally, brewed with precision</span>
+        </div>
+        <div class="pillar reveal reveal-delay-2">
+          <strong>Baked Fresh Daily</strong>
+          <span>Everything out of our kitchen by 8am</span>
+        </div>
+        <div class="pillar reveal reveal-delay-2">
+          <strong>Always Welcoming</strong>
+          <span>Laptops, dogs & prams all welcome</span>
+        </div>
+        <div class="pillar reveal reveal-delay-3">
+          <strong>Local & Seasonal</strong>
+          <span>Suppliers within 60km where possible</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="specials" id="menu">
+  <div class="specials-inner">
+    <div class="specials-header reveal">
+      <div>
+        <p class="section-eyebrow">What We Serve</p>
+        <h2>Fresh from our<br><em>kitchen & bar.</em></h2>
+      </div>
+      <p class="specials-note">Menu changes seasonally. All prices include VAT.</p>
+    </div>
+    <div class="menu-tabs" role="tablist">
+      <button class="menu-tab active" data-tab="coffee" role="tab" aria-selected="true">Coffee & Drinks</button>
+      <button class="menu-tab" data-tab="food" role="tab" aria-selected="false">Food</button>
+      <button class="menu-tab" data-tab="bakes" role="tab" aria-selected="false">Bakes & Sweet</button>
+    </div>
+    <div class="menu-panel active" id="tab-coffee">
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Flat White</div>
+          <div class="menu-item-desc">Double ristretto, silky microfoam, oat or whole milk</div>
+        </div>
+        <div class="menu-item-price">€3.80</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <span class="menu-item-badge badge-special">House Special</span>
+          <div class="menu-item-name">Copper Latte</div>
+          <div class="menu-item-desc">House blend, cinnamon, cardamom, steamed milk</div>
+        </div>
+        <div class="menu-item-price">€4.50</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Americano</div>
+          <div class="menu-item-desc">Single or double espresso, hot water</div>
+        </div>
+        <div class="menu-item-price">€3.20</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <span class="menu-item-badge badge-new">New</span>
+          <div class="menu-item-name">Cold Brew Tonic</div>
+          <div class="menu-item-desc">12hr cold brew over ice, fever-tree tonic, orange peel</div>
+        </div>
+        <div class="menu-item-price">€5.20</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <span class="menu-item-badge badge-veg">Vegan</span>
+          <div class="menu-item-name">Golden Milk Latte</div>
+          <div class="menu-item-desc">Turmeric, ginger, black pepper, oat milk</div>
+        </div>
+        <div class="menu-item-price">€4.20</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Barry's Tea</div>
+          <div class="menu-item-desc">Gold blend, served with warm milk</div>
+        </div>
+        <div class="menu-item-price">€2.80</div>
+      </div>
+    </div>
+    <div class="menu-panel" id="tab-food">
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <span class="menu-item-badge badge-special">Today's Special</span>
+          <div class="menu-item-name">Smashed Avo Toast</div>
+          <div class="menu-item-desc">Sourdough, avocado, cherry tomato, feta, chilli flake</div>
+        </div>
+        <div class="menu-item-price">€9.50</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Full Irish Bap</div>
+          <div class="menu-item-desc">Sausage, bacon, egg, white pudding, butter, ketchup</div>
+        </div>
+        <div class="menu-item-price">€7.50</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <span class="menu-item-badge badge-veg">Veggie</span>
+          <div class="menu-item-name">Granola Bowl</div>
+          <div class="menu-item-desc">House granola, Greek yoghurt, seasonal fruit, honey</div>
+        </div>
+        <div class="menu-item-price">€8.00</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">BLT on Sourdough</div>
+          <div class="menu-item-desc">Smoked bacon, baby gem, tomato, house mayo</div>
+        </div>
+        <div class="menu-item-price">€8.50</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <span class="menu-item-badge badge-veg">Vegan</span>
+          <div class="menu-item-name">Roast Veg Wrap</div>
+          <div class="menu-item-desc">Hummus, roasted peppers, spinach, sundried tomato</div>
+        </div>
+        <div class="menu-item-price">€8.00</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Soup of the Day</div>
+          <div class="menu-item-desc">Ask at the counter — served with brown bread</div>
+        </div>
+        <div class="menu-item-price">€6.50</div>
+      </div>
+    </div>
+    <div class="menu-panel" id="tab-bakes">
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <span class="menu-item-badge badge-special">House Favourite</span>
+          <div class="menu-item-name">Buttermilk Scone</div>
+          <div class="menu-item-desc">Plain or fruit, served warm with butter & jam</div>
+        </div>
+        <div class="menu-item-price">€3.20</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Almond Croissant</div>
+          <div class="menu-item-desc">Flaky butter pastry, frangipane, toasted almonds</div>
+        </div>
+        <div class="menu-item-price">€3.80</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <span class="menu-item-badge badge-new">New</span>
+          <div class="menu-item-name">Brown Butter Blondie</div>
+          <div class="menu-item-desc">White chocolate chips, sea salt, crispy edges</div>
+        </div>
+        <div class="menu-item-price">€3.50</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <span class="menu-item-badge badge-veg">Vegan</span>
+          <div class="menu-item-name">Date & Oat Bar</div>
+          <div class="menu-item-desc">Medjool dates, rolled oats, coconut oil, dark choc</div>
+        </div>
+        <div class="menu-item-price">€3.00</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Lemon Drizzle Slice</div>
+          <div class="menu-item-desc">Light sponge, zingy icing, candied lemon peel</div>
+        </div>
+        <div class="menu-item-price">€3.50</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Cinnamon Swirl</div>
+          <div class="menu-item-desc">Enriched dough, cinnamon sugar, cream cheese glaze</div>
+        </div>
+        <div class="menu-item-price">€4.00</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="gallery-inner">
+    <div class="gallery-top reveal">
+      <h2>Inside the<br><em>Kettle.</em></h2>
+      <p>A peek at our space, our drinks & our daily life.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item tall reveal">
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="Café interior">
+      </div>
+      <div class="gallery-item reveal reveal-delay-1">
+        <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=600&q=80" alt="Latte art">
+      </div>
+      <div class="gallery-item reveal reveal-delay-2">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Coffee and cake">
+      </div>
+      <div class="gallery-item tall reveal reveal-delay-1">
+        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80" alt="Barista at work">
+      </div>
+      <div class="gallery-item wide reveal reveal-delay-2">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="Café counter">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO STRIP -->
+<section class="info-strip" id="find-us">
+  <div class="info-strip-inner">
+    <div class="info-block reveal">
+      <div class="info-block-icon">📍</div>
+      <h3>Find Us</h3>
+      <p>14 Rathmines Road Lower<br>Rathmines, Dublin 6<br>D06 XF90</p>
+      <br>
+      <a href="https://maps.google.com" target="_blank" rel="noopener" style="color: var(--terra); font-weight: 700; font-size: 14px;">Get Directions →</a>
+    </div>
+    <div class="info-block reveal reveal-delay-1">
+      <div class="info-block-icon">🕐</div>
+      <h3>Opening Hours</h3>
+      <div class="open-now"><span class="open-dot"></span> Open Now</div>
+      <div class="hours-row"><strong>Mon – Fri</strong><span>7:30am – 6:00pm</span></div>
+      <div class="hours-row"><strong>Saturday</strong><span>8:30am – 5:00pm</span></div>
+      <div class="hours-row"><strong>Sunday</strong><span>9:00am – 4:30pm</span></div>
+      <div class="hours-row"><strong>Bank Hols</strong><span>10:00am – 3:00pm</span></div>
+    </div>
+    <div class="info-block reveal reveal-delay-2">
+      <div class="info-block-icon">📞</div>
+      <h3>Get in Touch</h3>
+      <a href="tel:0149622 10">📞 01 496 2210</a>
+      <a href="mailto:hello@copperkettledublin.ie">✉️ hello@copperkettledublin.ie</a>
+      <br>
+      <a href="https://instagram.com" target="_blank" rel="noopener">📸 @copperkettledublin</a>
+      <br><br>
+      <p>Table bookings for groups of 6+ welcome — call us or use the form below.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-strip">
+  <div class="testimonial-inner">
+    <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+    <blockquote class="testimonial-quote" id="testimonialQuote">
+      "Best flat white in Dublin — and the almond croissants are something else entirely. Feels like a proper local, not a chain."
+    </blockquote>
+    <p class="testimonial-author" id="testimonialAuthor">— Siobhán M., Google Review</p>
+    <div class="testimonial-dots" role="group" aria-label="Testimonials">
+      <button class="tdot active" data-t="0" aria-label="Testimonial 1"></button>
+      <button class="tdot" data-t="1" aria-label="Testimonial 2"></button>
+      <button class="tdot" data-t="2" aria-label="Testimonial 3"></button>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info reveal">
+      <p class="section-eyebrow">Reservations & Enquiries</p>
+      <h2>Come say<br><em>hello.</em></h2>
+      <p>Whether you're booking a table for a group, enquiring about a private event, or just want to tell us your order before you arrive — we'd love to hear from you.</p>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📞</div>
+        <div class="contact-detail-text">
+          <strong>Phone</strong>
+          <span>01 496 2210</span>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">✉️</div>
+        <div class="contact-detail-text">
+          <strong>Email</strong>
+          <span>hello@copperkettledublin.ie</span>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📍</div>
+        <div class="contact-detail-text">
+          <strong>Address</strong>
+          <span>14 Rathmines Rd Lower, Dublin 6</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-wrap reveal reveal-delay-1">
+      <h3>Send Us a Message</h3>
+      <p>We'll get back to you within a few hours during opening times.</p>
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" placeholder="Aoife" required>
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" placeholder="Murphy">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="aoife@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="reason">Reason for Contact</label>
+          <select id="reason">
+            <option value="">Select...</option>
+            <option>Table Reservation (group of 6+)</option>
+            <option>Private Event Enquiry</option>
+            <option>Catering Enquiry</option>
+            <option>General Question</option>
+            <option>Feedback</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Tell us what you need..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message ↗</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <div class="tick">✓</div>
+        <strong>Message sent!</strong>
+        <span>Thanks for reaching out. We'll be in touch shortly.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">The Copper <span>Kettle</span></div>
+    <div class="footer-mid">
+      <strong>14 Rathmines Road Lower, Dublin 6</strong>
+      Mon–Fri 7:30am–6pm · Sat 8:30am–5pm · Sun 9am–4:30pm
+    </div>
+    <div class="footer-right">
+      <a href="tel:0149622 10" style="color:rgba(255,253,249,0.5);">01 496 2210</a><br>
+      <a href="mailto:hello@copperkettledublin.ie" style="color:rgba(255,253,249,0.5);">hello@copperkettledublin.ie</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 The Copper Kettle Café. All rights reserved.</span>
+    <span class="dwc-credit">Site by <a href="../index.html">Dublin Website Co.</a></span>
+  </div>
+</footer>
+
+<script>
+// NAV SCROLL
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// MOBILE NAV TOGGLE
+const toggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+toggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    toggle.setAttribute('aria-expanded', false);
+  });
+});
+
+// MENU TABS
+document.querySelectorAll('.menu-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.menu-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+    document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected','true');
+    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+// TESTIMONIALS
+const testimonials = [
+  { quote: '"Best flat white in Dublin — and the almond croissants are something else entirely. Feels like a proper local, not a chain."', author: '— Siobhán M., Google Review' },
+  { quote: '"We came in out of the rain and ended up staying three hours. The staff are gas — and the copper latte is dangerously good."', author: '— Donal F., Google Review' },
+  { quote: '"I work from here at least twice a week. Reliable wifi, never rushed out, and the scones are out by half eight. 10/10."', author: '— Rachel K., Google Review' },
+];
+let tActive = 0;
+function setTestimonial(i) {
+  tActive = i;
+  document.getElementById('testimonialQuote').textContent = testimonials[i].quote;
+  document.getElementById('testimonialAuthor').textContent = testimonials[i].author;
+  document.querySelectorAll('.tdot').forEach((d, idx) => d.classList.toggle('active', idx === i));
+}
+document.querySelectorAll('.tdot').forEach(dot => {
+  dot.addEventListener('click', () => setTestimonial(+dot.dataset.t));
+});
+setInterval(() => setTestimonial((tActive + 1) % testimonials.length), 5000);
+
+// SCROLL REVEALS
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// CONTACT FORM
+document.getElementById('contactForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const fname = document.getElementById('fname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+  if (!fname || !email || !message) {
+    alert('Please fill in your name, email and message.');
+    return;
+  }
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').classList.add('show');
+});
+</script>
+</body>
+</html>

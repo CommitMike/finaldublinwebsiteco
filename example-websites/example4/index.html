@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dublin Larder — Artisan Irish Food & Drink</title>
+<meta name="description" content="Handcrafted Irish food and drink, delivered to your door. Jams, sauces, cordials, honey and gift hampers from small Irish producers.">
+
+<!-- Snipcart CSS -->
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.3/default/snipcart.css">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
+  🚚 Free delivery on all orders over €40 — Ireland wide. <a href="#shop">Shop now</a>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-leaf">🌿</span>
+      The Dublin Larder
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#about">Our Story</a></li>
+      <li><a href="#how">Delivery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="cart-btn snipcart-checkout" aria-label="Open cart">
+        🛒 Cart
+        <span class="cart-count snipcart-items-count">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <span class="hero-tag">Small batch · Irish made</span>
+    <h1>Real food,<br>made with<br><em>real care.</em></h1>
+    <p class="hero-sub">Handcrafted jams, sauces, cordials and pantry staples from small Irish producers. Delivered straight to your door.</p>
+    <div class="hero-actions">
+      <a href="#shop" class="btn-dark">Shop Now →</a>
+      <a href="#about" class="btn-outline">Our Story</a>
+    </div>
+    <div class="hero-trust">
+      <span class="trust-chip">Irish made</span>
+      <span class="trust-chip">Free delivery €40+</span>
+      <span class="trust-chip">Gift wrapping available</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1506802913710-40e2e66339c9?auto=format&fit=crop&w=1200&q=80" alt="Artisan food jars and preserves">
+  </div>
+</section>
+
+<!-- DELIVERY BANNER -->
+<div class="delivery-banner">
+  <div class="delivery-item"><span>🇮🇪</span> Made in Ireland</div>
+  <div class="delivery-item"><span>📦</span> Next-day dispatch</div>
+  <div class="delivery-item"><span>🎁</span> Gift wrapping on request</div>
+  <div class="delivery-item"><span>↩️</span> 30-day returns</div>
+  <div class="delivery-item"><span>💳</span> Secure checkout via Stripe</div>
+</div>
+
+<!-- CATEGORIES -->
+<div class="cats-strip">
+  <div class="cats-inner">
+    <button class="cat-btn active" data-cat="all">All Products</button>
+    <button class="cat-btn" data-cat="jams">Jams & Preserves</button>
+    <button class="cat-btn" data-cat="sauces">Sauces & Condiments</button>
+    <button class="cat-btn" data-cat="drinks">Drinks & Cordials</button>
+    <button class="cat-btn" data-cat="pantry">Pantry Staples</button>
+    <button class="cat-btn" data-cat="gifts">Gift Sets</button>
+  </div>
+</div>
+
+<!-- SHOP -->
+<section class="shop" id="shop">
+  <div class="shop-header reveal">
+    <div>
+      <h2>Our <em>products</em></h2>
+      <p style="font-size:15px;color:var(--mid);font-weight:300;margin-top:6px;">All made in small batches by Irish producers we trust.</p>
+    </div>
+    <div class="shop-sort">
+      Sort by:
+      <select id="sortSelect">
+        <option value="default">Featured</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="name">Name</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="products-grid" id="productsGrid">
+
+    <!-- GIFT HAMPER (wide) -->
+    <div class="product-card wide reveal" data-cat="gifts" data-price="55" data-name="The Dublin Larder Gift Hamper">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=900&q=80" alt="Gift Hamper">
+        <span class="product-badge badge-gift">Gift Set</span>
+      </div>
+      <div class="product-body">
+        <span class="product-cat">Gift Sets</span>
+        <div class="product-name">The Dublin Larder Gift Hamper</div>
+        <div class="product-desc">Our most popular gift. Includes our hedgerow jam, wild garlic pesto, hot sauce, sea salt flakes, elderflower cordial and artisan honey. Beautifully presented in a branded box with tissue paper. Perfect for birthdays, housewarmings or Christmas.</div>
+        <div class="product-weight">Approx. 1.4kg · Serves 2–4</div>
+        <div class="product-footer">
+          <div class="product-price">€55.00 <span>incl. VAT</span></div>
+          <button class="add-to-cart snipcart-add-item"
+            data-item-id="gift-hamper-001"
+            data-item-name="The Dublin Larder Gift Hamper"
+            data-item-price="55.00"
+            data-item-url="https://dublinwebsitecompany.netlify.app/index.html"
+            data-item-description="Includes hedgerow jam, wild garlic pesto, hot sauce, sea salt, elderflower cordial and artisan honey. Beautifully gift-boxed."
+            data-item-image="https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=400&q=80"
+            data-item-weight="1400"
+            data-item-categories="Gift Sets">
+            Add to Cart 🛒
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEDGEROW JAM -->
+    <div class="product-card reveal" data-cat="jams" data-price="6.50" data-name="Hedgerow Berry Jam">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80" alt="Hedgerow Berry Jam">
+        <span class="product-badge badge-popular">Best Seller</span>
+      </div>
+      <div class="product-body">
+        <span class="product-cat">Jams & Preserves</span>
+        <div class="product-name">Hedgerow Berry Jam</div>
+        <div class="product-desc">Made from foraged blackberries, elderberries and rosehips. Rich, deeply fruity and not too sweet. Stunning on sourdough or with aged cheddar.</div>
+        <div class="product-weight">230g jar</div>
+        <div class="product-footer">
+          <div class="product-price">€6.50</div>
+          <button class="add-to-cart snipcart-add-item"
+            data-item-id="hedgerow-jam-001"
+            data-item-name="Hedgerow Berry Jam"
+            data-item-price="6.50"
+            data-item-url="https://dublinwebsitecompany.netlify.app/index.html"
+            data-item-description="Made from foraged blackberries, elderberries and rosehips. Rich and deeply fruity. 230g jar."
+            data-item-image="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=400&q=80"
+            data-item-weight="280"
+            data-item-categories="Jams & Preserves">
+            Add to Cart 🛒
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- WILD GARLIC PESTO -->
+    <div class="product-card reveal d1" data-cat="sauces" data-price="8.50" data-name="Wild Garlic & Nettle Pesto">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=600&q=80" alt="Wild Garlic Pesto">
+        <span class="product-badge badge-new">New</span>
+      </div>
+      <div class="product-body">
+        <span class="product-cat">Sauces & Condiments</span>
+        <div class="product-name">Wild Garlic & Nettle Pesto</div>
+        <div class="product-desc">Spring-foraged wild garlic and young nettles blended with toasted hazelnuts, Irish rapeseed oil and Parmesan. Intensely green, brilliantly versatile.</div>
+        <div class="product-weight">190g jar</div>
+        <div class="product-footer">
+          <div class="product-price">€8.50</div>
+          <button class="add-to-cart snipcart-add-item"
+            data-item-id="wild-garlic-pesto-001"
+            data-item-name="Wild Garlic & Nettle Pesto"
+            data-item-price="8.50"
+            data-item-url="https://dublinwebsitecompany.netlify.app/index.html"
+            data-item-description="Spring-foraged wild garlic and young nettles blended with hazelnuts, rapeseed oil and Parmesan. 190g jar."
+            data-item-image="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=400&q=80"
+            data-item-weight="220"
+            data-item-categories="Sauces & Condiments">
+            Add to Cart 🛒
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DUBLIN BAY HOT SAUCE -->
+    <div class="product-card reveal d2" data-cat="sauces" data-price="9.00" data-name="Dublin Bay Hot Sauce">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1613514785940-daed07799d9b?auto=format&fit=crop&w=600&q=80" alt="Hot Sauce">
+        <span class="product-badge badge-popular">Popular</span>
+      </div>
+      <div class="product-body">
+        <span class="product-cat">Sauces & Condiments</span>
+        <div class="product-name">Dublin Bay Hot Sauce</div>
+        <div class="product-desc">Medium heat with depth. Made with Irish-grown chillies, roasted red peppers, smoked paprika and apple cider vinegar. Addictive on eggs, tacos or grilled chicken.</div>
+        <div class="product-weight">150ml bottle</div>
+        <div class="product-footer">
+          <div class="product-price">€9.00</div>
+          <button class="add-to-cart snipcart-add-item"
+            data-item-id="dublin-bay-hot-sauce-001"
+            data-item-name="Dublin Bay Hot Sauce"
+            data-item-price="9.00"
+            data-item-url="https://dublinwebsitecompany.netlify.app/index.html"
+            data-item-description="Medium heat hot sauce made with Irish-grown chillies, roasted red peppers and apple cider vinegar. 150ml."
+            data-item-image="https://images.unsplash.com/photo-1613514785940-daed07799d9b?auto=format&fit=crop&w=400&q=80"
+            data-item-weight="200"
+            data-item-categories="Sauces & Condiments">
+            Add to Cart 🛒
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ELDERFLOWER CORDIAL -->
+    <div class="product-card reveal" data-cat="drinks" data-price="8.00" data-name="Elderflower & Gooseberry Cordial">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80" alt="Elderflower Cordial">
+      </div>
+      <div class="product-body">
+        <span class="product-cat">Drinks & Cordials</span>
+        <div class="product-name">Elderflower & Gooseberry Cordial</div>
+        <div class="product-desc">Light, floral and subtly tart. Hand-picked elderflowers from the Wicklow hedgerows with fresh Irish gooseberries. Dilute 1:5 with still or sparkling water.</div>
+        <div class="product-weight">500ml bottle</div>
+        <div class="product-footer">
+          <div class="product-price">€8.00</div>
+          <button class="add-to-cart snipcart-add-item"
+            data-item-id="elderflower-cordial-001"
+            data-item-name="Elderflower & Gooseberry Cordial"
+            data-item-price="8.00"
+            data-item-url="https://dublinwebsitecompany.netlify.app/index.html"
+            data-item-description="Hand-picked elderflowers and fresh Irish gooseberries. 500ml. Dilute 1:5."
+            data-item-image="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=400&q=80"
+            data-item-weight="550"
+            data-item-categories="Drinks & Cordials">
+            Add to Cart 🛒
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARTISAN HONEY -->
+    <div class="product-card reveal d1" data-cat="pantry" data-price="11.00" data-name="Wicklow Wildflower Honey">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=600&q=80" alt="Artisan Honey">
+        <span class="product-badge badge-limited">Limited</span>
+      </div>
+      <div class="product-body">
+        <span class="product-cat">Pantry Staples</span>
+        <div class="product-name">Wicklow Wildflower Honey</div>
+        <div class="product-desc">Raw, unpasteurised honey from beehives in the Wicklow mountains. Complex floral notes that change with the season. Only 200 jars per batch.</div>
+        <div class="product-weight">340g jar · Raw & unpasteurised</div>
+        <div class="product-footer">
+          <div class="product-price">€11.00</div>
+          <button class="add-to-cart snipcart-add-item"
+            data-item-id="wicklow-honey-001"
+            data-item-name="Wicklow Wildflower Honey"
+            data-item-price="11.00"
+            data-item-url="https://dublinwebsitecompany.netlify.app/index.html"
+            data-item-description="Raw, unpasteurised wildflower honey from Wicklow mountain beehives. 340g. Limited batch."
+            data-item-image="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=400&q=80"
+            data-item-weight="380"
+            data-item-categories="Pantry Staples">
+            Add to Cart 🛒
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEA SALT -->
+    <div class="product-card reveal d2" data-cat="pantry" data-price="7.50" data-name="Irish Atlantic Sea Salt Flakes">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?auto=format&fit=crop&w=600&q=80" alt="Sea Salt">
+      </div>
+      <div class="product-body">
+        <span class="product-cat">Pantry Staples</span>
+        <div class="product-name">Irish Atlantic Sea Salt Flakes</div>
+        <div class="product-desc">Hand-harvested from the clean Atlantic waters off the west coast of Ireland. Delicate pyramid crystals with a clean, pure finish. A chef's favourite.</div>
+        <div class="product-weight">100g resealable pouch</div>
+        <div class="product-footer">
+          <div class="product-price">€7.50</div>
+          <button class="add-to-cart snipcart-add-item"
+            data-item-id="sea-salt-flakes-001"
+            data-item-name="Irish Atlantic Sea Salt Flakes"
+            data-item-price="7.50"
+            data-item-url="https://dublinwebsitecompany.netlify.app/index.html"
+            data-item-description="Hand-harvested Atlantic sea salt flakes from the west coast of Ireland. 100g resealable pouch."
+            data-item-image="https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?auto=format&fit=crop&w=400&q=80"
+            data-item-weight="130"
+            data-item-categories="Pantry Staples">
+            Add to Cart 🛒
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHISKEY BBQ SAUCE -->
+    <div class="product-card reveal" data-cat="sauces" data-price="9.50" data-name="Smoked Whiskey BBQ Sauce">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1472476443507-c7a5948772fc?auto=format&fit=crop&w=600&q=80" alt="BBQ Sauce">
+      </div>
+      <div class="product-body">
+        <span class="product-cat">Sauces & Condiments</span>
+        <div class="product-name">Smoked Whiskey BBQ Sauce</div>
+        <div class="product-desc">Built on a base of Irish whiskey, smoked tomatoes and treacle molasses. Deep, smoky and slightly sweet. Ideal for ribs, pulled pork or as a burger glaze.</div>
+        <div class="product-weight">250ml bottle</div>
+        <div class="product-footer">
+          <div class="product-price">€9.50</div>
+          <button class="add-to-cart snipcart-add-item"
+            data-item-id="whiskey-bbq-sauce-001"
+            data-item-name="Smoked Whiskey BBQ Sauce"
+            data-item-price="9.50"
+            data-item-url="https://dublinwebsitecompany.netlify.app/index.html"
+            data-item-description="Irish whiskey, smoked tomatoes and treacle molasses. Deep, smoky BBQ sauce. 250ml."
+            data-item-image="https://images.unsplash.com/photo-1472476443507-c7a5948772fc?auto=format&fit=crop&w=400&q=80"
+            data-item-weight="290"
+            data-item-categories="Sauces & Condiments">
+            Add to Cart 🛒
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STRAWBERRY JAM -->
+    <div class="product-card reveal d1" data-cat="jams" data-price="6.00" data-name="Strawberry & Black Pepper Jam">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1632848129232-f816b590e5e3?auto=format&fit=crop&w=600&q=80" alt="Strawberry Jam">
+      </div>
+      <div class="product-body">
+        <span class="product-cat">Jams & Preserves</span>
+        <div class="product-name">Strawberry & Black Pepper Jam</div>
+        <div class="product-desc">Wexford strawberries at their peak, with cracked black pepper to add warmth and depth. Beautifully balanced — sweet, fruity and just a little bit unexpected.</div>
+        <div class="product-weight">230g jar</div>
+        <div class="product-footer">
+          <div class="product-price">€6.00</div>
+          <button class="add-to-cart snipcart-add-item"
+            data-item-id="strawberry-pepper-jam-001"
+            data-item-name="Strawberry & Black Pepper Jam"
+            data-item-price="6.00"
+            data-item-url="https://dublinwebsitecompany.netlify.app/index.html"
+            data-item-description="Wexford strawberries with cracked black pepper. Beautifully balanced. 230g jar."
+            data-item-image="https://images.unsplash.com/photo-1668613374900-fcfecc5f7b3d?auto=format&fit=crop&w=400&q=80"
+            data-item-weight="280"
+            data-item-categories="Jams & Preserves">
+            Add to Cart 🛒
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BREAKFAST TEA -->
+    <div class="product-card reveal d2" data-cat="drinks" data-price="8.50" data-name="Irish Breakfast Loose Leaf Tea">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?auto=format&fit=crop&w=600&q=80" alt="Irish Tea">
+      </div>
+      <div class="product-body">
+        <span class="product-cat">Drinks & Cordials</span>
+        <div class="product-name">Irish Breakfast Loose Leaf Tea</div>
+        <div class="product-desc">A classic robust Irish breakfast blend of Assam and East African leaves, sourced and blended in Dublin. Bold, malty and best with a good dash of milk. 80 cups per tin.</div>
+        <div class="product-weight">150g tin · Approx. 80 cups</div>
+        <div class="product-footer">
+          <div class="product-price">€8.50</div>
+          <button class="add-to-cart snipcart-add-item"
+            data-item-id="breakfast-tea-001"
+            data-item-name="Irish Breakfast Loose Leaf Tea"
+            data-item-price="8.50"
+            data-item-url="https://dublinwebsitecompany.netlify.app/index.html"
+            data-item-description="Classic Irish breakfast blend of Assam and East African leaves, blended in Dublin. 150g tin, approx. 80 cups."
+            data-item-image="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?auto=format&fit=crop&w=400&q=80"
+            data-item-weight="200"
+            data-item-categories="Drinks & Cordials">
+            Add to Cart 🛒
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- APPLE CHUTNEY -->
+    <div class="product-card reveal" data-cat="jams" data-price="7.00" data-name="Apple, Ginger & Stout Chutney">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=600&q=80" alt="Apple Chutney">
+      </div>
+      <div class="product-body">
+        <span class="product-cat">Jams & Preserves</span>
+        <div class="product-name">Apple, Ginger & Stout Chutney</div>
+        <div class="product-desc">Bramley apples, fresh ginger and a generous glug of Irish stout slow-cooked with brown sugar and spices. Essential with a cheese board or cold cuts.</div>
+        <div class="product-weight">280g jar</div>
+        <div class="product-footer">
+          <div class="product-price">€7.00</div>
+          <button class="add-to-cart snipcart-add-item"
+            data-item-id="apple-stout-chutney-001"
+            data-item-name="Apple, Ginger & Stout Chutney"
+            data-item-price="7.00"
+            data-item-url="https://dublinwebsitecompany.netlify.app/index.html"
+            data-item-description="Bramley apples, fresh ginger and Irish stout slow-cooked with brown sugar and spices. 280g jar."
+            data-item-image="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=400&q=80"
+            data-item-weight="320"
+            data-item-categories="Jams & Preserves">
+            Add to Cart 🛒
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- COUPLE'S GIFT SET -->
+    <div class="product-card reveal d1" data-cat="gifts" data-price="28.00" data-name="The Weekend Brunch Set">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="Brunch Gift Set">
+        <span class="product-badge badge-gift">Gift Set</span>
+      </div>
+      <div class="product-body">
+        <span class="product-cat">Gift Sets</span>
+        <div class="product-name">The Weekend Brunch Set</div>
+        <div class="product-desc">Everything for a perfect Saturday morning. Includes our hedgerow jam, strawberry jam, wildflower honey and breakfast loose leaf tea. Wrapped in kraft paper with a handwritten card.</div>
+        <div class="product-weight">Approx. 780g · For 2</div>
+        <div class="product-footer">
+          <div class="product-price">€28.00</div>
+          <button class="add-to-cart snipcart-add-item"
+            data-item-id="brunch-gift-set-001"
+            data-item-name="The Weekend Brunch Set"
+            data-item-price="28.00"
+            data-item-url="https://dublinwebsitecompany.netlify.app/index.html"
+            data-item-description="Includes hedgerow jam, strawberry jam, wildflower honey and breakfast tea. Gift wrapped with handwritten card."
+            data-item-image="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80"
+            data-item-weight="780"
+            data-item-categories="Gift Sets">
+            Add to Cart 🛒
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMPTY STATE -->
+    <div class="empty-state" id="emptyState">
+      <p>No products in this category yet — check back soon!</p>
+    </div>
+
+  </div><!-- /products-grid -->
+</section>
+
+<!-- ABOUT -->
+<section class="about-strip" id="about">
+  <div class="about-inner">
+    <div class="about-text reveal">
+      <p class="about-eyebrow">Our Story</p>
+      <h2>Good ingredients,<br><em>honestly made.</em></h2>
+      <p>The Dublin Larder started at a farmers' market stall in Dún Laoghaire in 2019. We were frustrated by supermarket jams full of sugar and sauces full of stuff you couldn't pronounce.</p>
+      <p>So we started making our own — using Irish ingredients wherever possible, in proper small batches, with nothing added that didn't need to be there. People kept asking where they could buy them, so here we are.</p>
+      <div class="about-pillars">
+        <div class="about-pillar"><strong>Small batch only</strong><span>Never more than 200 jars per recipe</span></div>
+        <div class="about-pillar"><strong>Irish ingredients first</strong><span>85% of ingredients sourced in Ireland</span></div>
+        <div class="about-pillar"><strong>No nasties</strong><span>No artificial preservatives or flavours</span></div>
+        <div class="about-pillar"><strong>Plastic-free packing</strong><span>All packaging is recyclable or compostable</span></div>
+      </div>
+    </div>
+    <div class="about-imgs reveal d2">
+      <img class="about-img-main" src="https://images.unsplash.com/photo-1506368249639-73a05d6f6488?auto=format&fit=crop&w=800&q=80" alt="Making preserves">
+      <img class="about-img-accent" src="https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?auto=format&fit=crop&w=600&q=80" alt="Jarred products">
+      <div class="about-badge"><strong>2019</strong><span>Est. Dún Laoghaire</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-works" id="how">
+  <div class="how-inner">
+    <div class="how-head reveal">
+      <h2>Ordering is <em>simple.</em></h2>
+      <p>From your basket to your door in 1–2 working days.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-step reveal">
+        <div class="how-icon">🛒</div>
+        <h4>Add to Cart</h4>
+        <p>Browse our shop and add items to your cart. Mix and match — free delivery kicks in at €40.</p>
+      </div>
+      <div class="how-step reveal d1">
+        <div class="how-icon">💳</div>
+        <h4>Secure Checkout</h4>
+        <p>Pay securely via Stripe. We accept all major cards, Apple Pay and Google Pay. No account needed.</p>
+      </div>
+      <div class="how-step reveal d2">
+        <div class="how-icon">📦</div>
+        <h4>We Pack & Dispatch</h4>
+        <p>Orders placed before 2pm are dispatched the same day. We pack carefully to prevent any breakages.</p>
+      </div>
+      <div class="how-step reveal d3">
+        <div class="how-icon">🚪</div>
+        <h4>Delivered to You</h4>
+        <p>Next-day delivery across Ireland via An Post. You'll get a tracking number as soon as we ship.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="newsletter" id="contact">
+  <div class="newsletter-inner reveal">
+    <h3>New batches, first.</h3>
+    <p>Sign up and be the first to know when a new product drops or a limited batch is available. No spam, ever.</p>
+    <form class="newsletter-form" id="newsletterForm" novalidate>
+      <input type="email" id="nlEmail" placeholder="your@email.ie" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <div class="newsletter-success" id="newsletterSuccess">
+      ✓ You're on the list! We'll be in touch soon.
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>🌿 The Dublin Larder</h3>
+      <p>Artisan Irish food & drink, made in small batches and shipped to your door. Est. Dún Laoghaire, 2019.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">📸</a>
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="TikTok">🎵</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Shop</h5>
+      <a href="#" onclick="filterProducts('jams')">Jams & Preserves</a>
+      <a href="#" onclick="filterProducts('sauces')">Sauces & Condiments</a>
+      <a href="#" onclick="filterProducts('drinks')">Drinks & Cordials</a>
+      <a href="#" onclick="filterProducts('pantry')">Pantry Staples</a>
+      <a href="#" onclick="filterProducts('gifts')">Gift Sets</a>
+    </div>
+    <div class="footer-col">
+      <h5>Information</h5>
+      <a href="#">Delivery & Returns</a>
+      <a href="#">Allergen Information</a>
+      <a href="#">Wholesale Enquiries</a>
+      <a href="#">Stockists</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <a href="mailto:hello@dublinlarder.ie">hello@dublinlarder.ie</a>
+      <a href="tel:+353861234567">086 123 4567</a>
+      <a href="#">Dún Laoghaire, Co. Dublin</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 The Dublin Larder. All rights reserved. VAT registered.</span>
+    <span>Payments secured by <strong style="color:rgba(255,255,255,0.5)">Stripe</strong> · Powered by Snipcart</span>
+  </div>
+</footer>
+
+<!-- TOAST CONTAINER -->
+<div class="toast-wrap" id="toastWrap"></div>
+
+<!-- SNIPCART -->
+<!-- ⚠️  Replace YOUR_SNIPCART_PUBLIC_API_KEY with your key from dashboard.snipcart.com -->
+<div hidden id="snipcart"
+  data-api-key="MDcxYjJjN2QtOGVhNS00ZTMwLWFiMjEtZGE4ZTIyOGRhYjRiNjM5MTYwOTk3OTE5MzMzNDcw"
+  data-currency="eur"
+  data-country="IE"
+  data-config-add-product-behavior="none">
+</div>
+<script src="https://cdn.snipcart.com/themes/v3.3.3/default/snipcart.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

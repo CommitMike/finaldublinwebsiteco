@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prestige Motors Dublin — Premium Used Cars</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="20,3 37,12 37,28 20,37 3,28 3,12" fill="none" stroke="#3B82F6" stroke-width="1.5"/>
+        <polygon points="20,9 31,15 31,25 20,31 9,25 9,15" fill="none" stroke="#3B82F6" stroke-width="0.75" opacity="0.4"/>
+        <path d="M13,22 Q16,16 20,15 Q24,16 27,22" stroke="white" stroke-width="1.5" fill="none"/>
+        <circle cx="15" cy="23" r="2" fill="#3B82F6"/>
+        <circle cx="25" cy="23" r="2" fill="#3B82F6"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <span class="logo-main">Prestige</span>
+      <span class="logo-sub">Motors Dublin</span>
+    </div>
+  </a>
+  <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#stock">Stock</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#finance">Finance</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=80" alt="Premium car showroom">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow reveal">
+      <span class="dot"></span>
+      Dublin's Premium Used Car Specialists
+    </div>
+    <h1 class="reveal r1">
+      DRIVE<br>
+      <span class="h1-outline">YOUR</span><br>
+      DREAM.
+    </h1>
+    <p class="hero-desc reveal r2">Over 120 handpicked, fully inspected vehicles on-site in Sandyford. Every car HPI-checked, every deal transparent.</p>
+    <div class="hero-actions reveal r3">
+      <a href="#stock" class="btn-blue">Browse Stock →</a>
+      <a href="#contact" class="btn-outline-white">Book a Test Drive</a>
+    </div>
+  </div>
+  <div class="hero-stats reveal r2">
+    <div class="hstat">
+      <strong>120<span>+</span></strong>
+      <span>Cars in stock</span>
+    </div>
+    <div class="hstat-div"></div>
+    <div class="hstat">
+      <strong>14<span>yr</span></strong>
+      <span>In business</span>
+    </div>
+    <div class="hstat-div"></div>
+    <div class="hstat">
+      <strong>4.9<span>★</span></strong>
+      <span>Google Reviews</span>
+    </div>
+    <div class="hstat-div"></div>
+    <div class="hstat">
+      <strong>100<span>%</span></strong>
+      <span>HPI Checked</span>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>BMW</span><span>·</span><span>Mercedes-Benz</span><span>·</span>
+    <span>Audi</span><span>·</span><span>Volkswagen</span><span>·</span>
+    <span>Porsche</span><span>·</span><span>Lexus</span><span>·</span>
+    <span>Toyota</span><span>·</span><span>Ford</span><span>·</span>
+    <span>Volvo</span><span>·</span><span>Land Rover</span><span>·</span>
+    <span>BMW</span><span>·</span><span>Mercedes-Benz</span><span>·</span>
+    <span>Audi</span><span>·</span><span>Volkswagen</span><span>·</span>
+    <span>Porsche</span><span>·</span><span>Lexus</span><span>·</span>
+    <span>Toyota</span><span>·</span><span>Ford</span><span>·</span>
+    <span>Volvo</span><span>·</span><span>Land Rover</span><span>·</span>
+  </div>
+</div>
+
+<!-- SEARCH / FILTER BAR -->
+<section class="search-bar" id="stock">
+  <div class="sb-inner">
+    <div class="sb-title">
+      <span class="section-tag">Browse Stock</span>
+      <h2>Find Your <em>Next Car</em></h2>
+    </div>
+    <div class="sb-filters">
+      <select class="sb-select" id="filterMake">
+        <option value="">All Makes</option>
+        <option>BMW</option>
+        <option>Mercedes-Benz</option>
+        <option>Audi</option>
+        <option>Volkswagen</option>
+        <option>Porsche</option>
+        <option>Volvo</option>
+        <option>Toyota</option>
+        <option>Ford</option>
+      </select>
+      <select class="sb-select" id="filterType">
+        <option value="">All Types</option>
+        <option>Saloon</option>
+        <option>SUV</option>
+        <option>Estate</option>
+        <option>Coupé</option>
+        <option>Convertible</option>
+        <option>Hatchback</option>
+      </select>
+      <select class="sb-select" id="filterPrice">
+        <option value="">Any Price</option>
+        <option>Under €15,000</option>
+        <option>€15,000 – €25,000</option>
+        <option>€25,000 – €40,000</option>
+        <option>€40,000+</option>
+      </select>
+      <button class="sb-btn" onclick="filterCars()">Search</button>
+    </div>
+  </div>
+</section>
+
+<!-- STOCK GRID -->
+<section class="stock-section">
+  <div class="stock-grid" id="stockGrid">
+
+    <article class="car-card reveal" data-make="BMW" data-type="SUV" data-price="40000+">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" alt="BMW X5">
+        <span class="card-badge badge-new">New Arrival</span>
+        <span class="card-fuel">Diesel</span>
+      </div>
+      <div class="card-body">
+        <div class="card-make">BMW</div>
+        <div class="card-model">X5 xDrive30d M Sport</div>
+        <div class="card-specs">
+          <span>2022</span><span>·</span><span>28,400 km</span><span>·</span><span>Automatic</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-price">€54,950</div>
+          <a href="#contact" class="card-cta">Enquire →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="car-card reveal r1" data-make="Mercedes-Benz" data-type="Saloon" data-price="25000-40000">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80" alt="Mercedes C-Class">
+        <span class="card-badge badge-featured">Featured</span>
+        <span class="card-fuel">Petrol</span>
+      </div>
+      <div class="card-body">
+        <div class="card-make">Mercedes-Benz</div>
+        <div class="card-model">C 300 AMG Line Premium</div>
+        <div class="card-specs">
+          <span>2023</span><span>·</span><span>12,100 km</span><span>·</span><span>Automatic</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-price">€39,500</div>
+          <a href="#contact" class="card-cta">Enquire →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="car-card reveal r2" data-make="Audi" data-type="Estate" data-price="25000-40000">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=80" alt="Audi A6 Avant">
+        <span class="card-fuel">Diesel</span>
+      </div>
+      <div class="card-body">
+        <div class="card-make">Audi</div>
+        <div class="card-model">A6 Avant 40 TDI S Line</div>
+        <div class="card-specs">
+          <span>2021</span><span>·</span><span>44,200 km</span><span>·</span><span>Automatic</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-price">€32,950</div>
+          <a href="#contact" class="card-cta">Enquire →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="car-card reveal" data-make="Porsche" data-type="SUV" data-price="40000+">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Porsche Cayenne">
+        <span class="card-badge badge-featured">Featured</span>
+        <span class="card-fuel">Petrol</span>
+      </div>
+      <div class="card-body">
+        <div class="card-make">Porsche</div>
+        <div class="card-model">Cayenne S Coupé PDK</div>
+        <div class="card-specs">
+          <span>2022</span><span>·</span><span>19,800 km</span><span>·</span><span>Automatic</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-price">€89,500</div>
+          <a href="#contact" class="card-cta">Enquire →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="car-card reveal r1" data-make="Volkswagen" data-type="Hatchback" data-price="15000-25000">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=800&q=80" alt="VW Golf">
+        <span class="card-fuel">Petrol</span>
+      </div>
+      <div class="card-body">
+        <div class="card-make">Volkswagen</div>
+        <div class="card-model">Golf R-Line 1.5 TSI</div>
+        <div class="card-specs">
+          <span>2022</span><span>·</span><span>31,000 km</span><span>·</span><span>Manual</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-price">€22,450</div>
+          <a href="#contact" class="card-cta">Enquire →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="car-card reveal r2" data-make="Volvo" data-type="SUV" data-price="25000-40000">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80" alt="Volvo XC60">
+        <span class="card-badge badge-new">New Arrival</span>
+        <span class="card-fuel">Hybrid</span>
+      </div>
+      <div class="card-body">
+        <div class="card-make">Volvo</div>
+        <div class="card-model">XC60 T6 Recharge Inscription</div>
+        <div class="card-specs">
+          <span>2023</span><span>·</span><span>9,500 km</span><span>·</span><span>Automatic</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-price">€47,900</div>
+          <a href="#contact" class="card-cta">Enquire →</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+  <div class="stock-more reveal">
+    <p>Showing 6 of 120+ cars in stock.</p>
+    <a href="#contact" class="btn-blue">Request Full Stock List →</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="services-header reveal">
+      <span class="section-tag">What We Offer</span>
+      <h2>More Than Just<br><em>A Car Sale.</em></h2>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="svc-num">01</div>
+        <div class="svc-icon">🔍</div>
+        <h3>Vehicle Sourcing</h3>
+        <p>Can't find the exact spec you want? Tell us and we'll source it. We have access to dealer networks across Ireland and the UK.</p>
+      </div>
+      <div class="svc-card reveal r1">
+        <div class="svc-num">02</div>
+        <div class="svc-icon">📋</div>
+        <h3>Full HPI Check</h3>
+        <p>Every car on our forecourt is fully HPI checked. No write-offs, no outstanding finance, no hidden history. Guaranteed.</p>
+      </div>
+      <div class="svc-card reveal r2">
+        <div class="svc-num">03</div>
+        <div class="svc-icon">🔧</div>
+        <h3>Pre-Sale Inspection</h3>
+        <p>140-point inspection on every car before it reaches the forecourt. Service history verified, mechanics signed off.</p>
+      </div>
+      <div class="svc-card reveal r3">
+        <div class="svc-num">04</div>
+        <div class="svc-icon">🛡️</div>
+        <h3>Warranty Cover</h3>
+        <p>All cars come with a minimum 6-month warranty. Extended cover up to 3 years available on most stock.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-num">05</div>
+        <div class="svc-icon">🚗</div>
+        <h3>Part Exchange</h3>
+        <p>Trading in your current car? We'll give you a fair, transparent valuation — no low-ball offers, no games.</p>
+      </div>
+      <div class="svc-card reveal r1">
+        <div class="svc-num">06</div>
+        <div class="svc-icon">📦</div>
+        <h3>Home Delivery</h3>
+        <p>We deliver anywhere in Ireland. Your car arrives detailed, full of fuel, and ready to drive the moment it lands.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCE -->
+<section class="finance" id="finance">
+  <div class="finance-left reveal">
+    <span class="section-tag">Finance</span>
+    <h2>Drive Away<br>Today — Pay<br><em>Your Way.</em></h2>
+    <p>We work with Ireland's leading lenders to get you approved fast, with competitive rates and flexible terms. From 12 to 72 months, we structure a deal that works for your budget.</p>
+    <ul class="finance-list">
+      <li><span class="fl-check">✓</span> Decision in as little as 1 hour</li>
+      <li><span class="fl-check">✓</span> All credit profiles considered</li>
+      <li><span class="fl-check">✓</span> 0% deposit options available</li>
+      <li><span class="fl-check">✓</span> PCP & HP finance available</li>
+      <li><span class="fl-check">✓</span> No hidden fees or charges</li>
+    </ul>
+    <a href="#contact" class="btn-blue">Get a Finance Quote →</a>
+  </div>
+  <div class="finance-right reveal r2">
+    <div class="finance-calc">
+      <div class="fc-header">
+        <span>Finance Calculator</span>
+        <span class="fc-tag">Indicative only</span>
+      </div>
+      <div class="fc-body">
+        <div class="fc-group">
+          <label>Vehicle Price</label>
+          <div class="fc-input-wrap">
+            <span class="fc-prefix">€</span>
+            <input type="number" id="fcPrice" value="25000" min="5000" max="150000" step="500" oninput="calcFinance()">
+          </div>
+        </div>
+        <div class="fc-group">
+          <label>Deposit</label>
+          <div class="fc-input-wrap">
+            <span class="fc-prefix">€</span>
+            <input type="number" id="fcDeposit" value="5000" min="0" step="500" oninput="calcFinance()">
+          </div>
+        </div>
+        <div class="fc-group">
+          <label>Term (months)</label>
+          <select id="fcTerm" onchange="calcFinance()">
+            <option value="24">24 months</option>
+            <option value="36">36 months</option>
+            <option value="48" selected>48 months</option>
+            <option value="60">60 months</option>
+            <option value="72">72 months</option>
+          </select>
+        </div>
+        <div class="fc-result">
+          <span>Estimated monthly payment</span>
+          <strong id="fcResult">€466 <small>/mo</small></strong>
+        </div>
+        <p class="fc-disclaimer">Representative APR 7.9%. For illustration purposes only. Subject to status and affordability.</p>
+        <a href="#contact" class="fc-apply">Apply for Finance →</a>
+      </div>
+    </div>
+    <div class="finance-img">
+      <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80" alt="Car keys">
+    </div>
+  </div>
+</section>
+
+<!-- WHY US / ABOUT -->
+<section class="about-strip" id="about">
+  <div class="about-strip-inner">
+    <div class="about-strip-text reveal">
+      <span class="section-tag">About Us</span>
+      <h2>Fourteen Years.<br>One Standard:<br><em>Exceptional.</em></h2>
+      <p>Prestige Motors started in 2010 with a simple idea — that buying a used car shouldn't feel like a gamble. We built our reputation on transparency, fair pricing, and cars that are genuinely what we say they are.</p>
+      <p>Based in Sandyford Business Park, we're open 7 days a week. No high-pressure sales tactics, no hidden extras — just honest advice and great cars.</p>
+      <div class="about-awards">
+        <div class="award">
+          <strong>2023</strong>
+          <span>Best Used Car Dealer<br>Dublin Chamber Awards</span>
+        </div>
+        <div class="award">
+          <strong>AA</strong>
+          <span>Approved Dealer<br>Network Member</span>
+        </div>
+        <div class="award">
+          <strong>SIMI</strong>
+          <span>Accredited Member<br>Since 2010</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-strip-imgs reveal r2">
+      <img class="as-img-main" src="https://images.unsplash.com/photo-1562141961-d8c2eed29c71?auto=format&fit=crop&w=800&q=80" alt="Prestige Motors showroom">
+      <img class="as-img-accent" src="https://images.unsplash.com/photo-1596489638-db4d07be3580?auto=format&fit=crop&w=600&q=80" alt="Car handover">
+      <div class="as-review-pill">
+        <strong>4.9 ★</strong>
+        <span>Based on 340+ reviews</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <div class="testimonials-header reveal">
+      <span class="section-tag">Reviews</span>
+      <h2>What Our<br><em>Customers Say.</em></h2>
+    </div>
+    <div class="tcard-grid">
+      <div class="tcard reveal">
+        <div class="tcard-stars">★★★★★</div>
+        <p>"Bought an Audi A6 last month. The whole process was smooth — no pressure, everything explained clearly, and the car was exactly as described. Would recommend without hesitation."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">CM</div>
+          <div><strong>Cormac M.</strong><span>Dublin 4</span></div>
+        </div>
+      </div>
+      <div class="tcard reveal r1">
+        <div class="tcard-stars">★★★★★</div>
+        <p>"Got finance sorted in under two hours. The lads were sound, no messing around with the price, and my BMW was delivered to my door in Galway the next day. Class service."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">SR</div>
+          <div><strong>Sinéad R.</strong><span>Galway</span></div>
+        </div>
+      </div>
+      <div class="tcard reveal r2">
+        <div class="tcard-stars">★★★★★</div>
+        <p>"Third car I've bought here. They sourced a specific spec Porsche Cayenne I couldn't find anywhere else. Came in perfect nick. Prestige Motors is the only place I'd go for a premium used car in Ireland."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">PD</div>
+          <div><strong>Pádraig D.</strong><span>Cork</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left reveal">
+      <span class="section-tag">Contact</span>
+      <h2>Let's Find Your<br><em>Perfect Car.</em></h2>
+      <p>Whether you're ready to buy, want to book a test drive, or just need advice — get in touch. No pressure, no obligation.</p>
+      <div class="contact-details">
+        <div class="cd-item">
+          <div class="cd-icon">📍</div>
+          <div>
+            <strong>Showroom</strong>
+            <span>Unit 4, Sandyford Business Park<br>Sandyford, Dublin 18</span>
+          </div>
+        </div>
+        <div class="cd-item">
+          <div class="cd-icon">📞</div>
+          <div>
+            <strong>Call Us</strong>
+            <a href="tel:012953400">01 295 3400</a>
+          </div>
+        </div>
+        <div class="cd-item">
+          <div class="cd-icon">✉</div>
+          <div>
+            <strong>Email</strong>
+            <a href="mailto:info@prestigemotorsdublin.ie">info@prestigemotorsdublin.ie</a>
+          </div>
+        </div>
+        <div class="cd-item">
+          <div class="cd-icon">🕐</div>
+          <div>
+            <strong>Opening Hours</strong>
+            <span>Mon–Fri 9am–6pm<br>Sat 10am–5pm · Sun 12pm–4pm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-wrap reveal r2">
+      <div class="cf-header">
+        <h3>Send an Enquiry</h3>
+        <p>We'll get back to you within a few hours.</p>
+      </div>
+      <form id="contactForm" novalidate>
+        <div class="fg-row">
+          <div class="fg">
+            <label for="cname">Full Name *</label>
+            <input type="text" id="cname" placeholder="Your name" required>
+          </div>
+          <div class="fg">
+            <label for="cphone">Phone Number *</label>
+            <input type="tel" id="cphone" placeholder="085 123 4567" required>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="cemail">Email Address *</label>
+          <input type="email" id="cemail" placeholder="your@email.com" required>
+        </div>
+        <div class="fg">
+          <label for="cinterest">I'm Interested In</label>
+          <select id="cinterest">
+            <option value="">Select...</option>
+            <option>A specific car in stock</option>
+            <option>Vehicle sourcing</option>
+            <option>Finance enquiry</option>
+            <option>Part exchange valuation</option>
+            <option>Test drive booking</option>
+            <option>General enquiry</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="cmessage">Message</label>
+          <textarea id="cmessage" placeholder="Tell us what you're looking for — make, model, budget, any specific requirements..."></textarea>
+        </div>
+        <button type="submit" class="cf-submit">Send Enquiry →</button>
+      </form>
+      <div class="form-ok" id="formOk">
+        <div class="ok-icon">✓</div>
+        <strong>Enquiry Sent!</strong>
+        <span>Thanks for getting in touch. One of our team will call or email you within a few hours.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Prestige <em>Motors</em></div>
+      <p>Premium used cars in Sandyford, Dublin. Established 2010.</p>
+      <div class="footer-accreditations">
+        <span class="accred">SIMI</span>
+        <span class="accred">AA Approved</span>
+        <span class="accred">HPI Clear</span>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Stock</h4>
+      <ul>
+        <li><a href="#stock">All Cars</a></li>
+        <li><a href="#stock">SUVs</a></li>
+        <li><a href="#stock">Saloons</a></li>
+        <li><a href="#stock">Estates</a></li>
+        <li><a href="#stock">New Arrivals</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#finance">Finance</a></li>
+        <li><a href="#services">Part Exchange</a></li>
+        <li><a href="#services">Vehicle Sourcing</a></li>
+        <li><a href="#services">Home Delivery</a></li>
+        <li><a href="#services">Warranty</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#about">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Prestige Motors Dublin Ltd. All rights reserved. Registered in Ireland.</span>
+    <span class="dwc">Site by <a href="../../index.html">Dublin Website Co.</a></span>
+  </div>
+</footer>
+
+<script>
+/* NAV */
+const nav = document.getElementById('nav');
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+burger.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  burger.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', open);
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  burger.classList.remove('open');
+}));
+
+/* FINANCE CALC */
+function calcFinance() {
+  const price = parseFloat(document.getElementById('fcPrice').value) || 0;
+  const deposit = parseFloat(document.getElementById('fcDeposit').value) || 0;
+  const term = parseInt(document.getElementById('fcTerm').value) || 48;
+  const apr = 0.079;
+  const principal = Math.max(0, price - deposit);
+  const monthlyRate = apr / 12;
+  let monthly = 0;
+  if (monthlyRate > 0 && principal > 0) {
+    monthly = principal * (monthlyRate * Math.pow(1 + monthlyRate, term)) / (Math.pow(1 + monthlyRate, term) - 1);
+  }
+  document.getElementById('fcResult').innerHTML = '€' + Math.round(monthly).toLocaleString() + ' <small>/mo</small>';
+}
+calcFinance();
+
+/* FILTER */
+function filterCars() {
+  const make = document.getElementById('filterMake').value;
+  const type = document.getElementById('filterType').value;
+  const price = document.getElementById('filterPrice').value;
+  document.querySelectorAll('.car-card').forEach(card => {
+    const matchMake = !make || card.dataset.make === make;
+    const matchType = !type || card.dataset.type === type;
+    let matchPrice = true;
+    if (price === 'Under €15,000') matchPrice = card.dataset.price === 'under15';
+    else if (price === '€15,000 – €25,000') matchPrice = card.dataset.price === '15000-25000';
+    else if (price === '€25,000 – €40,000') matchPrice = card.dataset.price === '25000-40000';
+    else if (price === '€40,000+') matchPrice = card.dataset.price === '40000+';
+    card.style.display = (matchMake && matchType && matchPrice) ? '' : 'none';
+  });
+}
+
+/* REVEALS */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* FORM */
+document.getElementById('contactForm').addEventListener('submit', e => {
+  e.preventDefault();
+  if (!document.getElementById('cname').value || !document.getElementById('cphone').value) return;
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formOk').style.display = 'flex';
+});
+</script>
+</body>
+</html>

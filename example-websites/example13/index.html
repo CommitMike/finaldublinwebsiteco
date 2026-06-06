@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sudsy — Launderette & Dry Cleaning, Phibsborough</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="stlye.css">
+</head>
+<body>
+
+<!-- FLOATING BUBBLES -->
+<div class="bubbles-wrap" id="bubblesWrap"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo" aria-label="Sudsy Launderette">
+    <div class="nav-logo-icon">🫧</div>
+    Sudsy
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks" role="list">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#find-us">Find Us</a></li>
+    <li><a href="#contact" class="nav-book">Book Collection</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-label">🫧 Phibsborough, Dublin 7</div>
+      <h1>
+        <span class="big-blue">Fresh &</span>
+        <span class="big-teal">Clean.</span>
+        Every time.
+      </h1>
+      <p class="hero-desc">Dublin's friendliest launderette. Drop off, collect, or let us come to you. Self-service machines, full wash & fold, dry cleaning and ironing — all under one roof.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-hero">Book a Collection 🚐</a>
+        <a href="#pricing" class="btn-hero-outline">See Prices</a>
+      </div>
+      <div class="hero-hours">
+        <div class="hero-hour"><strong>Mon–Fri</strong><span>7am – 9pm</span></div>
+        <div class="hero-hour"><strong>Sat – Sun</strong><span>8am – 8pm</span></div>
+        <div class="hero-hour"><strong>Call us</strong><span>01 830 4422</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="drum-scene">
+        <div class="drum-outer">
+          <div class="drum-water"></div>
+          <div class="drum-inner">
+            <div class="drum-holes">
+              <div class="drum-hole" style="top:30px;left:60px;"></div>
+              <div class="drum-hole" style="top:30px;right:60px;"></div>
+              <div class="drum-hole" style="bottom:30px;left:60px;"></div>
+              <div class="drum-hole" style="bottom:30px;right:60px;"></div>
+              <div class="drum-hole" style="top:50%;left:20px;transform:translateY(-50%)"></div>
+              <div class="drum-hole" style="top:50%;right:20px;transform:translateY(-50%)"></div>
+            </div>
+            <div class="drum-center"></div>
+          </div>
+        </div>
+        <div class="drum-badge">✦ Same Day Available</div>
+        <div class="drum-badge2">🚐 Free Collection Over €30</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span>Wash & Fold</span><span class="hi">// Same Day Service</span><span>Dry Cleaning</span><span class="hi">// Free Collection Over €30</span><span>Ironing</span><span class="hi">// 7 Days a Week</span><span>Self-Service</span><span class="hi">// Eco Detergents</span><span>Duvet Cleaning</span><span class="hi">// Fast Turnaround</span>
+    <span>Wash & Fold</span><span class="hi">// Same Day Service</span><span>Dry Cleaning</span><span class="hi">// Free Collection Over €30</span><span>Ironing</span><span class="hi">// 7 Days a Week</span><span>Self-Service</span><span class="hi">// Eco Detergents</span><span>Duvet Cleaning</span><span class="hi">// Fast Turnaround</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="section-head reveal">
+      <div class="section-badge">What We Offer</div>
+      <h2>All your laundry,<br><span>sorted.</span></h2>
+      <p>From a bag of mixed clothes to wedding dresses and duvets — we handle everything with care.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <span class="svc-emoji">👕</span>
+        <h3>Wash & Fold</h3>
+        <p>Drop it in, we wash it, dry it and fold it neatly. Ready same day or next morning — your call.</p>
+        <div class="svc-price-row">
+          <span class="svc-from">From</span>
+          <span class="svc-price">€12</span>
+        </div>
+      </div>
+      <div class="svc-card reveal d1">
+        <span class="svc-tag">Popular</span>
+        <span class="svc-emoji">🧺</span>
+        <h3>Wash, Dry & Iron</h3>
+        <p>Everything washed, tumble dried and pressed. Perfect for work shirts, uniforms or a full wardrobe refresh.</p>
+        <div class="svc-price-row">
+          <span class="svc-from">From</span>
+          <span class="svc-price">€18</span>
+        </div>
+      </div>
+      <div class="svc-card reveal d2">
+        <span class="svc-emoji">👔</span>
+        <h3>Dry Cleaning</h3>
+        <p>Suits, dresses, coats and delicates. Professional dry cleaning with careful garment handling.</p>
+        <div class="svc-price-row">
+          <span class="svc-from">From</span>
+          <span class="svc-price">€9</span>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <span class="svc-emoji">🛏️</span>
+        <h3>Duvets & Bedding</h3>
+        <p>Single, double and king duvets, pillows and blankets. We have the big drums for the bulky stuff.</p>
+        <div class="svc-price-row">
+          <span class="svc-from">From</span>
+          <span class="svc-price">€16</span>
+        </div>
+      </div>
+      <div class="svc-card reveal d1">
+        <span class="svc-tag">New</span>
+        <span class="svc-emoji">🚐</span>
+        <h3>Collection & Delivery</h3>
+        <p>We come to your door anywhere in Dublin 7. Free collection on orders over €30. Book online or by phone.</p>
+        <div class="svc-price-row">
+          <span class="svc-from">Delivery from</span>
+          <span class="svc-price">€5</span>
+        </div>
+      </div>
+      <div class="svc-card reveal d2">
+        <span class="svc-emoji">🪣</span>
+        <h3>Self-Service</h3>
+        <p>12 washers and 10 dryers available seven days a week. Coin and card. We're always here if you need a hand.</p>
+        <div class="svc-price-row">
+          <span class="svc-from">From</span>
+          <span class="svc-price">€4</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TABLE -->
+<section class="pricing" id="pricing">
+  <div class="pricing-inner">
+    <div class="section-head reveal">
+      <div class="section-badge">Pricing</div>
+      <h2>Clear prices,<br><span>no surprises.</span></h2>
+      <p>All prices per item or per load. We'll always give you an exact quote before we start.</p>
+    </div>
+    <div class="pricing-table reveal">
+      <div class="pt-head">
+        <div class="pt-head-cell">Item / Service</div>
+        <div class="pt-head-cell">Standard</div>
+        <div class="pt-head-cell">Express</div>
+        <div class="pt-head-cell">Notes</div>
+      </div>
+      <div class="pt-row category"><div class="pt-cell" style="grid-column:span 4;">Wash & Dry</div></div>
+      <div class="pt-row">
+        <div class="pt-cell">Wash & Fold (per load)</div>
+        <div class="pt-cell price">€12</div>
+        <div class="pt-cell price">€16</div>
+        <div class="pt-cell tag-cell"><span class="pt-mini-tag">Same Day</span></div>
+      </div>
+      <div class="pt-row">
+        <div class="pt-cell">Wash, Dry & Iron (per load)</div>
+        <div class="pt-cell price">€18</div>
+        <div class="pt-cell price">€24</div>
+        <div class="pt-cell muted">Shirts from €2.50 ea</div>
+      </div>
+      <div class="pt-row">
+        <div class="pt-cell">Self-Service Wash</div>
+        <div class="pt-cell price">€4–€6</div>
+        <div class="pt-cell muted">—</div>
+        <div class="pt-cell muted">By machine size</div>
+      </div>
+      <div class="pt-row category"><div class="pt-cell" style="grid-column:span 4;">Dry Cleaning</div></div>
+      <div class="pt-row">
+        <div class="pt-cell">Suit (2-piece)</div>
+        <div class="pt-cell price">€18</div>
+        <div class="pt-cell price">€26</div>
+        <div class="pt-cell muted">3-piece +€6</div>
+      </div>
+      <div class="pt-row">
+        <div class="pt-cell">Dress / Blouse</div>
+        <div class="pt-cell price">€9</div>
+        <div class="pt-cell price">€13</div>
+        <div class="pt-cell tag-cell"><span class="pt-mini-tag yellow">Popular</span></div>
+      </div>
+      <div class="pt-row">
+        <div class="pt-cell">Coat / Jacket</div>
+        <div class="pt-cell price">€14</div>
+        <div class="pt-cell price">€20</div>
+        <div class="pt-cell muted">—</div>
+      </div>
+      <div class="pt-row category"><div class="pt-cell" style="grid-column:span 4;">Bedding & Bulky</div></div>
+      <div class="pt-row">
+        <div class="pt-cell">Single Duvet</div>
+        <div class="pt-cell price">€16</div>
+        <div class="pt-cell price">€22</div>
+        <div class="pt-cell muted">Includes dry</div>
+      </div>
+      <div class="pt-row">
+        <div class="pt-cell">Double / King Duvet</div>
+        <div class="pt-cell price">€22</div>
+        <div class="pt-cell price">€30</div>
+        <div class="pt-cell muted">Includes dry</div>
+      </div>
+      <div class="pt-row">
+        <div class="pt-cell">Pillows (pair)</div>
+        <div class="pt-cell price">€10</div>
+        <div class="pt-cell price">€14</div>
+        <div class="pt-cell muted">—</div>
+      </div>
+    </div>
+    <p class="pricing-note">Prices exclude VAT. Express = ready within 4 hours. Can't see your item? <a href="#contact" style="color:var(--blue);font-weight:700;">Just ask us.</a></p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="how-inner">
+    <div class="section-head reveal">
+      <div class="section-badge">How It Works</div>
+      <h2 style="color:white;">Simple as it <span style="color:var(--yellow);font-style:italic;">gets.</span></h2>
+      <p style="color:rgba(255,255,255,0.65);">Drop off in person or book a collection — we handle the rest.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-num-wrap"><span>📦</span></div>
+        <h4>Drop Off or Book</h4>
+        <p>Walk in any time we're open, or book a collection online. Takes 30 seconds.</p>
+      </div>
+      <div class="step-card reveal d1">
+        <div class="step-num-wrap"><span>🏷️</span></div>
+        <h4>We Tag & Quote</h4>
+        <p>We label your items and give you an exact price before we start — no hidden charges.</p>
+      </div>
+      <div class="step-card reveal d2">
+        <div class="step-num-wrap"><span>🫧</span></div>
+        <h4>Washed & Finished</h4>
+        <p>Your laundry is cleaned, dried and neatly folded or pressed to a high standard.</p>
+      </div>
+      <div class="step-card reveal d3">
+        <div class="step-num-wrap"><span>✅</span></div>
+        <h4>Collect or Delivered</h4>
+        <p>Pick up in store, or we deliver back to your door. You'll get a text when it's ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY / COLLECTIONS -->
+<section class="collections" id="gallery">
+  <div class="collections-inner">
+    <div class="section-head reveal">
+      <div class="section-badge">The Space</div>
+      <h2>A proper local<br><span>launderette.</span></h2>
+      <p>Bright, clean and always staffed. Never a broken machine, never a queue out the door.</p>
+    </div>
+    <div class="collections-grid">
+      <div class="col-card reveal">
+        <img src="https://images.unsplash.com/photo-1567113463300-102a7eb3cb26?auto=format&fit=crop&w=900&q=80" alt="Launderette interior">
+        <div class="col-overlay"></div>
+        <div class="col-body">
+          <div>
+            <div class="col-title">Self-Service Floor</div>
+            <div class="col-desc">12 washers · 10 dryers · card & coin</div>
+          </div>
+          <div class="col-tag">Always Open</div>
+        </div>
+      </div>
+      <div class="col-card reveal d1">
+        <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=900&q=80" alt="Laundry being folded">
+        <div class="col-overlay"></div>
+        <div class="col-body">
+          <div>
+            <div class="col-title">Full Service</div>
+            <div class="col-desc">We wash, dry, fold & press</div>
+          </div>
+          <div class="col-tag">From €12</div>
+        </div>
+      </div>
+      <div class="col-card reveal d1">
+        <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=900&q=80" alt="Clothes hanging">
+        <div class="col-overlay"></div>
+        <div class="col-body">
+          <div>
+            <div class="col-title">Dry Cleaning</div>
+            <div class="col-desc">Suits, dresses, coats & delicates</div>
+          </div>
+          <div class="col-tag">From €9</div>
+        </div>
+      </div>
+      <div class="col-card reveal d2">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80" alt="Collection van">
+        <div class="col-overlay"></div>
+        <div class="col-body">
+          <div>
+            <div class="col-title">Collection & Delivery</div>
+            <div class="col-desc">Free over €30 · Dublin 7</div>
+          </div>
+          <div class="col-tag">Book Online</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="testimonials" id="reviews">
+  <div class="testimonials-inner">
+    <div class="section-head reveal">
+      <div class="section-badge">Reviews</div>
+      <h2>People love us.<br><span>(Their laundry too.)</span></h2>
+    </div>
+    <div class="reviews-row">
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Absolute lifesaver. I booked a collection Monday morning and everything was back folded and smelling gorgeous by Tuesday evening. I'm never going back to doing it myself."</p>
+        <div class="review-author">
+          <div class="review-avatar">ÁO</div>
+          <div>
+            <div class="review-name">Áine O'Connell</div>
+            <div class="review-loc">Phibsborough · Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal d1">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"They got a red wine stain out of my favourite white shirt that I was convinced was ruined. Don't ask me how. Brilliant staff, always friendly, always ready on time."</p>
+        <div class="review-author">
+          <div class="review-avatar">CM</div>
+          <div>
+            <div class="review-name">Ciarán Murphy</div>
+            <div class="review-loc">Cabra · Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal d2">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I bring my king-size duvet here every few months. The self-service machines are always working, and the place is genuinely spotless. Great value for what you get."</p>
+        <div class="review-author">
+          <div class="review-avatar">SR</div>
+          <div>
+            <div class="review-name">Sarah Ryan</div>
+            <div class="review-loc">Stoneybatter · Google Review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-total reveal">
+      <div class="reviews-total-stars">★★★★★</div>
+      <div>
+        <strong>4.9</strong>
+        <span>Based on 183 Google reviews</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO + MAP -->
+<section class="info-section" id="find-us">
+  <div class="info-inner">
+    <div class="section-head reveal">
+      <div class="section-badge">Find Us</div>
+      <h2>Come say <span>hello.</span></h2>
+      <p>We're right on the main street in Phibsborough. Always staffed, always happy to help.</p>
+    </div>
+    <div class="info-grid">
+      <div class="info-cards">
+        <div class="info-card reveal">
+          <div class="info-card-icon">📍</div>
+          <div>
+            <div class="info-card-label">Address</div>
+            <div class="info-card-val">42 Phibsborough Road<br>Phibsborough, Dublin 7<br>D07 EW24</div>
+          </div>
+        </div>
+        <div class="info-card reveal d1">
+          <div class="info-card-icon">🕐</div>
+          <div>
+            <div class="info-card-label">Opening Hours</div>
+            <div class="open-pill"><span class="open-pip"></span>Open Today</div>
+            <div class="hours-list">
+              <div class="hours-row-item"><strong>Mon – Fri</strong><span>7:00am – 9:00pm</span></div>
+              <div class="hours-row-item"><strong>Saturday</strong><span>8:00am – 8:00pm</span></div>
+              <div class="hours-row-item"><strong>Sunday</strong><span>8:00am – 8:00pm</span></div>
+              <div class="hours-row-item"><strong>Bank Holidays</strong><span>9:00am – 6:00pm</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="info-card reveal d2">
+          <div class="info-card-icon">📞</div>
+          <div>
+            <div class="info-card-label">Contact</div>
+            <div class="info-card-val">
+              <a href="tel:018304422">📞 01 830 4422</a><br>
+              <a href="mailto:hello@sudsy.ie">✉️ hello@sudsy.ie</a><br>
+              <a href="https://instagram.com" target="_blank" rel="noopener">📸 @sudsy.dublin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-card reveal d1">
+        <div class="map-visual">
+          <div class="map-pin-big">📍</div>
+          <div class="map-addr">42 Phibsborough Road, Dublin 7</div>
+        </div>
+        <a href="https://maps.google.com" target="_blank" rel="noopener" class="map-btn">Open in Google Maps →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <div class="cta-strip-left">
+    <h2>Ready for<br>fresh clothes?</h2>
+    <p>Book a collection and we'll have everything back to you clean, folded and smelling great. Free collection on orders over €30.</p>
+  </div>
+  <div class="cta-strip-right">
+    <a href="#contact" class="btn-cta-dark">Book a Collection →</a>
+    <a href="tel:018304422" class="cta-tel">01 830 4422</a>
+  </div>
+</div>
+
+<!-- CONTACT / BOOKING -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="section-head reveal">
+      <div class="section-badge">Book a Collection</div>
+      <h2>Leave it with <span>us.</span></h2>
+      <p>Fill in the form and we'll arrange a convenient collection time. We'll text you confirmation within the hour.</p>
+    </div>
+    <div class="contact-form-wrap reveal">
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="fg">
+            <label for="fname">Your Name</label>
+            <input type="text" id="fname" placeholder="Máire Ní Bhriain" required>
+          </div>
+          <div class="fg">
+            <label for="fphone">Phone Number</label>
+            <input type="tel" id="fphone" placeholder="085 123 4567" required>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="faddress">Collection Address</label>
+          <input type="text" id="faddress" placeholder="14 Connaught Street, Dublin 7">
+        </div>
+        <div class="form-row">
+          <div class="fg">
+            <label for="fservice">Service Needed</label>
+            <select id="fservice">
+              <option value="">Choose...</option>
+              <option>Wash & Fold</option>
+              <option>Wash, Dry & Iron</option>
+              <option>Dry Cleaning</option>
+              <option>Duvets & Bedding</option>
+              <option>Mixed — we'll sort it out</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="ftime">Preferred Time</label>
+            <select id="ftime">
+              <option value="">Any time</option>
+              <option>Morning (8am – 12pm)</option>
+              <option>Afternoon (12pm – 5pm)</option>
+              <option>Evening (5pm – 8pm)</option>
+            </select>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="fnotes">Anything Else?</label>
+          <textarea id="fnotes" placeholder="Any special instructions, stain treatments, or notes about your laundry..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">🫧 Book My Collection</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <div class="ok-emoji">🫧</div>
+        <h3>You're booked in!</h3>
+        <p>We'll text you a confirmation shortly with your collection window. See you soon!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <div class="footer-logo-spin">🫧</div>
+        Sudsy
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#how">How It Works</a>
+        <a href="#find-us">Find Us</a>
+        <a href="#contact">Book</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Sudsy Launderette · 42 Phibsborough Road, Dublin 7</span>
+      <span>Site by <a href="../index.html">Dublin Website Co.</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// BUBBLES
+const wrap = document.getElementById('bubblesWrap');
+for (let i = 0; i < 18; i++) {
+  const b = document.createElement('div');
+  b.className = 'bubble';
+  const size = 20 + Math.random() * 80;
+  b.style.cssText = `
+    width:${size}px; height:${size}px;
+    left:${Math.random() * 100}%;
+    animation-duration:${8 + Math.random() * 14}s;
+    animation-delay:${Math.random() * 12}s;
+  `;
+  wrap.appendChild(b);
+}
+
+// NAV SCROLL
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', scrollY > 20));
+
+// MOBILE NAV
+const toggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+toggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  toggle.setAttribute('aria-expanded', false);
+}));
+
+// SCROLL REVEALS
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// FORM
+document.getElementById('contactForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = document.getElementById('fname').value.trim();
+  const phone = document.getElementById('fphone').value.trim();
+  if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').classList.add('show');
+});
+</script>
+</body>
+</html>

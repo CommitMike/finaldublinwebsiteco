@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slice & Co. — Wood-Fired Pizza, Phibsborough Dublin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-badge">🍕</div>
+    Slice <em>&</em> Co.
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks" role="list">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#find-us">Find Us</a></li>
+    <li><a href="#order" class="nav-order">Order Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-img-wrap">
+    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1800&q=80" alt="Wood-fired pizza fresh from the oven">
+  </div>
+  <div class="hero-checker-strip"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker"><span>✦ Wood-Fired · Phibsborough · Dublin 7 ✦</span></div>
+    <h1>REAL.<br><em>PROPER.</em><br>PIZZA.</h1>
+    <p class="hero-tagline">Made fresh, every single order.</p>
+    <div class="hero-cta-row">
+      <a href="#order" class="btn-order">🍕 Order Now</a>
+      <a href="#menu" class="btn-menu-link">See the Menu →</a>
+    </div>
+  </div>
+  <div class="hero-badge">
+    <div class="hero-badge-text">OPEN<br>DAILY</div>
+    <div class="hero-badge-num">7</div>
+    <div class="hero-badge-text">DAYS<br>A WEEK</div>
+  </div>
+</section>
+
+<!-- TRICOLOUR -->
+<div class="tricolour" role="presentation">
+  <div class="tricolour-g"></div>
+  <div class="tricolour-w"></div>
+  <div class="tricolour-o"></div>
+</div>
+
+<!-- PROMO STRIP -->
+<div class="promo-strip" aria-hidden="true">
+  <div class="promo-inner">
+    <span>Wood-Fired Dough</span>
+    <span>Fresh Daily</span>
+    <span>Dine In & Takeaway</span>
+    <span>Family Deals</span>
+    <span>Gluten-Free Base Available</span>
+    <span>Free Delivery Over €25</span>
+    <span>Wood-Fired Dough</span>
+    <span>Fresh Daily</span>
+    <span>Dine In & Takeaway</span>
+    <span>Family Deals</span>
+    <span>Gluten-Free Base Available</span>
+    <span>Free Delivery Over €25</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-img-stack reveal">
+      <img class="about-img-main" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80" alt="Pizza being made">
+      <img class="about-img-second" src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=600&q=80" alt="Wood-fired oven">
+      <div class="about-stamp">Est. Phibsborough 2017</div>
+    </div>
+    <div class="about-text reveal d1">
+      <p class="eyebrow">Who We Are</p>
+      <h2>NO<br>SHORTCUTS.<br><em>EVER.</em></h2>
+      <p>Slice & Co. was born out of a simple frustration — bad pizza in a city that deserved better. We started with one wood-fired oven, a recipe from Marco's grandmother in Napoli, and an obsession with getting the dough right.</p>
+      <p>Every base is proved for 48 hours. Every sauce is made the same day. Every pizza goes into a 450°C oven. You can taste the difference.</p>
+      <div class="about-facts">
+        <div class="fact-box">
+          <div class="fact-num">48h</div>
+          <div class="fact-label">Dough Prove</div>
+        </div>
+        <div class="fact-box">
+          <div class="fact-num">450°</div>
+          <div class="fact-label">Oven Temp</div>
+        </div>
+        <div class="fact-box">
+          <div class="fact-num">7+</div>
+          <div class="fact-label">Years Open</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="menu-inner">
+    <div class="menu-header reveal">
+      <p class="eyebrow">What We Make</p>
+      <h2 class="menu-title">THE<br><em>MENU</em></h2>
+      <p class="menu-sub">All pizzas available 9" or 12"</p>
+    </div>
+
+    <div class="menu-tabs" role="tablist">
+      <button class="mtab active" data-tab="pizzas" role="tab">🍕 Pizzas</button>
+      <button class="mtab" data-tab="sides" role="tab">🧀 Sides</button>
+      <button class="mtab" data-tab="drinks" role="tab">🥤 Drinks</button>
+    </div>
+
+    <!-- PIZZAS -->
+    <div class="mpanel active" id="tab-pizzas">
+      <div class="pizza-grid">
+
+        <div class="pizza-card reveal">
+          <div class="pizza-emoji">🍕</div>
+          <div class="pizza-name">Margherita</div>
+          <div class="pizza-desc">San Marzano tomato, fior di latte, fresh basil, extra virgin olive oil</div>
+          <div class="pizza-footer">
+            <div class="pizza-sizes">
+              <div class="size-pill">9" <strong>€11</strong></div>
+              <div class="size-pill">12" <strong>€15</strong></div>
+            </div>
+            <span class="pizza-badge pb-veg">Veg</span>
+          </div>
+        </div>
+
+        <div class="pizza-card reveal d1">
+          <div class="pizza-emoji">🔥</div>
+          <div class="pizza-name">Diavola</div>
+          <div class="pizza-desc">Tomato, mozzarella, spicy Calabrian salami, chilli oil, black olives</div>
+          <div class="pizza-footer">
+            <div class="pizza-sizes">
+              <div class="size-pill">9" <strong>€13</strong></div>
+              <div class="size-pill">12" <strong>€17</strong></div>
+            </div>
+            <span class="pizza-badge pb-hot">Spicy</span>
+          </div>
+        </div>
+
+        <div class="pizza-card reveal d2">
+          <div class="pizza-emoji">⭐</div>
+          <div class="pizza-name">The Classic</div>
+          <div class="pizza-desc">Tomato, mozzarella, smoked ham, mushrooms, sweet peppers — our best-seller</div>
+          <div class="pizza-footer">
+            <div class="pizza-sizes">
+              <div class="size-pill">9" <strong>€13</strong></div>
+              <div class="size-pill">12" <strong>€17</strong></div>
+            </div>
+            <span class="pizza-badge pb-best">Best Seller</span>
+          </div>
+        </div>
+
+        <div class="pizza-card reveal">
+          <div class="pizza-emoji">🥩</div>
+          <div class="pizza-name">BBQ Meat Feast</div>
+          <div class="pizza-desc">BBQ base, mozzarella, pulled pork, streaky bacon, red onion, smoked paprika</div>
+          <div class="pizza-footer">
+            <div class="pizza-sizes">
+              <div class="size-pill">9" <strong>€14</strong></div>
+              <div class="size-pill">12" <strong>€18</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza-card reveal d1">
+          <div class="pizza-emoji">🌿</div>
+          <div class="pizza-name">The Green Machine</div>
+          <div class="pizza-desc">Pesto base, mozzarella, roasted courgette, sun-dried tomato, spinach, pine nuts</div>
+          <div class="pizza-footer">
+            <div class="pizza-sizes">
+              <div class="size-pill">9" <strong>€13</strong></div>
+              <div class="size-pill">12" <strong>€17</strong></div>
+            </div>
+            <span class="pizza-badge pb-veg">Vegan option</span>
+          </div>
+        </div>
+
+        <div class="pizza-card reveal d2">
+          <div class="pizza-emoji">🍗</div>
+          <div class="pizza-name">Chicken Ranch</div>
+          <div class="pizza-desc">Ranch base, mozzarella, grilled chicken, crispy bacon bits, spring onion, sweet corn</div>
+          <div class="pizza-footer">
+            <div class="pizza-sizes">
+              <div class="size-pill">9" <strong>€14</strong></div>
+              <div class="size-pill">12" <strong>€18</strong></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <p style="text-align:center;margin-top:24px;font-size:13px;color:rgba(250,243,224,0.35);font-style:italic;">Gluten-free base +€2.50 · Vegan cheese available · Ask about half & half</p>
+    </div>
+
+    <!-- SIDES -->
+    <div class="mpanel" id="tab-sides">
+      <div class="sides-grid">
+        <div class="side-row reveal">
+          <div><div class="side-name">Garlic Bread</div><div class="side-desc">Toasted, butter, garlic, parsley</div></div>
+          <div class="side-price">€4.50</div>
+        </div>
+        <div class="side-row reveal d1">
+          <div><div class="side-name">Cheesy Garlic Bread</div><div class="side-desc">Same as above, buried in mozzarella</div></div>
+          <div class="side-price">€5.50</div>
+        </div>
+        <div class="side-row reveal">
+          <div><div class="side-name">Dough Balls (8)</div><div class="side-desc">Soft, pillowy, with garlic butter dip</div></div>
+          <div class="side-price">€5.00</div>
+        </div>
+        <div class="side-row reveal d1">
+          <div><div class="side-name">Arancini (4)</div><div class="side-desc">Crispy risotto balls, tomato sauce</div></div>
+          <div class="side-price">€6.00</div>
+        </div>
+        <div class="side-row reveal">
+          <div><div class="side-name">Wedges</div><div class="side-desc">Seasoned potato wedges, sour cream</div></div>
+          <div class="side-price">€4.00</div>
+        </div>
+        <div class="side-row reveal d1">
+          <div><div class="side-name">Side Salad</div><div class="side-desc">Mixed leaves, cherry tomato, balsamic</div></div>
+          <div class="side-price">€4.50</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DRINKS -->
+    <div class="mpanel" id="tab-drinks">
+      <div class="drinks-grid">
+        <div class="drink-card reveal"><div class="drink-icon">🥤</div><div class="drink-name">Soft Drinks</div><div class="drink-price">€2.50</div></div>
+        <div class="drink-card reveal d1"><div class="drink-icon">💧</div><div class="drink-name">Still Water</div><div class="drink-price">€1.50</div></div>
+        <div class="drink-card reveal d2"><div class="drink-icon">🍺</div><div class="drink-name">Peroni (330ml)</div><div class="drink-price">€4.50</div></div>
+        <div class="drink-card reveal d3"><div class="drink-icon">🍷</div><div class="drink-name">House Wine (Glass)</div><div class="drink-price">€6.00</div></div>
+        <div class="drink-card reveal"><div class="drink-icon">🧃</div><div class="drink-name">Fruit Juice</div><div class="drink-price">€2.50</div></div>
+        <div class="drink-card reveal d1"><div class="drink-icon">☕</div><div class="drink-name">Coffee</div><div class="drink-price">€3.00</div></div>
+        <div class="drink-card reveal d2"><div class="drink-icon">🍦</div><div class="drink-name">Gelato (2 scoops)</div><div class="drink-price">€4.50</div></div>
+        <div class="drink-card reveal d3"><div class="drink-icon">🫖</div><div class="drink-name">Tea</div><div class="drink-price">€2.50</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHONE CTA -->
+<div class="phone-cta">
+  <div class="phone-cta-left reveal">
+    <h2>PREFER TO CALL IT IN?</h2>
+    <p>No apps, no fuss. Just ring us and we'll have your order ready. Collection in 20 minutes or delivery in 35.</p>
+  </div>
+  <div class="reveal d1">
+    <p class="phone-label">Call to Order</p>
+    <a href="tel:018301122" class="phone-num">01 830 1122</a>
+  </div>
+</div>
+
+<!-- INFO -->
+<section class="info-row-section" id="find-us">
+  <div class="info-row-inner">
+    <div class="info-col reveal">
+      <div class="info-col-icon">📍</div>
+      <h3>Find Us</h3>
+      <p>42 Phibsborough Road<br>Phibsborough, Dublin 7<br>D07 AW22</p>
+      <br>
+      <a href="https://maps.google.com" target="_blank" rel="noopener" style="color:var(--red);font-weight:700;">Get Directions →</a>
+    </div>
+    <div class="info-col reveal d1">
+      <div class="info-col-icon">🕐</div>
+      <h3>Opening Hours</h3>
+      <div class="open-badge"><span class="open-dot"></span> Open Now</div>
+      <div class="hours-line"><strong>Mon – Thu</strong><span>4:00pm – 10:30pm</span></div>
+      <div class="hours-line"><strong>Fri</strong><span>3:00pm – 11:30pm</span></div>
+      <div class="hours-line"><strong>Sat</strong><span>1:00pm – 11:30pm</span></div>
+      <div class="hours-line"><strong>Sun</strong><span>1:00pm – 10:00pm</span></div>
+    </div>
+    <div class="info-col reveal d2">
+      <div class="info-col-icon">📞</div>
+      <h3>Order & Enquire</h3>
+      <a href="tel:018301122" style="font-weight:800;font-size:20px;color:var(--red);">01 830 1122</a>
+      <br>
+      <a href="mailto:hello@sliceandco.ie">hello@sliceandco.ie</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener">@sliceandcodublin</a>
+      <br><br>
+      <p style="font-size:13px;">Free delivery on orders over €25 within 3km. Collection always free. Minimum order €10.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER FORM -->
+<section class="order-section" id="order">
+  <div class="order-inner">
+    <p class="eyebrow" style="justify-content:center;">Online Order</p>
+    <h2 class="order-title reveal">ORDER<br><em>ONLINE</em></h2>
+    <p class="order-note reveal">Fill in your details and we'll confirm your order by text within 5 minutes. Collection or delivery available.</p>
+    <div class="order-form-box reveal">
+      <form id="orderForm" novalidate>
+        <div class="form-grid2">
+          <div class="fg">
+            <label for="oname">Your Name</label>
+            <input type="text" id="oname" placeholder="Niamh O'Sullivan" required>
+          </div>
+          <div class="fg">
+            <label for="ophone">Phone Number</label>
+            <input type="tel" id="ophone" placeholder="085 123 4567" required>
+          </div>
+          <div class="fg">
+            <label for="otype">Collection or Delivery?</label>
+            <select id="otype" id="otype">
+              <option value="">Choose...</option>
+              <option>Collection (ready in ~20 mins)</option>
+              <option>Delivery (€2 charge, ~35 mins)</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="otime">Preferred Time</label>
+            <select id="otime">
+              <option value="">ASAP</option>
+              <option>30 minutes</option>
+              <option>45 minutes</option>
+              <option>1 hour</option>
+              <option>1.5 hours</option>
+            </select>
+          </div>
+          <div class="fg span2">
+            <label for="oaddress">Delivery Address (if applicable)</label>
+            <input type="text" id="oaddress" placeholder="12 Any Street, Phibsborough, Dublin 7">
+          </div>
+          <div class="fg span2">
+            <label for="oorder">Your Order</label>
+            <textarea id="oorder" placeholder="e.g. 1x Diavola 12&quot;, 1x Classic 9&quot;, 2x Dough Balls, 2x Peroni..." required></textarea>
+          </div>
+        </div>
+        <button type="submit" class="form-submit2">🍕 Place My Order</button>
+        <p class="form-tiny">We'll confirm by text. Pay on collection or at the door. Card & cash accepted.</p>
+      </form>
+      <div class="order-success" id="orderSuccess">
+        <div class="order-success-icon">🍕</div>
+        <h3>ORDER IN!</h3>
+        <p>We'll text you a confirmation shortly. Get ready — it's going to be good.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-name">Slice <em>&</em> Co.</div>
+        <p>Wood-fired pizza made with proper ingredients, no shortcuts, and a whole lot of love. Feeding Phibsborough since 2017.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#menu">The Menu</a>
+        <a href="#about">Our Story</a>
+        <a href="#find-us">Find Us</a>
+        <a href="#order">Order Online</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:018301122">01 830 1122</a>
+        <a href="mailto:hello@sliceandco.ie">hello@sliceandco.ie</a>
+        <a href="#">@sliceandcodublin</a>
+        <a href="https://maps.google.com" target="_blank" rel="noopener">42 Phibsborough Rd, D7</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Slice & Co. All rights reserved.</span>
+      <span>Site by <a href="../index.html">Dublin Website Co.</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// NAV
+const navbar = document.getElementById('navbar');
+const toggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+toggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  toggle.setAttribute('aria-expanded', false);
+}));
+
+// MENU TABS
+document.querySelectorAll('.mtab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.mtab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+    document.querySelectorAll('.mpanel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected','true');
+    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+// SCROLL REVEALS
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// ORDER FORM
+document.getElementById('orderForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = document.getElementById('oname').value.trim();
+  const phone = document.getElementById('ophone').value.trim();
+  const order = document.getElementById('oorder').value.trim();
+  if (!name || !phone || !order) { alert('Please fill in your name, phone number and order details.'); return; }
+  document.getElementById('orderForm').style.display = 'none';
+  document.getElementById('orderSuccess').classList.add('show');
+});
+</script>
+</body>
+</html>

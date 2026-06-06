@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malone's Garage — Dublin Car Servicing & Repairs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="tb-left">
+      <span>📍 Crumlin, Dublin 12</span>
+      <span class="tb-sep">|</span>
+      <span>Mon–Fri 8am–6pm · Sat 9am–3pm</span>
+    </div>
+    <a href="tel:014567890" class="tb-phone">📞 01 456 7890</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="19" cy="19" r="18" stroke="#E8651A" stroke-width="1.5"/>
+        <circle cx="19" cy="19" r="11" stroke="#E8651A" stroke-width="1" opacity="0.4"/>
+        <circle cx="19" cy="19" r="4" fill="#E8651A"/>
+        <line x1="19" y1="1" x2="19" y2="8" stroke="#E8651A" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="19" y1="30" x2="19" y2="37" stroke="#E8651A" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="1" y1="19" x2="8" y2="19" stroke="#E8651A" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="30" y1="19" x2="37" y2="19" stroke="#E8651A" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="5.4" y1="5.4" x2="10.4" y2="10.4" stroke="#E8651A" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="27.6" y1="27.6" x2="32.6" y2="32.6" stroke="#E8651A" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="32.6" y1="5.4" x2="27.6" y2="10.4" stroke="#E8651A" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="10.4" y1="27.6" x2="5.4" y2="32.6" stroke="#E8651A" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <span class="lt-main">Malone's</span>
+      <span class="lt-sub">Garage · Dublin 12</span>
+    </div>
+  </a>
+  <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#nct">NCT Prep</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#booking" class="nav-cta">Book a Service</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=1800&q=80" alt="Mechanic working on a car">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-label reveal">
+      <span class="label-line"></span>
+      Family-run · Crumlin · Est. 1987
+    </div>
+    <h1 class="reveal r1">
+      Your car,<br>
+      looked after<br>
+      <em>properly.</em>
+    </h1>
+    <p class="hero-sub reveal r2">Honest car servicing, repairs and NCT preparation in Dublin 12. No jargon, no inflated quotes — just straight-talking mechanics who know their stuff.</p>
+    <div class="hero-actions reveal r2">
+      <a href="#booking" class="btn-orange">Book a Service</a>
+      <a href="tel:014567890" class="btn-ghost-white">📞 01 456 7890</a>
+    </div>
+  </div>
+  <div class="hero-trust-bar">
+    <div class="htb-item reveal">
+      <span class="htb-icon">🔧</span>
+      <div>
+        <strong>All Makes & Models</strong>
+        <span>Petrol, diesel & hybrid</span>
+      </div>
+    </div>
+    <div class="htb-div"></div>
+    <div class="htb-item reveal r1">
+      <span class="htb-icon">📋</span>
+      <div>
+        <strong>Upfront Quotes</strong>
+        <span>No surprises on the invoice</span>
+      </div>
+    </div>
+    <div class="htb-div"></div>
+    <div class="htb-item reveal r2">
+      <span class="htb-icon">✅</span>
+      <div>
+        <strong>SIMI Approved</strong>
+        <span>Registered & accredited</span>
+      </div>
+    </div>
+    <div class="htb-div"></div>
+    <div class="htb-item reveal r3">
+      <span class="htb-icon">🚗</span>
+      <div>
+        <strong>Courtesy Car</strong>
+        <span>Available on request</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-top reveal">
+      <div>
+        <span class="eyebrow">What We Do</span>
+        <h2>Everything your car<br><em>needs under one roof.</em></h2>
+      </div>
+      <p>From a simple oil change to a full engine rebuild — we've been fixing Dublin's cars since 1987. Family-run, no franchises, no nonsense.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="svc-card reveal">
+        <div class="svc-num">01</div>
+        <div class="svc-icon">🔩</div>
+        <h3>Full Car Service</h3>
+        <p>Our full service covers 50+ checks including oil & filter change, brake inspection, tyre condition, fluid top-ups, battery health and more.</p>
+        <div class="svc-price">From <strong>€89</strong></div>
+        <a href="#booking" class="svc-link">Book now →</a>
+      </div>
+
+      <div class="svc-card reveal r1">
+        <div class="svc-num">02</div>
+        <div class="svc-icon">🛑</div>
+        <h3>Brakes & Tyres</h3>
+        <p>Brake pad and disc replacement, brake fluid flush, tyre fitting and balancing, TPMS reset. Safety-critical work done right.</p>
+        <div class="svc-price">From <strong>€45</strong></div>
+        <a href="#booking" class="svc-link">Book now →</a>
+      </div>
+
+      <div class="svc-card reveal r2">
+        <div class="svc-num">03</div>
+        <div class="svc-icon">🔍</div>
+        <h3>Diagnostics</h3>
+        <p>Engine management light on? We use the latest OBD diagnostic tools to identify faults quickly and accurately across all makes and models.</p>
+        <div class="svc-price">From <strong>€55</strong></div>
+        <a href="#booking" class="svc-link">Book now →</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-num">04</div>
+        <div class="svc-icon">📋</div>
+        <h3>NCT Preparation</h3>
+        <p>Pre-NCT check and report — we'll identify everything your car needs to pass before you go in, so there are no surprises on test day.</p>
+        <div class="svc-price">From <strong>€49</strong></div>
+        <a href="#booking" class="svc-link">Book now →</a>
+      </div>
+
+      <div class="svc-card reveal r1">
+        <div class="svc-num">05</div>
+        <div class="svc-icon">❄️</div>
+        <h3>Air Conditioning</h3>
+        <p>AC regas, leak detection, compressor repair and full aircon system service. Keep your car comfortable year-round.</p>
+        <div class="svc-price">From <strong>€65</strong></div>
+        <a href="#booking" class="svc-link">Book now →</a>
+      </div>
+
+      <div class="svc-card reveal r2">
+        <div class="svc-num">06</div>
+        <div class="svc-icon">⚙️</div>
+        <h3>Engine & Gearbox</h3>
+        <p>Clutch replacement, timing belt and chain, engine mounts, gearbox repairs. Bigger jobs done properly with quality parts and a warranty.</p>
+        <div class="svc-price">Price on enquiry</div>
+        <a href="#booking" class="svc-link">Get a quote →</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-num">07</div>
+        <div class="svc-icon">💧</div>
+        <h3>Exhausts & Cooling</h3>
+        <p>Exhaust repair and replacement, catalytic converter, radiator flush, coolant system repairs — keeping your engine running at the right temperature.</p>
+        <div class="svc-price">From <strong>€75</strong></div>
+        <a href="#booking" class="svc-link">Book now →</a>
+      </div>
+
+      <div class="svc-card reveal r1">
+        <div class="svc-num">08</div>
+        <div class="svc-icon">🔋</div>
+        <h3>Electrics & Battery</h3>
+        <p>Battery testing and replacement, starter motor, alternator, wiring faults, central locking and window regulators. We have the kit to sort it.</p>
+        <div class="svc-price">From <strong>€45</strong></div>
+        <a href="#booking" class="svc-link">Book now →</a>
+      </div>
+
+      <div class="svc-card reveal r2">
+        <div class="svc-num">09</div>
+        <div class="svc-icon">🌿</div>
+        <h3>Hybrid Servicing</h3>
+        <p>Approved hybrid servicing for Toyota, Honda, Hyundai and more. High-voltage trained technicians, specialist equipment on-site.</p>
+        <div class="svc-price">From <strong>€99</strong></div>
+        <a href="#booking" class="svc-link">Book now →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NCT SECTION -->
+<section class="nct-section" id="nct">
+  <div class="container">
+    <div class="nct-inner">
+      <div class="nct-left reveal">
+        <span class="eyebrow eyebrow-light">NCT Prep</span>
+        <h2>Pass your NCT<br><em>first time.</em></h2>
+        <p>The most common NCT failures in Ireland are things we catch every time — brake wear, tyre condition, lighting faults, emissions and suspension. Book a pre-NCT check and we'll run through all of it before your test date.</p>
+        <p>We'll give you a written report of exactly what needs fixing, what can wait, and an honest quote for anything that needs attention. No unnecessary work recommended — ever.</p>
+        <div class="nct-checklist">
+          <div class="nct-item"><span>✓</span> Lighting & electrical</div>
+          <div class="nct-item"><span>✓</span> Tyres & wheels</div>
+          <div class="nct-item"><span>✓</span> Brakes & steering</div>
+          <div class="nct-item"><span>✓</span> Suspension & chassis</div>
+          <div class="nct-item"><span>✓</span> Engine & emissions</div>
+          <div class="nct-item"><span>✓</span> Bodywork & glass</div>
+        </div>
+        <a href="#booking" class="btn-orange">Book Pre-NCT Check — €49 →</a>
+      </div>
+      <div class="nct-right reveal r2">
+        <img src="https://images.unsplash.com/photo-1580274455191-1c62238fa333?auto=format&fit=crop&w=800&q=80" alt="Car being inspected">
+        <div class="nct-stat-card">
+          <strong>87%</strong>
+          <span>of our NCT-prepped cars pass first time</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY MALONE'S -->
+<section class="why-us">
+  <div class="container">
+    <div class="why-header reveal">
+      <span class="eyebrow">Why Malone's</span>
+      <h2>We've been doing this<br>since <em>before you could Google it.</em></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="wc-icon">🤝</div>
+        <h4>Honest, always</h4>
+        <p>We'll tell you exactly what's wrong, what it'll cost, and whether it's urgent. If you don't need it, we won't recommend it.</p>
+      </div>
+      <div class="why-card reveal r1">
+        <div class="wc-icon">📞</div>
+        <h4>We actually answer the phone</h4>
+        <p>Call us during opening hours and a real person picks up. No phone trees, no "press 1 for this", no waiting on hold.</p>
+      </div>
+      <div class="why-card reveal r2">
+        <div class="wc-icon">💰</div>
+        <h4>Fair pricing, always written down</h4>
+        <p>You'll get a written quote before we touch the car. Nothing gets done without your approval. No surprise extras.</p>
+      </div>
+      <div class="why-card reveal r3">
+        <div class="wc-icon">🚗</div>
+        <h4>Courtesy car available</h4>
+        <p>Leaving your car in for the day? We have a courtesy car available at no extra charge — just let us know when you book.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="wc-icon">⚡</div>
+        <h4>Same-day service on most jobs</h4>
+        <p>Drop in before 10am and most standard services and repairs will be ready the same day. We know you need your car.</p>
+      </div>
+      <div class="why-card reveal r1">
+        <div class="wc-icon">🛡️</div>
+        <h4>12-month parts & labour warranty</h4>
+        <p>All repairs come with a 12-month warranty on both parts and labour. If something we fixed goes wrong, we fix it again. Simple.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-imgs reveal">
+        <div class="ab-main">
+          <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80" alt="Mechanic at work">
+        </div>
+        <div class="ab-accent">
+          <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=600&q=80" alt="Engine work">
+        </div>
+        <div class="ab-years">
+          <strong>37</strong>
+          <span>Years<br>Serving<br>Dublin</span>
+        </div>
+      </div>
+      <div class="about-text reveal r1">
+        <span class="eyebrow">Our Story</span>
+        <h2>Three generations.<br>One <em>standard.</em></h2>
+        <p>Malone's Garage opened on Crumlin Road in 1987. Seamus Malone started it with a single ramp and a reputation built on word of mouth. His son Declan joined in 2003, and Declan's daughter Orla completed her apprenticeship with us in 2021.</p>
+        <p>We've never chased growth for the sake of it. We're still the same workshop — just with better tools, more experience, and a lot of long-term customers who've been bringing us their cars for decades.</p>
+        <div class="about-team">
+          <div class="team-card">
+            <div class="tc-avatar">SD</div>
+            <div>
+              <strong>Seamus Doyle</strong>
+              <span>Master Technician · Founder</span>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="tc-avatar">DD</div>
+            <div>
+              <strong>Declan Doyle</strong>
+              <span>Senior Mechanic · Diagnostics</span>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="tc-avatar">OD</div>
+            <div>
+              <strong>Orla Doyle</strong>
+              <span>Technician · Hybrid Specialist</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-creds">
+          <span>SIMI Member</span>
+          <span>ATA Accredited</span>
+          <span>12-Month Warranty</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="reviews-header reveal">
+      <span class="eyebrow">Reviews</span>
+      <h2>Don't take our<br>word for <em>it.</em></h2>
+      <div class="reviews-overall">
+        <span class="ro-stars">★★★★★</span>
+        <strong>4.9</strong>
+        <span>Based on 290+ Google reviews</span>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="rc-stars">★★★★★</div>
+        <p>"Been going to Malone's for 12 years. Never once felt like I was being sold something I didn't need. Declan is straight as an arrow — tells you exactly what's what and never overcharges. Would trust no one else with my car."</p>
+        <div class="rc-author">
+          <div class="rc-av">MP</div>
+          <div><strong>Micheál P.</strong><span>Crumlin · 12 years a customer</span></div>
+        </div>
+      </div>
+      <div class="review-card reveal r1">
+        <div class="rc-stars">★★★★★</div>
+        <p>"Brought my Hyundai in with the engine light on — another garage had quoted me €600 for a sensor. Malone's diagnosed it as a loose connector, fixed in 10 minutes, charged me €35. That's why I'll never go anywhere else."</p>
+        <div class="rc-author">
+          <div class="rc-av">SF</div>
+          <div><strong>Sinéad F.</strong><span>Drimnagh · Google Review</span></div>
+        </div>
+      </div>
+      <div class="review-card reveal r2">
+        <div class="rc-stars">★★★★★</div>
+        <p>"Pre-NCT check saved me a fortune. Orla spotted a brake issue I wouldn't have known about, fixed it for €90, and my car sailed through the test. Extremely professional, really reasonable pricing. Highly recommend."</p>
+        <div class="rc-author">
+          <div class="rc-av">KO</div>
+          <div><strong>Kevin O'B.</strong><span>Walkinstown · Google Review</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TABLE -->
+<section class="pricing">
+  <div class="container">
+    <div class="pricing-header reveal">
+      <span class="eyebrow">Pricing</span>
+      <h2>Transparent prices.<br><em>No nasty surprises.</em></h2>
+      <p>All prices are starting rates. A written quote is issued before any work begins.</p>
+    </div>
+    <div class="pricing-table reveal">
+      <div class="pt-row pt-head">
+        <span>Service</span>
+        <span>Typical Duration</span>
+        <span>Starting Price</span>
+        <span></span>
+      </div>
+      <div class="pt-row">
+        <span>Full Car Service (Oil, Filter + 50 Checks)</span>
+        <span>2–3 hours</span>
+        <span class="pt-price">€89</span>
+        <a href="#booking" class="pt-book">Book</a>
+      </div>
+      <div class="pt-row">
+        <span>Minor Service (Oil & Filter Only)</span>
+        <span>45 mins</span>
+        <span class="pt-price">€55</span>
+        <a href="#booking" class="pt-book">Book</a>
+      </div>
+      <div class="pt-row">
+        <span>Pre-NCT Inspection & Report</span>
+        <span>1.5 hours</span>
+        <span class="pt-price">€49</span>
+        <a href="#booking" class="pt-book">Book</a>
+      </div>
+      <div class="pt-row">
+        <span>Brake Pads (Front or Rear, per axle)</span>
+        <span>1 hour</span>
+        <span class="pt-price">€85</span>
+        <a href="#booking" class="pt-book">Book</a>
+      </div>
+      <div class="pt-row">
+        <span>Diagnostics / Engine Light</span>
+        <span>1 hour</span>
+        <span class="pt-price">€55</span>
+        <a href="#booking" class="pt-book">Book</a>
+      </div>
+      <div class="pt-row">
+        <span>Tyre Fitting & Balancing (per tyre)</span>
+        <span>30 mins</span>
+        <span class="pt-price">€20</span>
+        <a href="#booking" class="pt-book">Book</a>
+      </div>
+      <div class="pt-row">
+        <span>Air Conditioning Regas</span>
+        <span>1 hour</span>
+        <span class="pt-price">€65</span>
+        <a href="#booking" class="pt-book">Book</a>
+      </div>
+      <div class="pt-row">
+        <span>Battery Replacement</span>
+        <span>30 mins</span>
+        <span class="pt-price">€85</span>
+        <a href="#booking" class="pt-book">Book</a>
+      </div>
+      <div class="pt-row">
+        <span>Clutch Replacement</span>
+        <span>4–6 hours</span>
+        <span class="pt-price">From €320</span>
+        <a href="#booking" class="pt-book">Quote</a>
+      </div>
+    </div>
+    <p class="pricing-note reveal">All prices include VAT. Parts cost extra and will be quoted separately before work begins. Labour rate €75/hr.</p>
+  </div>
+</section>
+
+<!-- BOOKING / CONTACT -->
+<section class="booking" id="booking">
+  <div class="container">
+    <div class="booking-grid">
+      <div class="booking-left reveal">
+        <span class="eyebrow">Book a Service</span>
+        <h2>Get booked in<br><em>today.</em></h2>
+        <p>Fill in the form and we'll confirm your booking by phone or email within a few hours. Prefer to call? We're on <a href="tel:014567890" style="color:var(--orange);font-weight:600;">01 456 7890</a>.</p>
+        <div class="booking-info">
+          <div class="bi-item">
+            <span>📍</span>
+            <div>
+              <strong>Address</strong>
+              <span>48 Crumlin Road, Dublin 12, D12 F8X2</span>
+            </div>
+          </div>
+          <div class="bi-item">
+            <span>🕐</span>
+            <div>
+              <strong>Opening Hours</strong>
+              <span>Mon–Fri: 8:00am – 6:00pm<br>Saturday: 9:00am – 3:00pm<br>Sunday: Closed</span>
+            </div>
+          </div>
+          <div class="bi-item">
+            <span>📞</span>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:014567890">01 456 7890</a>
+            </div>
+          </div>
+          <div class="bi-item">
+            <span>✉</span>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:info@malonesgarage.ie">info@malonesgarage.ie</a>
+            </div>
+          </div>
+        </div>
+        <div class="drop-in-note">
+          <span>🔧</span>
+          <p><strong>Walk-ins welcome</strong> — if it's something quick like a bulb, tyre check or battery test, just drop in during opening hours.</p>
+        </div>
+      </div>
+
+      <div class="booking-form reveal r1">
+        <form id="bookingForm" novalidate>
+          <h3>Request a Booking</h3>
+          <div class="fg-row">
+            <div class="fg">
+              <label for="bname">Your Name *</label>
+              <input type="text" id="bname" placeholder="Full name" required>
+            </div>
+            <div class="fg">
+              <label for="bphone">Phone *</label>
+              <input type="tel" id="bphone" placeholder="085 123 4567" required>
+            </div>
+          </div>
+          <div class="fg">
+            <label for="bemail">Email</label>
+            <input type="email" id="bemail" placeholder="your@email.com">
+          </div>
+          <div class="fg-row">
+            <div class="fg">
+              <label for="bmake">Car Make & Model *</label>
+              <input type="text" id="bmake" placeholder="e.g. Toyota Corolla" required>
+            </div>
+            <div class="fg">
+              <label for-="byear">Year</label>
+              <input type="text" id="byear" placeholder="e.g. 2019">
+            </div>
+          </div>
+          <div class="fg">
+            <label for="bservice">Service Required *</label>
+            <select id="bservice" required>
+              <option value="">Select...</option>
+              <option>Full Car Service</option>
+              <option>Minor Service (Oil & Filter)</option>
+              <option>Pre-NCT Inspection</option>
+              <option>Brakes or Tyres</option>
+              <option>Diagnostics / Engine Light</option>
+              <option>Air Conditioning</option>
+              <option>Engine / Gearbox Work</option>
+              <option>Exhaust or Cooling</option>
+              <option>Electrics / Battery</option>
+              <option>Hybrid Servicing</option>
+              <option>Not sure — need advice</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="bdate">Preferred Date</label>
+            <input type="date" id="bdate">
+          </div>
+          <div class="fg">
+            <label for="bnotes">Anything else we should know?</label>
+            <textarea id="bnotes" placeholder="Describe any symptoms, warning lights, or anything unusual your car is doing..."></textarea>
+          </div>
+          <div class="fg courtesy-row">
+            <input type="checkbox" id="bcourtesy">
+            <label for="bcourtesy">I'd like to request a courtesy car</label>
+          </div>
+          <button type="submit" class="btn-submit">Send Booking Request →</button>
+        </form>
+        <div class="form-ok" id="formOk">
+          <div class="ok-icon">🔧</div>
+          <strong>Booking request received!</strong>
+          <p>We'll call or email you to confirm within a few hours. If it's urgent, call us directly on <a href="tel:014567890">01 456 7890</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Malone's <em>Garage</em></div>
+      <p>Honest car servicing & repairs in Crumlin, Dublin 12. Family-run since 1987.</p>
+      <div class="footer-creds">
+        <span>SIMI</span>
+        <span>ATA</span>
+        <span>12-Mo Warranty</span>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Car Servicing</a></li>
+        <li><a href="#services">Brakes & Tyres</a></li>
+        <li><a href="#services">Diagnostics</a></li>
+        <li><a href="#nct">NCT Preparation</a></li>
+        <li><a href="#services">Hybrid Servicing</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Garage</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#booking">Book a Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Find Us</h4>
+      <ul>
+        <li><a href="#">48 Crumlin Road</a></li>
+        <li><a href="#">Dublin 12, D12 F8X2</a></li>
+        <li><a href="tel:014567890">01 456 7890</a></li>
+        <li><a href="mailto:info@malonesgarage.ie">info@malonesgarage.ie</a></li>
+        <li><a href="#">Mon–Fri 8am–6pm</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container fbot-inner">
+      <span>© 2026 Malone's Garage Ltd. All rights reserved. Registered in Ireland.</span>
+      <span class="dwc">Site by <a href="../../index.html">Dublin Website Co.</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* NAV */
+const nav = document.getElementById('nav');
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50));
+burger.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  burger.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', open);
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  burger.classList.remove('open');
+}));
+
+/* REVEALS */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* FORM */
+document.getElementById('bookingForm').addEventListener('submit', e => {
+  e.preventDefault();
+  if (!document.getElementById('bname').value.trim() ||
+      !document.getElementById('bphone').value.trim() ||
+      !document.getElementById('bservice').value) return;
+  document.getElementById('bookingForm').style.opacity = '0';
+  setTimeout(() => {
+    document.getElementById('bookingForm').style.display = 'none';
+    document.getElementById('formOk').style.display = 'flex';
+  }, 300);
+});
+</script>
+</body>
+</html>
