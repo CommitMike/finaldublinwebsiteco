@@ -257,6 +257,7 @@ h4 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   padding: 32px 28px;
+  position: relative; /* Added to support absolute positioning of badge if needed */
 }
 .pricing-card:hover { box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
 .pricing-card.featured { border: 2px solid var(--green); }
@@ -270,10 +271,15 @@ h4 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
 .pricing-header { text-align: center; padding-bottom: 20px; border-bottom: 1px solid var(--line); margin-bottom: 20px; }
 .pricing-header h3 { font-family: var(--serif); font-size: 22px; margin-bottom: 6px; }
 .pricing-header p { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
-.price { display: flex; align-items: baseline; justify-content: center; gap: 4px; }
+
+/* Updated price layout to accommodate old prices nicely */
+.price { display: flex; align-items: baseline; justify-content: center; gap: 6px; flex-wrap: wrap; }
+.old-price { text-decoration: line-through; color: var(--muted); font-size: 18px; margin-right: 4px; font-weight: 500; }
+.old-price .currency { font-size: 14px; color: var(--muted); }
+
 .currency { font-size: 22px; font-weight: 600; color: var(--ink); }
 .amount { font-family: var(--serif); font-size: 52px; line-height: 1; color: var(--ink); }
-.period { font-size: 13px; color: var(--muted); }
+.period { font-size: 13px; color: var(--muted); margin-left: 2px; }
 .pricing-features { flex: 1; }
 .pricing-features li {
   padding: 9px 0; font-size: 14px; color: var(--mid);
