@@ -213,6 +213,35 @@ h4 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
 .process-step:hover .step-num { background: var(--green); color: #fff; }
 .process-step p { font-size: 13px; font-weight: 300; color: var(--mid); line-height: 1.6; }
 
+/* ── EXAMPLES ────────────────────────────────── */
+#examples {
+  padding: 100px 0;
+}
+
+#examples .container {
+  display: flex;
+  flex-direction: column; /* Stacked vertically on small/medium screens */
+  align-items: center;    /* Center everything horizontally when stacked */
+  text-align: center;     /* Center text lines inside the section header */
+  gap: 32px;              /* Adds clean spacing between the text and button */
+}
+
+/* Target large screens (Laptops and Desktops) */
+@media (min-width: 1025px) {
+  #examples .container {
+    flex-direction: row;             /* Switch to a side-by-side row */
+    justify-content: space-between;  /* Pushes text to the left, button to the right */
+    align-items: center;             /* Vertically aligns them perfectly in the center */
+    text-align: left;                /* Flushes text cleanly to the left on desktop */
+  }
+  
+  /* Keeps the text wrapper from expanding too wide on desktop */
+  #examples .section-header {
+    margin-bottom: 0; 
+    max-width: 680px;
+  }
+}
+
 /* ── PRICING ─────────────────────────────────── */
 .pricing-grid {
   display: grid;
@@ -462,6 +491,7 @@ footer { border-top: 1px solid var(--line); background: var(--ink); }
   .footer-bottom-inner { flex-direction: column; text-align: center; }
   .cookie-inner { padding: 16px 20px; }
   .back-to-top { bottom: 20px; right: 20px; }
+
 }
 @media (max-width: 480px) {
   .hero-actions { flex-direction: column; align-items: flex-start; }
