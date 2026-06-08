@@ -167,9 +167,4 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// nav scroll
-window.addEventListener('scroll', () =>
-  document.getElementById('nav').classList.toggle('scrolled', scrollY > 20)
-);
-
 render();
