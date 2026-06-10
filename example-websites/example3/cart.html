@@ -104,6 +104,7 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);}
 }
 
 </style>
+<link rel="stylesheet" href="css/theme.css">
 </head>
 <body>
 
@@ -197,7 +198,7 @@ function renderCart() {
         <div class="cart-items">
           ${cart.map(item => `
             <div class="cart-item">
-              <img src="${item.image}" alt="${item.name}">
+              <div class="cart-art">${item.art || `<img src="${item.image}" alt="${item.name}">`}</div>
               <div>
                 <div class="cart-item-name">${item.name}</div>
                 <div class="cart-item-meta">${item.size} · ${item.color}</div>

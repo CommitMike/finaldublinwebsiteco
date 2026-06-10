@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://js.stripe.com/v3/"></script>
 <style>
 
 :root{
@@ -35,49 +36,54 @@ p{color:var(--muted);line-height:1.7;}
 
 .checkout-header{padding:60px 0 30px;}
 .checkout-header h1{font-size:clamp(48px,8vw,100px);line-height:0.9;}
-
 .checkout-layout{display:grid;grid-template-columns:1fr 420px;gap:50px;padding-bottom:100px;align-items:start;}
 
-/* FORM */
-.form-card{background:white;border-radius:30px;padding:36px;border:1px solid rgba(0,0,0,0.05);}
-.form-section-title{font-size:24px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--line);}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
-.form-group{margin-bottom:16px;}
-.form-group label{display:block;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;}
-.form-group input,.form-group select{width:100%;padding:16px 18px;border:1px solid var(--line);border-radius:14px;font-family:Inter,sans-serif;font-size:15px;background:white;outline:none;transition:border-color 0.2s;}
-.form-group input:focus,.form-group select:focus{border-color:var(--accent);}
-.form-group input::placeholder{color:#9ca3af;}
-
-.section-divider{height:1px;background:var(--line);margin:30px 0;}
-
-.submit-btn{width:100%;padding:20px;background:#111;color:white;border:none;border-radius:999px;font-family:Inter,sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:0.3s;letter-spacing:0.04em;margin-top:10px;}
-.submit-btn:hover{background:var(--accent);}
-.submit-btn:disabled{opacity:0.6;cursor:not-allowed;}
-
-.secure-note{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;font-size:13px;color:#6b7280;}
-
-/* ORDER SUMMARY */
-.summary-card{position:sticky;top:30px;background:white;border-radius:30px;padding:30px;border:1px solid rgba(0,0,0,0.05);}
-.summary-card h3{font-size:28px;margin-bottom:24px;}
-.summary-items{border-bottom:1px solid var(--line);margin-bottom:20px;padding-bottom:4px;}
-.summary-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.04);}
-.summary-row:last-child{border-bottom:none;}
-.summary-item-info{display:flex;align-items:center;gap:12px;flex:1;}
-.summary-totals{}
-.total-row{display:flex;justify-content:space-between;margin-bottom:12px;font-size:15px;}
-.grand-total{font-weight:800;font-size:20px;border-top:1px solid var(--line);padding-top:14px;margin-top:4px;}
-.free-shipping-notice{background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46;border-radius:12px;padding:12px 14px;font-size:13px;font-weight:600;margin-top:16px;}
-.progress-bar{height:4px;background:#d1fae5;border-radius:999px;margin-top:8px;overflow:hidden;}
-.progress-fill{height:100%;background:#065f46;border-radius:999px;transition:width 0.5s ease;}
-
-/* STEPS */
 .checkout-steps{display:flex;gap:0;margin-bottom:32px;}
 .step{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;}
 .step.active{color:#111;}
 .step-num{width:26px;height:26px;border-radius:50%;border:2px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:12px;}
 .step-divider{width:40px;height:1px;background:var(--line);margin:0 8px;}
 
-/* FOOTER */
+.form-card{background:white;border-radius:30px;padding:36px;border:1px solid rgba(0,0,0,0.05);margin-bottom:20px;}
+.form-section-title{font-size:24px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--line);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;}
+.form-group input,.form-group select{width:100%;padding:16px 18px;border:1px solid var(--line);border-radius:14px;font-family:Inter,sans-serif;font-size:15px;background:white;outline:none;transition:border-color 0.2s;color:#111;}
+.form-group input:focus,.form-group select:focus{border-color:var(--accent);}
+.form-group input::placeholder{color:#9ca3af;}
+
+.express-section{margin-bottom:28px;}
+.express-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#6b7280;text-align:center;margin-bottom:14px;}
+.divider{display:flex;align-items:center;gap:14px;margin:22px 0;}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line);}
+.divider span{font-size:13px;color:#9ca3af;font-weight:600;white-space:nowrap;}
+#payment-element{padding:4px 0;}
+
+.submit-btn{width:100%;padding:20px;background:#111;color:white;border:none;border-radius:999px;font-family:Inter,sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:0.3s;letter-spacing:0.04em;margin-top:20px;display:flex;align-items:center;justify-content:center;gap:10px;}
+.submit-btn:hover:not(:disabled){background:var(--accent);}
+.submit-btn:disabled{opacity:0.6;cursor:not-allowed;}
+.spinner{width:18px;height:18px;border:2px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.7s linear infinite;display:none;}
+@keyframes spin{to{transform:rotate(360deg)}}
+.secure-note{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;font-size:13px;color:#6b7280;}
+#payment-message{color:#ef4444;font-size:14px;font-weight:600;margin-top:14px;text-align:center;min-height:20px;}
+
+.summary-card{position:sticky;top:30px;background:white;border-radius:30px;padding:30px;border:1px solid rgba(0,0,0,0.05);}
+.summary-card h3{font-size:28px;margin-bottom:24px;}
+.summary-items{border-bottom:1px solid var(--line);margin-bottom:20px;padding-bottom:4px;}
+.summary-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.04);}
+.summary-row:last-child{border-bottom:none;}
+.summary-item-info{display:flex;align-items:center;gap:12px;flex:1;}
+.total-row{display:flex;justify-content:space-between;margin-bottom:12px;font-size:15px;}
+.grand-total{font-weight:800;font-size:20px;border-top:1px solid var(--line);padding-top:14px;margin-top:4px;}
+.free-shipping-notice{background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46;border-radius:12px;padding:12px 14px;font-size:13px;font-weight:600;margin-top:16px;}
+.progress-bar{height:4px;background:#d1fae5;border-radius:999px;margin-top:8px;overflow:hidden;}
+.progress-fill{height:100%;background:#065f46;border-radius:999px;transition:width 0.5s ease;}
+.skeleton{background:linear-gradient(90deg,#1a1a18 25%,#25231f 50%,#1a1a18 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:12px;height:20px;margin-bottom:12px;}
+@keyframes shimmer{from{background-position:200% 0}to{background-position:-200% 0}}
+.empty-cart-msg{text-align:center;padding:40px 0;}
+.btn-dark{display:inline-flex;align-items:center;padding:14px 24px;border-radius:999px;background:#111;color:white;font-weight:700;font-size:14px;margin-top:16px;}
+
 footer{padding:60px 0 30px;border-top:1px solid var(--line);}
 .footer-bottom{color:#6b7280;font-size:13px;text-align:center;}
 
@@ -88,8 +94,8 @@ footer{padding:60px 0 30px;border-top:1px solid var(--line);}
 @media(max-width:600px){
   .form-row{grid-template-columns:1fr;}
 }
-
 </style>
+<link rel="stylesheet" href="css/theme.css">
 </head>
 <body>
 
@@ -103,127 +109,106 @@ footer{padding:60px 0 30px;border-top:1px solid var(--line);}
 </nav>
 
 <div class="container">
-
   <div class="checkout-header">
     <h1>Checkout.</h1>
   </div>
 
   <div class="checkout-layout">
-
     <div>
       <div class="checkout-steps">
         <div class="step active"><span class="step-num">1</span> Details</div>
         <div class="step-divider"></div>
-        <div class="step"><span class="step-num">2</span> Payment</div>
+        <div class="step active"><span class="step-num">2</span> Payment</div>
         <div class="step-divider"></div>
         <div class="step"><span class="step-num">3</span> Confirm</div>
       </div>
 
-      <form class="form-card" id="checkoutForm">
-
+      <div class="form-card">
         <h3 class="form-section-title">Contact & Shipping</h3>
 
         <div class="form-row">
           <div class="form-group">
             <label>First Name</label>
-            <input type="text" placeholder="Sophie" required>
+            <input type="text" id="firstName" placeholder="Alex" required>
           </div>
           <div class="form-group">
             <label>Last Name</label>
-            <input type="text" placeholder="Martin" required>
+            <input type="text" id="lastName" placeholder="Morgan" required>
           </div>
         </div>
 
         <div class="form-group">
           <label>Email</label>
-          <input type="email" placeholder="sophie@example.com" required>
-        </div>
-
-        <div class="form-group">
-          <label>Phone</label>
-          <input type="tel" placeholder="+353 87 000 0000">
+          <input type="email" id="email" placeholder="alex@example.com" required>
         </div>
 
         <div class="form-group">
           <label>Address</label>
-          <input type="text" placeholder="12 Grand Canal Street" required>
+          <input type="text" id="address" placeholder="12 Grand Canal Street" required>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label>City</label>
-            <input type="text" placeholder="Dublin" required>
+            <input type="text" id="city" placeholder="Dublin" required>
           </div>
           <div class="form-group">
             <label>Postcode</label>
-            <input type="text" placeholder="D02 XY12" required>
+            <input type="text" id="postcode" placeholder="D02 XY12" required>
           </div>
         </div>
 
         <div class="form-group">
           <label>Country</label>
-          <select required>
+          <select id="country" required>
             <option value="">Select country</option>
-            <option selected>Ireland</option>
-            <option>United Kingdom</option>
-            <option>France</option>
-            <option>Germany</option>
-            <option>Italy</option>
-            <option>Spain</option>
-            <option>Netherlands</option>
-            <option>United States</option>
-            <option>Canada</option>
-            <option>Australia</option>
-            <option>Other</option>
+            <option value="IE" selected>Ireland</option>
+            <option value="GB">United Kingdom</option>
+            <option value="FR">France</option>
+            <option value="DE">Germany</option>
+            <option value="IT">Italy</option>
+            <option value="ES">Spain</option>
+            <option value="NL">Netherlands</option>
+            <option value="US">United States</option>
+            <option value="CA">Canada</option>
+            <option value="AU">Australia</option>
           </select>
         </div>
+      </div>
 
-        <div class="section-divider"></div>
+      <div class="form-card">
+        <h3 class="form-section-title">Payment</h3>
 
-        <h3 class="form-section-title">Payment Details</h3>
-
-        <div class="form-group">
-          <label>Card Number</label>
-          <input type="text" id="cardNumber" placeholder="4242 4242 4242 4242" required maxlength="19">
+        <div class="express-section">
+          <p class="express-label">Express checkout</p>
+          <div id="express-checkout-element"></div>
         </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label>Expiry</label>
-            <input type="text" id="expiry" placeholder="MM/YY" required maxlength="5">
-          </div>
-          <div class="form-group">
-            <label>CVV</label>
-            <input type="text" id="cvv" placeholder="123" required maxlength="4">
-          </div>
-        </div>
+        <div class="divider"><span>or pay with card</span></div>
+        <div id="payment-element"></div>
+        <div id="payment-message"></div>
 
-        <div class="form-group">
-          <label>Name on Card</label>
-          <input type="text" placeholder="Sophie Martin" required>
-        </div>
-
-        <button type="submit" class="submit-btn" id="placeOrderBtn">
-          Place Order
+        <button class="submit-btn" id="submitBtn" disabled>
+          <div class="spinner" id="spinner"></div>
+          <span id="btnText">Loading…</span>
         </button>
 
         <div class="secure-note">
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          Secure 256-bit SSL encryption
+          Secured by Stripe — 256-bit SSL encryption
         </div>
-
-      </form>
+      </div>
     </div>
 
     <div class="summary-card">
       <h3>Order Summary</h3>
       <div id="orderSummary">
-        <p style="color:#9ca3af">Loading…</p>
+        <div class="skeleton" style="height:60px"></div>
+        <div class="skeleton" style="height:60px"></div>
+        <div class="skeleton" style="height:24px;width:60%"></div>
       </div>
     </div>
-
   </div>
-
 </div>
 
 <footer>
@@ -234,7 +219,188 @@ footer{padding:60px 0 30px;border-top:1px solid var(--line);}
 
 <script src="js/products.js"></script>
 <script src="js/cart.js"></script>
-<script src="js/checkout.js"></script>
+<script>
+const BACKEND_URL = window.LUXECORE_BACKEND_URL || "http://localhost:4242";
+let stripe;
+let elements;
 
+async function init() {
+  if (!cart || cart.length === 0) {
+    document.getElementById("orderSummary").innerHTML = `
+      <div class="empty-cart-msg">
+        <p>Your cart is empty.</p>
+        <a href="shop.html" class="btn-dark">Shop Now</a>
+      </div>`;
+    document.getElementById("btnText").textContent = "Cart Empty";
+    return;
+  }
+
+  const configRes = await fetch(`${BACKEND_URL}/config`);
+  const config = await configRes.json();
+  if (!configRes.ok) throw new Error(config.error || "Could not load Stripe config");
+
+  stripe = Stripe(config.publishableKey);
+
+  const intentRes = await fetch(`${BACKEND_URL}/create-payment-intent`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      items: cart.map(item => ({ id: item.id, quantity: item.quantity }))
+    })
+  });
+
+  const intent = await intentRes.json();
+  if (!intentRes.ok) throw new Error(intent.error || "Could not create payment");
+
+  elements = stripe.elements({
+    clientSecret: intent.clientSecret,
+    appearance: {
+      theme: "night",
+      variables: {
+        colorPrimary: "#c8a96a",
+        colorBackground: "#141414",
+        colorText: "#f4efe6",
+        colorDanger: "#ef4444",
+        fontFamily: "Inter, sans-serif",
+        spacingUnit: "5px",
+        borderRadius: "14px",
+        fontSizeBase: "15px"
+      }
+    }
+  });
+
+  const expressCheckout = elements.create("expressCheckout", {
+    buttonHeight: 52
+  });
+  expressCheckout.mount("#express-checkout-element");
+  expressCheckout.on("confirm", handleExpressConfirm);
+
+  const paymentElement = elements.create("payment", {
+    layout: "tabs"
+  });
+  paymentElement.mount("#payment-element");
+  paymentElement.on("ready", () => {
+    const btn = document.getElementById("submitBtn");
+    btn.disabled = false;
+    document.getElementById("btnText").textContent = `Pay €${intent.amount.toFixed(2)}`;
+  });
+
+  renderSummary(intent.amount);
+}
+
+async function handleExpressConfirm() {
+  setLoading(true);
+  clearError();
+
+  const { error } = await stripe.confirmPayment({
+    elements,
+    confirmParams: {
+      return_url: `${window.location.origin}/success.html`
+    }
+  });
+
+  if (error) {
+    showError(error.message);
+    setLoading(false);
+  }
+}
+
+document.getElementById("submitBtn").addEventListener("click", async () => {
+  if (!stripe || !elements) return;
+
+  const email = document.getElementById("email").value.trim();
+  if (!email) {
+    showError("Please enter your email address.");
+    return;
+  }
+
+  setLoading(true);
+  clearError();
+
+  const { error } = await stripe.confirmPayment({
+    elements,
+    confirmParams: {
+      return_url: `${window.location.origin}/success.html`,
+      receipt_email: email,
+      shipping: {
+        name: [
+          document.getElementById("firstName").value,
+          document.getElementById("lastName").value
+        ].join(" ").trim() || "LUXECORE Customer",
+        address: {
+          line1: document.getElementById("address").value,
+          city: document.getElementById("city").value,
+          postal_code: document.getElementById("postcode").value,
+          country: document.getElementById("country").value || "IE"
+        }
+      }
+    }
+  });
+
+  if (error) {
+    showError(error.message || "Something went wrong. Please try again.");
+  }
+
+  setLoading(false);
+});
+
+function renderSummary(serverTotal) {
+  const subtotal = cartSubtotal();
+  const shipping = subtotal >= 200 ? 0 : 12;
+  const toFree = Math.max(0, 200 - subtotal);
+
+  document.getElementById("orderSummary").innerHTML = `
+    <div class="summary-items">
+      ${cart.map(item => `
+        <div class="summary-row">
+          <div class="summary-item-info">
+            ${item.art || `<img src="${item.image}" alt="${item.name}" style="width:60px;height:60px;object-fit:cover;border-radius:10px;flex-shrink:0">`}
+            <div>
+              <div style="font-weight:700;font-size:15px">${item.name}</div>
+              <div style="font-size:12px;color:#9ca3af">${item.size} · ${item.color} · ×${item.quantity}</div>
+            </div>
+          </div>
+          <div style="font-weight:700;color:#c8a96a;white-space:nowrap">€${(item.price * item.quantity).toFixed(2)}</div>
+        </div>
+      `).join("")}
+    </div>
+
+    <div class="total-row"><span>Subtotal</span><span>€${subtotal.toFixed(2)}</span></div>
+    <div class="total-row"><span>Shipping</span><span>${shipping === 0 ? '<span style="color:#9ed3ae;font-weight:700">Free</span>' : "€" + shipping.toFixed(2)}</span></div>
+    <div class="total-row grand-total"><span>Total</span><span>€${serverTotal.toFixed(2)}</span></div>
+
+    ${toFree > 0 ? `
+      <div class="free-shipping-notice">
+        Add €${toFree.toFixed(2)} more for free shipping
+        <div class="progress-bar"><div class="progress-fill" style="width:${Math.min(100,(subtotal/200)*100)}%"></div></div>
+      </div>` : `
+      <div class="free-shipping-notice">✓ Free shipping applied!</div>`}
+  `;
+}
+
+function setLoading(on) {
+  const btn = document.getElementById("submitBtn");
+  const spinner = document.getElementById("spinner");
+  const btnText = document.getElementById("btnText");
+  btn.disabled = on;
+  spinner.style.display = on ? "block" : "none";
+  btnText.style.opacity = on ? "0.5" : "1";
+}
+
+function showError(message) {
+  document.getElementById("payment-message").textContent = message;
+}
+
+function clearError() {
+  document.getElementById("payment-message").textContent = "";
+}
+
+init().catch(err => {
+  console.error("Stripe init error:", err);
+  showError("Could not connect to payment server. Start the backend with npm run start.");
+  document.getElementById("submitBtn").disabled = true;
+  document.getElementById("btnText").textContent = "Payment unavailable";
+});
+</script>
 </body>
 </html>

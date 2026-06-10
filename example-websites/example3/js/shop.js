@@ -65,15 +65,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     grid.innerHTML = list.map(p => `
-      <article class="product-card" style="animation:fadeUp 0.4s ease both">
+      <article class="product-card" role="link" tabindex="0" data-product-url="${productUrl(p)}" style="animation:fadeUp 0.4s ease both;cursor:pointer">
         <div class="product-image">
-          <a href="product.html?id=${p.id}">
-            <img src="${p.image}" alt="${p.name}" loading="lazy">
+          <a href="${productUrl(p)}">
+            ${p.art}
           </a>
           ${p.badge ? `<div class="product-badge-grid">${p.badge}</div>` : ""}
           <div class="quick-actions">
-            <a href="product.html?id=${p.id}" class="quick-btn">View</a>
-            <button class="quick-btn" onclick="addToCart(${p.id})">Add to Bag</button>
+            <a href="${productUrl(p)}" class="quick-btn">View</a>
+            <button class="quick-btn" data-add-to-bag="${p.id}">Add to Bag</button>
           </div>
         </div>
         <div class="product-info">
@@ -86,7 +86,31 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </article>
     `).join("");
+
+    grid.querySelectorAll(".product-card").forEach(card => {
+      card.addEventListener("click", event => {
+        if (event.target.closest("a,button")) return;
+        window.location.href = card.dataset.productUrl;
+      });
+      card.addEventListener("keydown", event => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        window.location.href = card.dataset.productUrl;
+      });
+    });
+
+    grid.querySelectorAll("[data-add-to-bag]").forEach(button => {
+      button.addEventListener("click", event => {
+        event.stopPropagation();
+        addToCart(Number(button.dataset.addToBag));
+      });
+    });
   }
 
   render();
 });
+
+function productUrl(product) {
+  const key = product.slug || product.id;
+  return `product.html?product=${encodeURIComponent(key)}`;
+}

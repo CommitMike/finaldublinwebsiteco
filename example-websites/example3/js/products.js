@@ -1,106 +1,291 @@
+function productImage(title, category, tone = "charcoal") {
+  return `images/products/${slugifyAsset(title)}.svg`;
+}
+
+function slugifyAsset(value) {
+  return String(value)
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function productArtwork(title, category, seed = 1) {
+  const palettes = [
+    ["#08090a", "#1a1a18", "#c8a96a"],
+    ["#090d0b", "#17231c", "#9fb08e"],
+    ["#12080a", "#2a1015", "#c8a96a"],
+    ["#080b0d", "#17202a", "#b7b1a3"],
+    ["#0d0907", "#211711", "#c8a96a"],
+    ["#11100d", "#d8d0c2", "#c8a96a"]
+  ];
+  const [bg, panel, accent] = palettes[seed % palettes.length];
+  const isFootwear = category === "footwear";
+  const isAccessory = category === "accessories";
+  const shape = isFootwear
+    ? `<path d="M134 318c54 14 117 16 186 6 32-4 61 4 88 25 15 12 11 32-8 38-74 21-159 19-255-5-38-9-59-22-63-39-4-18 14-32 52-25Z" fill="${panel}" stroke="${accent}" stroke-width="3"/><path d="M137 320c25-47 57-76 96-89l31 84" fill="none" stroke="${accent}" stroke-width="3"/>`
+    : isAccessory
+      ? `<rect x="132" y="162" width="236" height="246" rx="24" fill="${panel}" stroke="${accent}" stroke-width="3"/><path d="M186 164c10-55 118-55 128 0" fill="none" stroke="${accent}" stroke-width="4"/><path d="M168 222h164M168 334h164" stroke="${accent}" stroke-width="2" opacity=".35"/>`
+      : `<path d="M178 132h144l53 74-42 38v183H167V244l-42-38 53-74Z" fill="${panel}" stroke="${accent}" stroke-width="3"/><path d="M204 133c18 30 72 30 92 0M250 172v238M186 224h128" stroke="${accent}" stroke-width="2" opacity=".45"/>`;
+
+  return `
+    <svg class="product-art-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 650" role="img" aria-label="${escapeSvg(title)}">
+      <defs>
+        <linearGradient id="g-${seed}" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="${bg}"/>
+          <stop offset="1" stop-color="#030303"/>
+        </linearGradient>
+        <radialGradient id="r-${seed}" cx=".72" cy=".18" r=".8">
+          <stop offset="0" stop-color="${accent}" stop-opacity=".22"/>
+          <stop offset=".55" stop-color="${accent}" stop-opacity=".04"/>
+          <stop offset="1" stop-color="${accent}" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="500" height="650" fill="url(#g-${seed})"/>
+      <rect width="500" height="650" fill="url(#r-${seed})"/>
+      <rect x="46" y="48" width="408" height="554" rx="18" fill="none" stroke="${accent}" stroke-opacity=".18"/>
+      <circle cx="405" cy="114" r="46" fill="${accent}" opacity=".12"/>
+      ${shape}
+      <text x="58" y="560" font-family="Inter, Arial, sans-serif" font-size="17" fill="#f4efe6" font-weight="700">${escapeSvg(title)}</text>
+      <text x="58" y="587" font-family="Inter, Arial, sans-serif" font-size="11" fill="${accent}" letter-spacing="4">${escapeSvg(category.toUpperCase())}</text>
+    </svg>`;
+}
+
+function escapeSvg(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
 const products = [
   {
     id: 1,
-    name: "Wool Blend Coat",
+    slug: "double-face-wool-overcoat",
+    name: "Double-Face Wool Overcoat",
     category: "outerwear",
-    price: 320,
+    price: 420,
     badge: "Bestseller",
     sizes: ["XS","S","M","L","XL"],
-    colors: ["Camel","Black","Ivory"],
-    image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80",
-    description: "Italian wool oversized coat with structured tailoring and luxury interior lining. A statement piece crafted for the discerning wardrobe.",
-    details: ["100% Italian Wool","Dry clean only","Structured silhouette","Interior silk lining","Made in Italy"]
+    colors: ["Black","Charcoal","Camel"],
+    image: productImage("Double-Face Wool Overcoat", "outerwear", "charcoal"),
+    image2: productImage("Overcoat Detail", "outerwear", "espresso"),
+    description: "A substantial double-face wool overcoat with a clean shoulder, deep interior pockets, and a tailored profile for men and women.",
+    details: ["90% wool, 10% cashmere","Double-face construction","Horn-effect buttons","Fully bound seams","Made in Italy"]
   },
   {
     id: 2,
-    name: "Minimal Sneakers",
+    slug: "black-calf-leather-sneaker",
+    name: "Black Calf Leather Sneaker",
     category: "footwear",
-    price: 180,
+    price: 240,
     badge: "New",
-    sizes: ["38","39","40","41","42","43","44"],
-    colors: ["White","Black","Sand"],
-    image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80",
-    description: "Clean low-profile sneakers designed for elevated everyday wear. Minimal detailing meets premium craftsmanship.",
-    details: ["Premium leather upper","Cushioned insole","Rubber outsole","Hand-finished edges","Made in Portugal"]
+    sizes: ["38","39","40","41","42","43","44","45"],
+    colors: ["Black","Bone","Graphite"],
+    image: productImage("Black Calf Leather Sneaker", "footwear", "slate"),
+    image2: productImage("Leather Sneaker Detail", "footwear", "bone"),
+    description: "Low-profile sneakers in smooth calf leather with tonal hardware and a cushioned cupsole for elevated daily wear.",
+    details: ["Calf leather upper","Leather lining","Removable cushioned insole","Rubber cupsole","Made in Portugal"]
   },
   {
     id: 3,
-    name: "Leather Carry Bag",
+    slug: "structured-leather-tote",
+    name: "Structured Leather Tote",
     category: "accessories",
-    price: 260,
+    price: 360,
     badge: "Limited",
     sizes: ["One Size"],
-    colors: ["Tan","Black","Forest"],
-    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1200&q=80",
-    description: "Luxury leather bag inspired by Scandinavian minimalism. Refined hardware and a clean silhouette make this a forever piece.",
-    details: ["Full-grain vegetable leather","Adjustable strap","Interior zip pocket","Brass hardware","Made in Denmark"]
+    colors: ["Black","Espresso","Forest"],
+    image: productImage("Structured Leather Tote", "accessories", "espresso"),
+    image2: productImage("Tote Interior", "accessories", "forest"),
+    description: "A structured full-grain leather tote with discreet hardware, designed to carry workday essentials without losing its shape.",
+    details: ["Full-grain leather","Suede interior","Internal laptop sleeve","Brushed brass hardware","Made in Spain"]
   },
   {
     id: 4,
-    name: "Relaxed Knitwear",
+    slug: "cashmere-rib-knit",
+    name: "Cashmere Rib Knit",
     category: "outerwear",
-    price: 140,
+    price: 260,
     badge: null,
     sizes: ["XS","S","M","L","XL"],
-    colors: ["Oat","Charcoal","Sage"],
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1200&q=80",
-    description: "Soft-touch knitwear designed for layered luxury styling. The relaxed silhouette complements both formal and casual looks.",
-    details: ["80% Merino wool, 20% cashmere","Hand wash cold","Relaxed oversized fit","Ribbed trim","Ethically sourced"]
+    colors: ["Black","Smoke","Oxblood"],
+    image: productImage("Cashmere Rib Knit", "outerwear", "oxblood"),
+    image2: productImage("Cashmere Texture", "outerwear", "charcoal"),
+    description: "Dense cashmere knitwear with a ribbed collar and relaxed drape, cut for layering beneath coats or wearing alone.",
+    details: ["100% Grade A cashmere","Ribbed collar and cuffs","Relaxed unisex fit","Hand wash cold","Made in Scotland"]
   },
   {
     id: 5,
-    name: "Silk Shirt",
+    slug: "silk-georgette-shirt",
+    name: "Silk Georgette Shirt",
     category: "essentials",
-    price: 195,
+    price: 220,
     badge: "New",
     sizes: ["XS","S","M","L","XL"],
-    colors: ["Cream","Navy","Blush"],
-    image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=80",
-    description: "Pure silk shirt with a fluid drape and timeless collar. Elevates any outfit from boardroom to evening.",
-    details: ["100% Mulberry silk","Dry clean recommended","Relaxed fit","Mother-of-pearl buttons","Made in France"]
+    colors: ["Black","Ivory","Midnight"],
+    image: productImage("Silk Georgette Shirt", "essentials", "bone"),
+    image2: productImage("Silk Cuff Detail", "essentials", "slate"),
+    description: "A fluid silk shirt with a sharp collar, deep cuffs, and an evening-weight drape that works under tailoring or alone.",
+    details: ["100% silk georgette","Mother-of-pearl buttons","French seams","Relaxed fit","Made in France"]
   },
   {
     id: 6,
-    name: "Tailored Trousers",
+    slug: "wide-leg-wool-trouser",
+    name: "Wide-Leg Wool Trouser",
     category: "essentials",
-    price: 210,
+    price: 290,
     badge: null,
     sizes: ["XS","S","M","L","XL"],
-    colors: ["Slate","Beige","Black"],
-    image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1200&q=80",
-    description: "Precision-cut tailored trousers with a wide-leg silhouette and clean press. The essential foundation of a capsule wardrobe.",
-    details: ["Italian wool blend","Dry clean only","Wide-leg cut","Side pockets","Made in Italy"]
+    colors: ["Black","Charcoal","Taupe"],
+    image: productImage("Wide-Leg Wool Trouser", "essentials", "charcoal"),
+    image2: productImage("Wool Trouser Detail", "essentials", "espresso"),
+    description: "A wide-leg trouser in Italian wool with a long clean line, crisp front pleat, and concealed waistband closure.",
+    details: ["Italian virgin wool","Wide-leg cut","Pressed front pleat","Concealed hook closure","Made in Italy"]
   },
   {
     id: 7,
-    name: "Suede Loafers",
+    slug: "suede-penny-loafer",
+    name: "Suede Penny Loafer",
     category: "footwear",
-    price: 240,
+    price: 310,
     badge: "Bestseller",
-    sizes: ["38","39","40","41","42","43","44"],
-    colors: ["Cognac","Black","Taupe"],
-    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80",
-    description: "Classic penny loafers in premium suede. A heritage silhouette reimagined for the modern wardrobe.",
-    details: ["Italian suede upper","Leather lining","Leather sole","Slip-on fit","Made in Italy"]
+    sizes: ["38","39","40","41","42","43","44","45"],
+    colors: ["Black","Cognac","Dark Taupe"],
+    image: productImage("Suede Penny Loafer", "footwear", "espresso"),
+    image2: productImage("Loafer Sole Detail", "footwear", "charcoal"),
+    description: "A refined penny loafer in plush suede with a leather sole, low stacked heel, and softly squared almond toe.",
+    details: ["Italian suede upper","Leather lining","Goodyear welted sole","Low stacked heel","Made in Italy"]
   },
   {
     id: 8,
-    name: "Cashmere Scarf",
+    slug: "cashmere-evening-scarf",
+    name: "Cashmere Evening Scarf",
     category: "accessories",
-    price: 120,
+    price: 150,
     badge: null,
     sizes: ["One Size"],
-    colors: ["Camel","Ivory","Burgundy"],
-    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1200&q=80",
-    description: "Pure cashmere scarf in a generous length and weight. An everyday luxury that transforms any look.",
-    details: ["100% Grade A cashmere","Dry clean recommended","200cm x 70cm","Fringed ends","Made in Scotland"]
+    colors: ["Black","Charcoal","Burgundy"],
+    image: productImage("Cashmere Evening Scarf", "accessories", "slate"),
+    image2: productImage("Cashmere Fringe", "accessories", "oxblood"),
+    description: "A generous cashmere scarf with a brushed finish, designed to add warmth and texture to dark tailoring.",
+    details: ["100% cashmere","Brushed finish","200cm x 70cm","Tonal fringe","Made in Scotland"]
+  },
+  {
+    id: 9,
+    slug: "technical-wool-bomber",
+    name: "Technical Wool Bomber",
+    category: "outerwear",
+    price: 380,
+    badge: "New",
+    sizes: ["XS","S","M","L","XL"],
+    colors: ["Black","Moss","Graphite"],
+    image: productImage("Technical Wool Bomber", "outerwear", "forest"),
+    image2: productImage("Bomber Hardware", "outerwear", "charcoal"),
+    description: "A compact wool bomber with matte hardware, ribbed trims, and a clean cropped proportion.",
+    details: ["Virgin wool blend","Two-way zip","Ribbed hem and cuffs","Internal welt pocket","Made in Portugal"]
+  },
+  {
+    id: 10,
+    slug: "leather-weekend-duffle",
+    name: "Leather Weekend Duffle",
+    category: "accessories",
+    price: 520,
+    badge: "Limited",
+    sizes: ["One Size"],
+    colors: ["Black","Espresso"],
+    image: productImage("Leather Weekend Duffle", "accessories", "espresso"),
+    image2: productImage("Duffle Hardware", "accessories", "charcoal"),
+    description: "A weekender in grained leather with a broad opening, detachable strap, and protected metal feet.",
+    details: ["Grained leather","Cotton twill lining","Detachable shoulder strap","Protective metal feet","Made in Spain"]
+  },
+  {
+    id: 11,
+    slug: "merino-roll-neck",
+    name: "Merino Roll Neck",
+    category: "essentials",
+    price: 170,
+    badge: null,
+    sizes: ["XS","S","M","L","XL"],
+    colors: ["Black","Stone","Burgundy"],
+    image: productImage("Merino Roll Neck", "essentials", "oxblood"),
+    image2: productImage("Roll Neck Rib", "essentials", "bone"),
+    description: "A fine-gauge merino roll neck with a close neckline and clean body for layering under tailoring.",
+    details: ["100% merino wool","Fine-gauge knit","Slim unisex fit","Ribbed neck","Made in Italy"]
+  },
+  {
+    id: 12,
+    slug: "pleated-evening-skirt",
+    name: "Pleated Evening Skirt",
+    category: "essentials",
+    price: 250,
+    badge: "New",
+    sizes: ["XS","S","M","L","XL"],
+    colors: ["Black","Midnight","Oxblood"],
+    image: productImage("Pleated Evening Skirt", "essentials", "slate"),
+    image2: productImage("Pleat Detail", "essentials", "oxblood"),
+    description: "A sharp pleated evening skirt in weighty satin, balanced with a clean waistband and fluid movement.",
+    details: ["Heavy satin twill","Knife pleats","Concealed side zip","Midi length","Made in France"]
+  },
+  {
+    id: 13,
+    slug: "brushed-wool-blazer",
+    name: "Brushed Wool Blazer",
+    category: "outerwear",
+    price: 460,
+    badge: "Bestseller",
+    sizes: ["XS","S","M","L","XL"],
+    colors: ["Black","Charcoal","Moss"],
+    image: productImage("Brushed Wool Blazer", "outerwear", "charcoal"),
+    image2: productImage("Blazer Lapel", "outerwear", "forest"),
+    description: "A softly structured blazer in brushed wool with a broad lapel and longer line.",
+    details: ["Brushed virgin wool","Single-breasted","Cupro lining","Internal breast pocket","Made in Italy"]
+  },
+  {
+    id: 14,
+    slug: "chelsea-commando-boot",
+    name: "Chelsea Commando Boot",
+    category: "footwear",
+    price: 340,
+    badge: null,
+    sizes: ["38","39","40","41","42","43","44","45"],
+    colors: ["Black","Espresso"],
+    image: productImage("Chelsea Commando Boot", "footwear", "charcoal"),
+    image2: productImage("Boot Tread Detail", "footwear", "espresso"),
+    description: "A polished leather Chelsea boot with elastic side panels and a substantial commando sole.",
+    details: ["Polished calf leather","Elastic side gussets","Commando rubber sole","Pull tab","Made in Portugal"]
+  },
+  {
+    id: 15,
+    slug: "brass-buckle-belt",
+    name: "Brass Buckle Belt",
+    category: "accessories",
+    price: 130,
+    badge: null,
+    sizes: ["S","M","L","XL"],
+    colors: ["Black","Espresso"],
+    image: productImage("Brass Buckle Belt", "accessories", "bone"),
+    image2: productImage("Belt Edge Detail", "accessories", "espresso"),
+    description: "A full-grain leather belt with a brushed brass buckle and hand-painted edges.",
+    details: ["Full-grain leather","Brushed brass buckle","Painted edges","35mm width","Made in England"]
+  },
+  {
+    id: 16,
+    slug: "satin-evening-camisole",
+    name: "Satin Evening Camisole",
+    category: "essentials",
+    price: 160,
+    badge: "New",
+    sizes: ["XS","S","M","L","XL"],
+    colors: ["Black","Champagne","Midnight"],
+    image: productImage("Satin Evening Camisole", "essentials", "bone"),
+    image2: productImage("Satin Strap Detail", "essentials", "slate"),
+    description: "A minimal satin camisole with a clean neckline and adjustable straps for evening layering.",
+    details: ["Silk satin blend","Adjustable straps","Bias cut","French seams","Made in France"]
   }
 ];
+
+products.forEach(product => {
+  product.art = productArtwork(product.name, product.category, product.id);
+});

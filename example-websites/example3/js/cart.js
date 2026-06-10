@@ -25,6 +25,7 @@ function addToCart(id, size, color) {
       name:     product.name,
       price:    product.price,
       image:    product.image,
+      art:      product.art,
       size:     selectedSize,
       color:    selectedColor,
       quantity: 1

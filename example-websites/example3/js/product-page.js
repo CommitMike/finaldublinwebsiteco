@@ -1,8 +1,7 @@
 // ─── PRODUCT PAGE ─────────────────────────────────────────────
 document.addEventListener("DOMContentLoaded", () => {
   const params  = new URLSearchParams(window.location.search);
-  const id      = parseInt(params.get("id"));
-  const product = products.find(p => p.id === id);
+  const product = findProductFromLocation(params);
   const el      = document.getElementById("productPage");
 
   if (!product || !el) {
@@ -25,9 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Related products (same category, different id)
   const related = products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 3);
   const relatedHTML = related.map(p => `
-    <a href="product.html?id=${p.id}" class="related-card">
+    <a href="${productUrl(p)}" class="related-card">
       <div class="related-img-wrap">
-        <img src="${p.image}" alt="${p.name}">
+        ${p.art}
       </div>
       <div class="related-info">
         <div class="tag">${p.category}</div>
@@ -50,14 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <div class="product-images">
         <div class="main-img-wrap">
-          <img id="mainImg" src="${product.image}" alt="${product.name}">
+          <div id="mainImg" class="main-art">${product.art}</div>
           ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ""}
-        </div>
-        <div class="thumb-row">
-          <img class="thumb active" src="${product.image}"
-            onclick="switchImg(this,'${product.image}')">
-          <img class="thumb" src="${product.image2}"
-            onclick="switchImg(this,'${product.image2}')">
         </div>
       </div>
 
@@ -133,9 +126,40 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function switchImg(thumb, src) {
-  document.getElementById("mainImg").src = src;
   document.querySelectorAll(".thumb").forEach(t => t.classList.remove("active"));
   thumb.classList.add("active");
+}
+
+function findProductFromLocation(params) {
+  const raw =
+    params.get("product") ||
+    params.get("slug") ||
+    params.get("id") ||
+    window.location.hash.replace("#", "") ||
+    window.location.pathname.split("/").pop().replace(".html", "");
+
+  const value = decodeURIComponent(String(raw || "")).trim().toLowerCase();
+  const id = Number.parseInt(value, 10);
+
+  return products.find(product =>
+    product.id === id ||
+    String(product.id) === value ||
+    product.slug === value ||
+    slugify(product.name) === value
+  );
+}
+
+function slugify(value) {
+  return String(value)
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function productUrl(product) {
+  const key = product.slug || product.id;
+  return `product.html?product=${encodeURIComponent(key)}`;
 }
 
 function selectOption(btn, groupId, labelId) {
@@ -147,7 +171,8 @@ function selectOption(btn, groupId, labelId) {
 
 function handleAdd() {
   const params  = new URLSearchParams(window.location.search);
-  const id      = parseInt(params.get("id"));
+  const product = findProductFromLocation(params);
+  const id      = product ? product.id : Number.parseInt(params.get("id"), 10);
   const sizeBtn  = document.querySelector("#sizeOptions .selected");
   const colorBtn = document.querySelector("#colorOptions .selected");
   const size     = sizeBtn  ? (sizeBtn.dataset.size  || sizeBtn.textContent)  : null;

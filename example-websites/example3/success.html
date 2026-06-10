@@ -69,6 +69,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);}
 }
 
 </style>
+<link rel="stylesheet" href="css/theme.css">
 </head>
 <body>
 
@@ -127,6 +128,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);}
 </footer>
 
 <script>
+  localStorage.removeItem("luxecore-cart");
   // Generate a random order number
   document.getElementById("orderRef").textContent =
     Math.floor(100000 + Math.random() * 900000);
